@@ -1,9 +1,15 @@
 #include "LightSource.h"
 
-lighting::LightSource::LightSource(LightLayer * lightLayer)
+namespace lighting
 {
-}
+	void LightSource::InitLSourceMap()
+	{
+	}
+	LightSource::LightSource(LightLayer * lightLayer)
+	{
+	}
 
-lighting::LightSource::~LightSource()
-{
+	LightSource::~LightSource()
+	{
+	}
 }
