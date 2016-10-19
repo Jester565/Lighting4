@@ -7,23 +7,26 @@
 
 namespace lighting
 {
-	class LightSource;
 	class LightRunnable;
 
 	/// <summary>
-	/// The core of the lighting system.  Holds all <see cref="LightSource"/>s and LightBlockers, handles drawing operations, and manages threads.
+	/// The core of the lighting system.  Holds all <see cref="LightSource" />s and LightBlockers, handles drawing operations, and manages threads.
 	/// </summary>
 	class LightLayer
 	{
+		friend class CircleLightSource;
+		friend class LightSource;
 	public:
+		static const int MAX_THREAD_TO_CORES = 0;
+
 		/// <summary>
 		/// Initializes a new instance of the <see cref="LightLayer"/> class.  
 		/// </summary>
 		/// <param name="drawToBmpW">The draw to BMP w.</param>
 		/// <param name="drawToBmpH">The draw to BMP h.</param>
 		/// <param name="lightBmpScale">The light BMP scale.</param>
-		/// <param name="maxThreads">The maximum threads.</param>
-		LightLayer(int drawToBmpW, int drawToBmpH, double lightBmpScale, size_t maxThreads);
+		/// <param name="maxThreads">The maximum threads. Default will set this to number of cores on computer.</param>
+		LightLayer(int drawToBmpW, int drawToBmpH, double lightBmpScale, size_t maxThreads = MAX_THREAD_TO_CORES);
 				
 		/// <summary>
 		/// Detaches all elements of <see cref="lightRunnables"/> to process <see cref="LightSource"/>s.
@@ -37,28 +40,6 @@ namespace lighting
 		/// processing shadows.  Gaussian blurs will be applied to the map and everything will be drawn to the display.
 		/// </summary>
 		void draw();
-
-		/// <summary>
-		/// The safe option for adding the <see cref="LightSource"/> object specified by the parameter <paramref name="lightSource"/>.
-		/// </summary>
-		/// <para>
-		/// This method is safe because it will not attempt to add <paramref name="lightSource"/> if <see cref="threadsProcessing"/> is true.
-		/// If <see cref="threadsProcessing"/> is true, <paramref name="lightSource"/> is pushed to <see cref="heldAddLightSources"/>.
-		/// Otherwise <see cref="addLightSourceUnsafe(LightSource*)"/> is called.
-		/// </para>
-		/// <param name="lightSource">The <see cref="LightSource"/> to be added.</param>
-		void addLightSource(LightSource* lightSource);
-		
-		/// <summary>
-		/// The safe option for removing the <see cref="LightSource"/> object specified by the parameter <paramref name="lightSource"/>.
-		/// </summary>
-		/// <para>
-		/// This method is safe because it will not attempt to remove <paramref name="lightSource"/> if <see cref="threadsProcessing"/> is true.
-		/// If <see cref="threadsProcessing"/> is true, <paramref name="lightSource"/> is pushed to <see cref="heldRemoveLightSources"/>.
-		/// Otherwise <see cref="removeLightSourceUnsafe(LightSource*)"/> is called.
-		/// </para>
-		/// <param name="lightSource">The <see cref="LightSource"/> to be removed.</param>
-		void removeLightSource(LightSource* lightSource);
 		
 		/// <summary>
 		/// Adds <paramref name="lightBlocker"/> to <see cref="lightBlockers"/> and saves its location in that list in <see cref="lightBlockerTrackerMap"/>.
@@ -71,13 +52,51 @@ namespace lighting
 		/// </summary>
 		/// <param name="lightBlocker">The light blocker.</param>
 		void removeLightBlocker(LightBlocker* lightBlocker);
-		
+				
+		/// <summary>
+		/// Accessor for attribute <see cref="lightBmpScale"/>. Scale of <see cref="lightMap"/> relative to the display size.
+		/// </summary>
+		/// <returns>Scale of <see cref="lightMap"/> relative to the display.</returns>
+		float getLightBmpScale()
+		{
+			return lightBmpScale;
+		}
+
 		/// <summary>
 		/// Finalizes an instance of the <see cref="LightLayer"/>.  None of the <see cref="LightBlocker"/>s or <see cref="LightSource"/> are deleted.  Everything else is destroyed.
 		/// </summary>
 		~LightLayer();
 
 	private:		
+		/// <summary>
+		/// Allegro bitmap flags for <see cref="lightMap"/>.
+		/// </summary>
+		static const int LIGHT_MAP_FLAGS = ALLEGRO_NO_PRESERVE_TEXTURE | ALLEGRO_MIN_LINEAR | ALLEGRO_MAG_LINEAR;
+
+		static const ALLEGRO_COLOR CLEAR_COLOR;
+		
+		/// <summary>
+		/// The safe option for adding the <see cref="LightSource"/> object specified by the parameter <paramref name="lightSource"/>.
+		/// </summary>
+		/// <para>
+		/// This method is safe because it will not attempt to add <paramref name="lightSource"/> if <see cref="threadsProcessing"/> is true.
+		/// If <see cref="threadsProcessing"/> is true, <paramref name="lightSource"/> is pushed to <see cref="heldAddLightSources"/>.
+		/// Otherwise <see cref="addLightSourceUnsafe(LightSource*)"/> is called.
+		/// </para>
+		/// <param name="lightSource">The <see cref="LightSource"/> to be added.</param>
+		void addLightSource(LightSource* lightSource);
+
+		/// <summary>
+		/// The safe option for removing the <see cref="LightSource"/> object specified by the parameter <paramref name="lightSource"/>.
+		/// </summary>
+		/// <para>
+		/// This method is safe because it will not attempt to remove <paramref name="lightSource"/> if <see cref="threadsProcessing"/> is true.
+		/// If <see cref="threadsProcessing"/> is true, <paramref name="lightSource"/> is pushed to <see cref="heldRemoveLightSources"/>.
+		/// Otherwise <see cref="removeLightSourceUnsafe(LightSource*)"/> is called.
+		/// </para>
+		/// <param name="lightSource">The <see cref="LightSource"/> to be removed.</param>
+		void removeLightSource(LightSource* lightSource);
+
 		/// <summary>
 		/// Transfers held variables and elements (attributes that can't be modified while processing <see cref="LightSource"/>s)
 		/// to their appropiate data members.  Called by <see cref="detach()"/>.
@@ -111,7 +130,7 @@ namespace lighting
 		/// <summary>
 		/// Temporarily stores <see cref="LightSource"/> objects when they cannot be directly added.  When <see cref="transferHeldVars()"/> is called, the queue is cleared.
 		/// </summary>
-		std::queue <LightSource>* heldAddLightSources;
+		std::queue <LightSource*> heldAddLightSources;
 		
 		/// <summary>
 		///  Temporarily stores <see cref="LightSource"/> objects when they cannot be directly removed.  When <see cref="transferHeldVars()"/> is called, the queue is cleared.
@@ -139,6 +158,11 @@ namespace lighting
 		ALLEGRO_BITMAP* lightMap;
 		
 		/// <summary>
+		/// The scale of the <see cref="lightMap"/> to the display.
+		/// </summary>
+		float lightBmpScale;
+		
+		/// <summary>
 		/// Indicates whether the lightRunnables are processing shadows.  Set to <code>true</code> by <see cref="detach()"/ and set to <code>false</code> by <see cref="draw()"/>.
 		/// </summary>
 		bool threadsProcessing;
@@ -147,5 +171,15 @@ namespace lighting
 		/// The maximum size of <see cref="lightRunnable"/>s (each <see cref="LightRunnable"/> contains a thread).  Must be greater than 0.
 		/// </summary>
 		size_t maxThreads;
+
+		/// <summary>
+		/// Width of the display the lightMap will be drawn to.
+		/// </summary>
+		int drawToWidth;
+
+		/// <summary>
+		/// Height of the display the lightMap will be drawn to.
+		/// </summary>
+		int drawToHeight;
 	};
 }

@@ -115,6 +115,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="CircleLightSource.h" />
+    <ClInclude Include="CircleShadePoint.h" />
     <ClInclude Include="LightBlocker.h" />
     <ClInclude Include="LightBlockerContainer.h" />
     <ClInclude Include="LightLayer.h" />
@@ -124,6 +125,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CircleLightSource.cpp" />
+    <ClCompile Include="CircleShadePoint.cpp" />
     <ClCompile Include="LightBlocker.cpp" />
     <ClCompile Include="LightBlockerContainer.cpp" />
     <ClCompile Include="LightLayer.cpp" />

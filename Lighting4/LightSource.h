@@ -15,16 +15,20 @@ namespace lighting
 	/// </summary>
 	class LightSource
 	{
+		friend class LightRunnable;
+		friend class LightLayer;
+
 	public:		
 		/// <summary>
-		/// Initializes the <see cref="LSourceMap"/>
+		/// Initializes the <see cref="LSourceMap"/> and all non constant attributes relating to it.
 		/// </summary>
-		static void InitLSourceMap();
+		/// <param name="path">File to load bitmap from.  Set to <see cref="LSOURCE_IMG_DEFAULT_DIR"/> by default.</param>
+		static void InitLSourceMap(const std::string& lightDir = LSOURCE_IMG_DEFAULT_DIR);
 
 		/// <summary>
 		/// Initializes a new instance of the <see cref="LightSource"/> class.  Will automatically add to the <paramref name="ownerLightLayer"/>.
 		/// </summary>
-		/// <param name="lightLayer">The light layer that will own <c>this</c>.  Value is assigned to <see cref="owner"/></param>
+		/// <param name="ownerLightLayer">The light layer that will own <c>this</c>.  Value is assigned to <see cref="owner"/></param>
 		LightSource(LightLayer* ownerLightLayer);
 
 		/// <summary>
@@ -41,7 +45,7 @@ namespace lighting
 		/// <summary>
 		/// The directory to load the <see cref="LSource_Map"/> from.
 		/// </summary>
-		static const std::string LSOURCE_IMG_DIR;
+		static const std::string LSOURCE_IMG_DEFAULT_DIR;
 		
 		/// <summary>
 		/// The bitmap of a circular light, shadows are drawn onto this bitmap.
@@ -59,18 +63,17 @@ namespace lighting
 		static int LSource_Map_H;
 		
 		/// <summary>
-		/// Converts elements of <see cref="lightBlockers"/> to <see cref="ShadePoint"/>s, populating the vector <see cref="shadePoints"/>.
+		/// Converts elements of <see cref="lightBlockers"/> to <see cref="ShadePoint"/>s, populating the vector of <see cref="ShadePoint"/>s.
 		/// </summary>
-		/// <param name="lightBlockers">The <see cref="LightBlocker"/>s to be converted.</param>
-		virtual void createShadePoints(std::list <LightBlocker*>& lightBlockers) = 0;
+		virtual void createShadePoints() = 0;
 		
 		/// <summary>
-		/// Uses <see cref="shadePoints"/> to calculate the <see cref="drawPoints"/>.  This will handle shadows.
+		/// Uses vector of <see cref="ShadePoint"/>s to calculate the drawing coordinates.  This will handle shadows.
 		/// </summary>
 		virtual void mapShadePoints() = 0;
 		
 		/// <summary>
-		/// Now that drawing operations are possible, <see cref="drawPoints"/> can be drawn to a bitmap data member, if it exists.
+		/// Now that drawing operations are possible, shadows can be drawn to the bitmap data member, if it exists.
 		/// </summary>
 		virtual void drawLocal() = 0;
 		
@@ -83,16 +86,6 @@ namespace lighting
 		/// When the <see cref="LightSource"/> is being processed, setting some variables may not be thread safe, so they are stored in heldVariables, this function tranfers their values.
 		/// </summary>
 		virtual void transferHeldVars() = 0;
-		
-		/// <summary>
-		/// Stores the <see cref="ShadePoint"/>s, populated by <see cref="createShadePoints()"/>.
-		/// </summary>
-		std::vector <ShadePoint*> shadePoints;
-		
-		/// <summary>
-		/// Stores the points to be drawn to.  Populated by <see cref="mapShadePoints()"/>.
-		/// </summary>
-		std::vector <float> drawPoints;
 
 		/// <summary>
 		/// The owner of <code>this</code>.  Set by constructor and is not reassigned afterwards.  Pointer is used to access lightBmpW and lightBmpH for drawing operations.  Also allows <c>this</c> to remove itself when <see cref="~LightSource()"/> is called.

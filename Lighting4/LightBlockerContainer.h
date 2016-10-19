@@ -1,5 +1,7 @@
 #pragma once
 #include <list>
+#define _USE_MATH_DEFINES
+#include <math.h>
 #include "LightBlocker.h"
 
 namespace lighting
@@ -7,7 +9,7 @@ namespace lighting
 	class LightLayer;
 	
 	/// <summary>
-	/// Represents a set of <see cref="LightBlocker">s that form a shape.
+	/// Contains related <see cref="LightBlocker"/>s, such as the lines that make up a shape.  Handles adding and removing from <see cref="LightMap"/>.
 	/// </summary>
 	class LightBlockerContainer
 	{
@@ -18,6 +20,22 @@ namespace lighting
 		/// <param name="ownerLightLayer">Value to set <see cref="owner"/> to.  Represents the <see cref="LightLayer"/> the <see cref="LightBlocker"/>s will belong to.</param>
 		LightBlockerContainer(LightLayer* ownerLightLayer);
 				
+		/// <summary>
+		/// Sets the xy of all elements of <see cref="lightBlockers"/>.
+		/// </summary>
+		/// <param name="x">The x.</param>
+		/// <param name="y">The y.</param>
+		void setXY(float x, float y);
+
+		/// <summary>
+		/// Adds a <see cref="LightBlocker"/> with the specified endpoints.
+		/// </summary>
+		/// <param name="x1">The x1.</param>
+		/// <param name="y1">The y1.</param>
+		/// <param name="x2">The x2.</param>
+		/// <param name="y2">The y2.</param>
+		void addLine(float x1, float y1, float x2, float y2);
+
 		/// <summary>
 		/// Creates four <see cref="LightBlocker"/>s in the shape of a rectangle, the top left corner of the rectangle is at <see cref="x"/> and <see cref="y"/>.
 		/// </summary>
@@ -31,7 +49,8 @@ namespace lighting
 		/// <param name="deltaDegs">The amount of degrees to rotate by.</param>
 		void changeDegs(float deltaDegs)
 		{
-
+			rads += deltaDegs * (M_PI / 180);
+			setLightBlockerRads();
 		}
 
 		/// <summary>
@@ -40,7 +59,8 @@ namespace lighting
 		/// <param name="degs">The angle to set <see cref="rads"/> to.</param>
 		void setDegs(float degs)
 		{
-
+			rads = degs * (M_PI / 180);
+			setLightBlockerRads();
 		}
 
 		/// <summary>
@@ -49,7 +69,8 @@ namespace lighting
 		/// <param name="deltaRads">The amount of radians to rotate by.</param>
 		void changeRads(float deltaRads)
 		{
-
+			rads += deltaRads;
+			setLightBlockerRads();
 		}
 
 		/// <summary>
@@ -58,7 +79,8 @@ namespace lighting
 		/// <param name="rads">The angle to set <see cref="rads"/> to.</param>
 		void setRads(float rads)
 		{
-
+			this->rads = rads;
+			setLightBlockerRads();
 		}
 		
 		/// <summary>
@@ -68,7 +90,8 @@ namespace lighting
 		/// <param name="cY">The c y.</param>
 		void setCXY(float cX, float cY)
 		{
-
+			this->cX;
+			this->cY;
 		}
 		
 		/// <summary>
@@ -81,7 +104,18 @@ namespace lighting
 		/// </summary>
 		~LightBlockerContainer();
 
-	private:		
+	private:
+				
+		/// <summary>
+		/// Sets elements of <see cref="lightBlockers"/> to the angle <see cref="rads"/>.
+		/// </summary>
+		void setLightBlockerRads()
+		{
+			for (auto it = lightBlockers.begin(); it != lightBlockers.end(); it++)
+			{
+				(*it)->setRads(rads, cX, cY);
+			}
+		}
 		/// <summary>
 		/// The <see cref="LightBlocker"/>s created by <code>this</code>.  Should form a shape.
 		/// </summary>

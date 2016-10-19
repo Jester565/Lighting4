@@ -2,6 +2,7 @@
 #include <thread>
 #include <list>
 #include <mutex>
+#include "LightSource.h"
 
 namespace lighting
 {
@@ -12,12 +13,11 @@ namespace lighting
 	/// </summary>
 	class LightRunnable
 	{
-	public:		
+	public:
 		/// <summary>
-		/// Initializes a new instance of the <see cref="LightRunnable"/> class. Providing a <see cref="LightSource"/> so the thread has work to do.
+		/// Initializes a new instance of the <see cref="LightRunnable"/> class.  Detaches the <see cref="runThread"/>.
 		/// </summary>
-		/// <param name="initialLightSource">The first <see cref="LightBlocker"/> to be added to the <see cref="lightBlockers"/>..</param>
-		LightRunnable(LightSource* initialLightSource);
+		LightRunnable();
 		
 		/// <summary>
 		/// Inifinite while loop to handle the processing of shadows, called by the <see cref="runThread"/> which is detached in the constructor.
@@ -56,8 +56,6 @@ namespace lighting
 		/// Mutex to lock access to <see cref="shadowsProcessedMutex"/>
 		/// </summary>
 		std::mutex shadowsProcessedMutex;
-
-		std::mutex shadowsProcessedMutex;
 		
 		/// <summary>
 		/// Accessor for the <see cref="runTime"/> attribute.
@@ -69,12 +67,56 @@ namespace lighting
 		}
 		
 		/// <summary>
+		/// Increments <see cref="runTime"/> by <paramref name="deltaMillis"/>.
+		/// </summary>
+		/// <param name="deltaMillis">The delta millis.</param>
+		void incrRunTime(int deltaMillis)
+		{
+			runTime += deltaMillis;
+		}
+		
+		/// <summary>
+		/// Gets the size of <see cref="lightSources"/>.
+		/// </summary>
+		/// <returns>Number of <see cref="LightSource"/>s.</returns>
+		unsigned int getLightSourceSize()
+		{
+			return lightSources.size();
+		}
+		
+		/// <summary>
+		/// Iterates over <see cref="lightSources"/> and transfersHeldVariables
+		/// </summary>
+		void transferHeldVars()
+		{
+			for (auto it = lightSources.begin(); it != lightSources.end(); it++)
+			{
+				(*it)->transferHeldVars();
+			}
+		}
+
+		void drawLocal()
+		{
+			for (auto it = lightSources.begin(); it != lightSources.end(); it++)
+			{
+				(*it)->drawLocal();
+			}
+		}
+
+		void drawToLightMap()
+		{
+			for (auto it = lightSources.begin(); it != lightSources.end(); it++)
+			{
+				(*it)->drawToLightMap();
+			}
+		}
+		
+		/// <summary>
 		/// Finalizes an instance of the <see cref="LightRunnable"/> class.
 		/// </summary>
 		~LightRunnable();
 
 	private:
-		
 		/// <summary>
 		/// Calls method <see cref="LightSource::createShadePoints()"/> on each element of <see cref="lightBlockers"/>.
 		/// </summary>
@@ -93,7 +135,7 @@ namespace lighting
 		/// <summary>
 		/// Thread which calls the method <see cref="run"/>.  Detached and initialized in the consturctor.
 		/// </summary>
-		std::thread* runThread;
+		std::thread runThread;
 		
 		/// <summary>
 		/// The amount of milliseconds it takes to process all of the shadows on all <see cref="lightBlockers"/>.
