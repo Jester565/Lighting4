@@ -1,8 +1,10 @@
 #pragma once
 #include <unordered_map>
+#include <unordered_set>
 #include <list>
 #include <queue>
 #include <allegro5/bitmap.h>
+#include "AboveLightBlocker.h"
 #include "LightBlocker.h"
 
 namespace lighting
@@ -14,6 +16,8 @@ namespace lighting
 	/// </summary>
 	class LightLayer
 	{
+		friend class AboveLightBlocker;
+		friend class AboveLightSource;
 		friend class CircleLightSource;
 		friend class LightSource;
 	public:
@@ -67,14 +71,24 @@ namespace lighting
 		/// </summary>
 		~LightLayer();
 
-	private:		
+	private:
 		/// <summary>
 		/// Allegro bitmap flags for <see cref="lightMap"/>.
 		/// </summary>
 		static const int LIGHT_MAP_FLAGS = ALLEGRO_NO_PRESERVE_TEXTURE | ALLEGRO_MIN_LINEAR | ALLEGRO_MAG_LINEAR;
 
-		static const ALLEGRO_COLOR CLEAR_COLOR;
-		
+		/// <summary>
+		/// Adds the <paramref name="aboveLightBlocker"/>.
+		/// </summary>
+		/// <param name="aboveLightBlocker">The <see cref="AboveLightBLocker"/> to be added.</param>
+		void addAboveLightBlocker(AboveLightBlocker* aboveLightBlocker);
+
+		/// <summary>
+		/// Removes <paramref name="aboveLightBlocker"/>.
+		/// </summary>
+		/// <param name="aboveLightBlocker">The <see cref="AboveLightBlocker"/> to be removed.</param>
+		void removeAboveLightBlocker(AboveLightBlocker* aboveLightBlocker);
+
 		/// <summary>
 		/// The safe option for adding the <see cref="LightSource"/> object specified by the parameter <paramref name="lightSource"/>.
 		/// </summary>
@@ -151,6 +165,11 @@ namespace lighting
 		/// Stores all of the <see cref="LightBlocker"/>s that will be processed by <see cref="LightSource">s.
 		/// </summary>
 		std::list <LightBlocker*> lightBlockers;
+		
+		/// <summary>
+		/// Stores all of the <see cref="AboveLightBlocker"/>s that will be processed by <see cref="AboveLightSource"/>s.
+		/// </summary>
+		std::unordered_set <AboveLightBlocker*> aboveLightBlockers;
 
 		/// <summary>
 		/// The bitmap where all <see cref="LightSource"/>s are drawn to and blurring and blending operations are preformed.  Initialized by the constructor and is not reassigned.

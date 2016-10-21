@@ -23,7 +23,7 @@ namespace lighting
 		/// <summary>
 		/// Number of bits for the maximum value of elements sorted by radix sort
 		/// </summary>
-		static const uint8_t RADIX_MAX_BITS = 16;
+		static const uint8_t RADIX_MAX_BITS = 32;
 
 		static unsigned int RADIX_MAX_NUM;
 
@@ -64,25 +64,26 @@ namespace lighting
 		virtual ~CircleLightSource();
 
 	protected:
-
+		/// <summary>
+		/// Uses radix sort to sort the elements of <see cref="shadePoints"/>.
+		/// </summary>
 		void radixSortShadePoints();
-
+		
+		/// <summary>
+		/// Called by <see cref="radixSortShadePoints"/> as a helper method for the sorting process
+		/// </summary>
+		/// <param name="bI">The amount of bits to shift by.</param>
 		void countingSortShadePoints(int bI);
 
 		/// <summary>
 		/// The allegro bitmap flags for creating the <see cref="shadeMap"/>.
 		/// </summary>
-		static const int SHADE_MAP_FLAGS;
+		static const int SHADE_MAP_FLAGS = ALLEGRO_NO_PRESERVE_TEXTURE | ALLEGRO_MIN_LINEAR | ALLEGRO_MAG_LINEAR;;
 				
 		/// <summary>
 		/// The amount of preset <see cref="CircleShadePoint"/>s that will be added to <see cref="shadePoints"/>.
 		/// </summary>
 		static const int BOUND_POINTS_SIZE = 8;
-		
-		/// <summary>
-		/// Color to clear the <see cref="shadeMap"/> to before drawing shadows.
-		/// </summary>
-		static const ALLEGRO_COLOR CLEAR_COLOR;
 
 		/// <summary>
 		/// If the line created by <paramref name="testPoint"/> and its connected point cross angle = 0, return <code>true</code>, <code>false</code> otherwise.
@@ -272,7 +273,7 @@ namespace lighting
 		/// The radius of the <code>this</code> <see cref="LightBlocker"/>.
 		/// </summary>
 		float radius;
-		
+
 		/// <summary>
 		/// Temporarily stores position of the <see cref="CircleLightSource"/> until <see cref="transferHeldVars()"/> is called, where the values are assigned to <see cref="x"/> and <see cref="y"/>.
 		/// </summary>

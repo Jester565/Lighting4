@@ -19,8 +19,8 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{D48A9114-AF56-4604-A9F0-783342085047}</ProjectGuid>
-    <RootNamespace>Lighting4</RootNamespace>
+    <ProjectGuid>{B7628A2E-61CA-4E17-818E-CF7C68BD8FF0}</ProjectGuid>
+    <RootNamespace>LightingExample</RootNamespace>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -44,7 +44,7 @@
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
-    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v140</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
@@ -66,11 +66,17 @@
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\..\Props\AllegroExt64_R.props" />
+    <Import Project="..\..\..\Props\Lighting4.props" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <Allegro_AddonImage>true</Allegro_AddonImage>
     <Allegro_AddonPrimitives>true</Allegro_AddonPrimitives>
+    <Allegro_AddonTTF>true</Allegro_AddonTTF>
+    <Allegro_AddonAudio>true</Allegro_AddonAudio>
+    <Allegro_AddonAcodec>true</Allegro_AddonAcodec>
+    <Allegro_AddonFont>true</Allegro_AddonFont>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -102,7 +108,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
-      <Optimization>Disabled</Optimization>
+      <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
@@ -114,35 +120,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="AboveLightBlocker.h" />
-    <ClInclude Include="AboveLightSource.h" />
-    <ClInclude Include="AboveShadePoint.h" />
-    <ClInclude Include="CircleLightSource.h" />
-    <ClInclude Include="CircleShadePoint.h" />
-    <ClInclude Include="DirectionalLightSource.h" />
-    <ClInclude Include="LightBlocker.h" />
-    <ClInclude Include="LightBlockerContainer.h" />
-    <ClInclude Include="LightLayer.h" />
-    <ClInclude Include="LightRunnable.h" />
-    <ClInclude Include="LightSource.h" />
-    <ClInclude Include="ShadePoint.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="AboveLightBlocker.cpp" />
-    <ClCompile Include="AboveLightSource.cpp" />
-    <ClCompile Include="AboveShadePoint.cpp" />
-    <ClCompile Include="CircleLightSource.cpp" />
-    <ClCompile Include="CircleShadePoint.cpp" />
-    <ClCompile Include="DirectionalLightSource.cpp" />
-    <ClCompile Include="LightBlocker.cpp" />
-    <ClCompile Include="LightBlockerContainer.cpp" />
-    <ClCompile Include="LightLayer.cpp" />
-    <ClCompile Include="LightRunnable.cpp" />
-    <ClCompile Include="LightSource.cpp" />
-    <ClCompile Include="ShadePoint.cpp" />
+    <ClCompile Include="Source.cpp" />
+    <ClCompile Include="TestCore.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="TestCore.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

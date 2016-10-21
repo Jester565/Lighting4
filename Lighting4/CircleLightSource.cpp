@@ -7,28 +7,29 @@
 
 namespace lighting
 {
-	unsigned int CircleLightSource::RADIX_MAX_NUM = pow(2, RADIX_MAX_BITS) - 1;
+	//TEMP
+	bool RadialShadePointCompare(CircleShadePoint* sp1, CircleShadePoint* sp2)
+	{
+		return sp1->rads < sp2->rads;
+	}
+
+	unsigned int CircleLightSource::RADIX_MAX_NUM = pow(2, 32) - 1;
 
 	const float CircleLightSource::MAX_NEG_FLOAT = -std::numeric_limits<float>::max();
-
-	const int CircleLightSource::SHADE_MAP_FLAGS = ALLEGRO_NO_PRESERVE_TEXTURE | ALLEGRO_MIN_LINEAR;  //Used to have ALLEGRO_MAG_LINEAR
-	
-	const ALLEGRO_COLOR CircleLightSource::CLEAR_COLOR = al_map_rgb(0, 0, 0);	//TODO: check if works before allegro is initialized
 
 	CircleLightSource::CircleLightSource(LightLayer * ownerLightLayer, float radius, uint8_t r, uint8_t g, uint8_t b)
 		:LightSource(ownerLightLayer), radius(radius)
 	{
-		lightColor = al_map_rgb(r, g, b);
+		setLightColor(r, g, b);
 		al_set_new_bitmap_flags(SHADE_MAP_FLAGS);
 		shadeMap = al_create_bitmap((radius * 2) * owner->getLightBmpScale(), (radius * 2) * owner->getLightBmpScale());
-		createBoundShadePoints();
 	}
 
-	void lighting::CircleLightSource::setLightColor(uint8_t r, uint8_t b, uint8_t g)
+	void lighting::CircleLightSource::setLightColor(uint8_t r, uint8_t g, uint8_t b)
 	{
-		lightColor = al_map_rgb(r, g, b);
+		lightColor = al_map_rgba(r, g, b, 0);
 	}
-
+	
 	CircleLightSource::~CircleLightSource()
 	{
 		delete shadeMap;
@@ -48,19 +49,21 @@ namespace lighting
 		std::vector <unsigned int> counts(RADIX_BASE_NUM);
 		for (int i = 0; i < shadePoints.size(); i++)
 		{
-			counts[(shadePoints[i]->radixVal >> bI) & RADIX_BASE_NUM]++;
+			int countIdx = (shadePoints[i]->radixVal >> bI) & 0xF;
+			counts.at(countIdx)++;
 		}
 
 		for (int i = 1; i < RADIX_BASE_NUM; i++)
 		{
-			counts[i] += counts[i - 1];
+			counts.at(i) += counts.at(i - 1);
 		}
 		
 		std::vector<CircleShadePoint*> output(shadePoints.size());
 		for (int i = shadePoints.size() - 1; i >= 0; i--)
 		{
-			output[counts[(shadePoints[i]->radixVal >> bI) & RADIX_BASE_NUM] - 1] = shadePoints[i];
-			counts[(shadePoints[i]->radixVal >> bI) & RADIX_BASE_NUM]--;
+			int countIdx = (shadePoints[i]->radixVal >> bI) & 0xF;
+			output[counts[countIdx] - 1] = shadePoints[i];
+			counts[countIdx]--;
 		}
 		for (int i = 0; i < shadePoints.size(); i++)
 		{
@@ -144,6 +147,7 @@ namespace lighting
 			}
 		}
 		radixSortShadePoints();
+		//std::sort(shadePoints.begin(), shadePoints.end(), RadialShadePointCompare);
 	}
 
 	void CircleLightSource::mapShadePoints()
@@ -163,8 +167,8 @@ namespace lighting
 			{
 				addDrawPoints(alphaContactX, alphaContactY, alphaPoint->getConnectPoint()->x, alphaPoint->getConnectPoint()->y);
 				//save the distance of the endpoint of the current alphaLine so we can check if the new alphapoint returned is past that distance
-				CircleShadePoint* diupdatePointoint = alphaPoint->getConnectPoint();
-				float alphaDis = sqrt(pow(diupdatePointoint->x, 2) + pow(diupdatePointoint->y, 2));
+				CircleShadePoint* disPoint = alphaPoint->getConnectPoint();
+				float alphaDis = sqrt(pow(disPoint->x, 2) + pow(disPoint->y, 2));
 				CircleShadePoint* radAlphaPoint = nullptr;
 				bool found = getAlphaLineAtRad(radAlphaPoint, i, alphaContactX, alphaContactY);
 				if (!found)
@@ -223,12 +227,14 @@ namespace lighting
 	{
 		al_set_target_bitmap(shadeMap);
 		al_set_blender(ALLEGRO_ADD, ALLEGRO_ONE, ALLEGRO_ZERO);
-		al_clear_to_color(CLEAR_COLOR);
+		al_clear_to_color(al_map_rgba(0, 0, 0, 255));	//clear the bitmap to all black (0, 0, 0, 255)
+		//Draw triangles where the light is, so the black shadow now becomes transparent because we are drawing color code (r, g, b, 0) direclty to the map
 		for (int i = 0; i < drawPoints.size(); i += 4)
 		{
-			al_draw_filled_triangle(drawPoints.at(i), drawPoints.at(i + 1), drawPoints.at(i + 2), drawPoints.at(i + 3), radius * owner->getLightBmpScale(), radius * owner->getLightBmpScale(), lightColor);
+			al_draw_filled_triangle(drawPoints.at(i), drawPoints.at(i + 1), drawPoints.at(i + 2), drawPoints.at(i + 3), radius * owner->getLightBmpScale(), radius * owner->getLightBmpScale(), lightColor);	
 		}
 		al_draw_filled_triangle(drawPoints.at(0), drawPoints.at(1), drawPoints.at(drawPoints.size() - 2), drawPoints.at(drawPoints.size() - 1), radius * owner->getLightBmpScale(), radius * owner->getLightBmpScale(), lightColor);
+		//Complicated, just leave as is
 		al_set_separate_blender(ALLEGRO_DEST_MINUS_SRC, ALLEGRO_ALPHA, ALLEGRO_ALPHA, ALLEGRO_SRC_MINUS_DEST, ALLEGRO_ONE, ALLEGRO_ONE);
 		al_draw_scaled_bitmap(LSource_Map, 0, 0, LSource_Map_W, LSource_Map_H, 0, 0, (radius * 2) * owner->getLightBmpScale(), (radius * 2) * owner->getLightBmpScale(), NULL);
 	}
@@ -240,14 +246,15 @@ namespace lighting
 
 	void CircleLightSource::resetPoints(size_t lightBlockersSize)
 	{
-		drawPoints.clear();
-		castPoints.clear();
 		for (int i = BOUND_POINTS_SIZE; i < shadePoints.size(); i++)
 		{
 			delete shadePoints.at(i);
 		}
-		shadePoints.erase(shadePoints.begin() + BOUND_POINTS_SIZE, shadePoints.end());
+		drawPoints.clear();
+		castPoints.clear();
+		shadePoints.clear();
 		shadePoints.reserve(lightBlockersSize * 2 + BOUND_POINTS_SIZE);
+		createBoundShadePoints();
 	}
 
 	void CircleLightSource::createBoundShadePoints()
@@ -268,7 +275,7 @@ namespace lighting
 		CircleShadePoint* pRpR1 = new CircleShadePoint(radius, radius);
 		pRnR2->setConnectPoint(pRpR1);
 		pRpR1->setConnectPoint(pRnR2);
-		castPoints.insert(pRnR2);
+		castPoints.emplace(pRnR2);	//Because this line passes angle=0, add it to cast points
 		shadePoints.push_back(pRnR2);
 		shadePoints.push_back(pRpR1);
 		CircleShadePoint* pRpR2 = new CircleShadePoint(radius, radius);
@@ -380,10 +387,10 @@ namespace lighting
 					radAtZero = true;
 				}
 			}
-			else
-			{
-				alphaPoint = shadowCast(0, firstX, firstY);
-			}
+		}
+		if (alphaPoint == nullptr)
+		{
+			alphaPoint = shadowCast(0, firstX, firstY);
 		}
 	}
 

@@ -1,10 +1,11 @@
 #include "LightSource.h"
 #include "allegro5/bitmap_io.h"
 #include "LightLayer.h"
+#include <stdexcept>
 
 namespace lighting
 {
-	const int LSOURCE_MAP_FLAGS = ALLEGRO_MIN_LINEAR;  //Used to have ALLEGRO_MAG_LINEAR flag
+	const int LightSource::LSOURCE_MAP_FLAGS = ALLEGRO_MIN_LINEAR;  //Used to have ALLEGRO_MAG_LINEAR flag
 
 	const std::string LightSource::LSOURCE_IMG_DEFAULT_DIR = "light.png";
 
@@ -23,7 +24,7 @@ namespace lighting
 			std::string err = "Could not load the LSource_Map from the file ";
 			err += lightDir;
 			err += "... Use LightGenerator to create this file";
-			throw std::exception(err.c_str());
+			throw std::runtime_error(err);
 		}
 		LSource_Map_W = al_get_bitmap_width(LSource_Map);
 		LSource_Map_H = al_get_bitmap_height(LSource_Map);

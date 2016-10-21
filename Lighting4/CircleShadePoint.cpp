@@ -13,7 +13,7 @@ namespace lighting
 		{
 			rads += M_PI * 2;
 		}
-		radixVal = (unsigned int)(rads * ((float)CircleLightSource::RADIX_MAX_NUM / M_PI));
+		radixVal = (unsigned int)(rads * ((float)CircleLightSource::RADIX_MAX_NUM / (2 * M_PI)));
 	}
 
 	CircleShadePoint::~CircleShadePoint()

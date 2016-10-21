@@ -7,10 +7,8 @@
 
 namespace lighting
 {
-	const ALLEGRO_COLOR CLEAR_COLOR = al_map_rgba(0, 0, 0, 0);
-
 	LightLayer::LightLayer(int drawToBmpW, int drawToBmpH, double lightBmpScale, size_t maxThreads)
-		:lightBmpScale(lightBmpScale), threadsProcessing(false)
+		:drawToWidth(drawToBmpW), drawToHeight(drawToBmpH), lightBmpScale(lightBmpScale), threadsProcessing(false)
 	{
 		if (maxThreads != MAX_THREAD_TO_CORES)
 		{
@@ -66,18 +64,24 @@ namespace lighting
 		{
 			for (auto it = unfinishedLRs.begin(); it != unfinishedLRs.end();)
 			{
+				bool erased = false;;
 				LightRunnable* lr = (*it);
 				if (lr->shadowsProcessedMutex.try_lock())
 				{
 					if (lr->shadowsProcessed)
 					{
+						erased = true;
 						lr->drawLocal();
-						unfinishedLRs.erase(it);
+						it = unfinishedLRs.erase(it);
 					}
 					else
 					{
 						lr->shadowsProcessedMutex.unlock();
 					}
+				}
+				if (!erased)
+				{
+					it++;
 				}
 			}
 		}
@@ -92,7 +96,7 @@ namespace lighting
 		al_draw_scaled_bitmap(lightMap, 0, 0, drawToWidth * lightBmpScale, drawToHeight * lightBmpScale, 0, 0, drawToWidth, drawToHeight, NULL);
 		al_set_blender(ALLEGRO_ADD, ALLEGRO_ONE, ALLEGRO_INVERSE_ALPHA);
 		al_set_target_bitmap(lightMap);
-		al_clear_to_color(CLEAR_COLOR);
+		al_clear_to_color(al_map_rgba(0, 0, 0, 0));
 		al_set_target_bitmap(prevBitmap);
 	}
 
@@ -123,19 +127,30 @@ namespace lighting
 	void LightLayer::addLightBlocker(LightBlocker * lightBlocker)
 	{
 		lightBlockers.push_back(lightBlocker);
-		lightBlockerTrackerMap.emplace(std::make_pair(lightBlocker, lightBlockers.end()));
+		//lightBlockerTrackerMap.emplace(std::make_pair(lightBlocker, lightBlockers.end()));
 	}
 
 	void LightLayer::removeLightBlocker(LightBlocker * lightBlocker)
 	{
-		auto trackMapIter = lightBlockerTrackerMap.find(lightBlocker);
-		lightBlockers.erase(trackMapIter->second);
-		lightBlockerTrackerMap.erase(trackMapIter);
+		//auto trackMapIter = lightBlockerTrackerMap.find(lightBlocker);
+		lightBlockers.remove(lightBlocker);
+		//lightBlockers.erase(trackMapIter->second);
+		//lightBlockerTrackerMap.erase(lightBlocker);
 	}
 
 	LightLayer::~LightLayer()
 	{
 		al_destroy_bitmap(lightMap);
+	}
+
+	void LightLayer::addAboveLightBlocker(AboveLightBlocker * aboveLightBlocker)
+	{
+		aboveLightBlockers.emplace(aboveLightBlocker);
+	}
+
+	void LightLayer::removeAboveLightBlocker(AboveLightBlocker * aboveLightBlocker)
+	{
+		aboveLightBlockers.erase(aboveLightBlocker);
 	}
 
 	void LightLayer::transferHeldVars()
@@ -190,15 +205,15 @@ namespace lighting
 	{
 		auto trackIter = lightSourceTrackerMap.find(lightSource);
 		trackIter->second.first->removeLightSource(trackIter->second.second);
-		lightSourceTrackerMap.erase(trackIter);
+		lightSourceTrackerMap.erase(lightSource);
 	}
 
 	void LightLayer::setMaxThreadsToNumCores()
 	{
-		int numAvaCores = std::thread::hardware_concurrency();
-		if (numAvaCores == 0)
+		maxThreads = std::thread::hardware_concurrency();
+		if (maxThreads == 0)
 		{
-			numAvaCores = 4;
+			maxThreads = 4;
 			std::cerr << "Could not get the number of cores, assumed 4" << std::endl;
 		}
 	}
