@@ -3,7 +3,7 @@
 #include <allegro5/allegro.h>
 #include "LightRunnable.h"
 #include "LightSource.h"
-
+#include "GaussianBlurrer.h"
 
 namespace lighting
 {
@@ -20,6 +20,8 @@ namespace lighting
 		}
 		al_set_new_bitmap_flags(LIGHT_MAP_FLAGS);
 		lightMap = al_create_bitmap((int)(drawToBmpW * lightBmpScale), (int)(drawToBmpH * lightBmpScale));
+		al_set_new_bitmap_flags(LIGHT_MAP_FLAGS);
+		blurMap = al_create_bitmap((int)(drawToBmpW * lightBmpScale), (int)(drawToBmpH * lightBmpScale));
 		LightSource::InitLSourceMap();
 	}
 
@@ -91,6 +93,15 @@ namespace lighting
 		{
 			(*it)->drawToLightMap();
 		}
+		al_set_blender(ALLEGRO_ADD, ALLEGRO_ONE, ALLEGRO_ZERO);
+		for (auto it = blurrers.begin(); it != blurrers.end(); it++)
+		{
+			(*it)->blur(lightMap, blurMap);
+		}
+		if (blurrers.size() > 0)
+		{
+			al_use_shader(nullptr);
+		}
 		al_set_target_bitmap(prevBitmap);
 		al_set_blender(ALLEGRO_ADD, ALLEGRO_ALPHA, ALLEGRO_ALPHA);
 		al_draw_scaled_bitmap(lightMap, 0, 0, drawToWidth * lightBmpScale, drawToHeight * lightBmpScale, 0, 0, drawToWidth, drawToHeight, NULL);
@@ -141,6 +152,7 @@ namespace lighting
 	LightLayer::~LightLayer()
 	{
 		al_destroy_bitmap(lightMap);
+		al_destroy_bitmap(blurMap);
 	}
 
 	void LightLayer::addAboveLightBlocker(AboveLightBlocker * aboveLightBlocker)

@@ -7,11 +7,10 @@
 
 namespace lighting
 {
-	//TEMP
-	bool RadialShadePointCompare(CircleShadePoint* sp1, CircleShadePoint* sp2)
-	{
-		return sp1->rads < sp2->rads;
-	}
+	uint64_t CircleLightSource::ShadePointsProcessed = 0;
+	uint64_t CircleLightSource::ShadowCalled = 0;
+	uint64_t CircleLightSource::CastPointsProcessed = 0;
+	uint64_t CircleLightSource::TotalCycles = 0;
 
 	unsigned int CircleLightSource::RADIX_MAX_NUM = pow(2, 32) - 1;
 
@@ -152,6 +151,8 @@ namespace lighting
 
 	void CircleLightSource::mapShadePoints()
 	{
+		TotalCycles++;  //TEMP
+		ShadePointsProcessed += shadePoints.size();
 		float firstAlphaContactX = 0;	//The position of the contact of the first line at angle=0
 		float firstAlphaContactY = 0;
 		CircleShadePoint* alphaPoint = nullptr;	//Represents an endpoint from the "alpha line".  This is the line closest to the origin of the light as you rotate.  This allows us to skip over ray casting in many cases.
@@ -441,6 +442,8 @@ namespace lighting
 
 	CircleShadePoint * CircleLightSource::shadowCast(float rads, float & cX, float & cY, CircleShadePoint * exceptionPoint)
 	{
+		ShadowCalled++;
+		CastPointsProcessed += castPoints.size();
 		cX = cos(rads) * radius * 2;	//coordinates for endpoint to check for intersects on.  Other endpoint is at orign.
 		cY = sin(rads) * radius * 2;
 		ShadePoint* shadowPoint = nullptr;

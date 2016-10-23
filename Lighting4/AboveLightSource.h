@@ -4,7 +4,11 @@
 #include <unordered_set>
 
 namespace lighting
-{
+{	
+	/// <summary>
+	/// Represents the sun or any planetary source of light.  Can be blocked by <see cref="AboveLightBlocker">s or <see cref="LightBlocker"/>s.
+	/// </summary>
+	/// <seealso cref="LightSource" />
 	class AboveLightSource : public LightSource
 	{
 		friend class LightLayer;
@@ -74,11 +78,21 @@ namespace lighting
 		/// Amount of bound <see cref="AboveShadePoint"/>s.
 		/// </summary>
 		static const int BOUND_POINTS_SIZE = 2;
-
-		static const int LINE_CHECK_OFF = 2000;
 		
+		/// <summary>
+		/// When shadowCasting or checking points, this is how far off the y value is from the sceen to check for collisoins.
+		/// </summary>
+		static const int LINE_CHECK_OFF = 2000;
+				
+		/// <summary>
+		/// Countings the sort shade points.
+		/// </summary>
+		/// <param name="bI">The bits to shift by.</param>
 		void countingSortShadePoints(int bI);
-
+		
+		/// <summary>
+		/// Radixes the sort shade points based on their x-values.
+		/// </summary>
 		void radixSortShadePoints();
 
 		/// <summary>
@@ -146,18 +160,42 @@ namespace lighting
 		/// <param name="alphaContactY">The last place an alphaContact occureed.</param>
 		/// <returns></returns>
 		virtual bool getAlphaLineAtX(AboveShadePoint*& alphaPoint, int& i, float& alphaContactX, float& alphaContactY);
-		
+				
+		/// <summary>
+		/// Handles the first shade points.
+		/// </summary>
+		/// <param name="alphaPoint">The alpha point.</param>
+		/// <param name="firstX">The first x.</param>
+		/// <param name="firstY">The first y.</param>
+		/// <param name="i">The i.</param>
 		virtual void handleFirstShadePoints(AboveShadePoint*& alphaPoint, float& firstX, float& firstY, int& i);
-
-		virtual void handleLastShadePoints(AboveShadePoint* alphaPoint, float alphaContactX, float alphaContactY);
-
-		int yOff;
 		
+		/// <summary>
+		/// Handles the last shade points. Currently no body.
+		/// </summary>
+		/// <param name="alphaPoint">The alpha point.</param>
+		/// <param name="alphaContactX">The alpha contact x.</param>
+		/// <param name="alphaContactY">The alpha contact y.</param>
+		virtual void handleLastShadePoints(AboveShadePoint* alphaPoint, float alphaContactX, float alphaContactY);
+		
+		/// <summary>
+		/// Value added to the y-component of <see cref="drawPoints"/>.
+		/// </summary>
+		int yOff;
+				
+		/// <summary>
+		/// The minimum value of x for elements of <see cref="shadePoints"/>.
+		/// </summary>
+		/// <returns></returns>
 		int getMinX()
 		{
 			return -BOUND_OFF;
 		}
-
+		
+		/// <summary>
+		/// The maximum value of x for elements of <see cref="shadePoints"/>.
+		/// </summary>
+		/// <returns></returns>
 		int getMaxX();
 
 		void addDrawPoints(float x1, float y1, float x2, float y2);

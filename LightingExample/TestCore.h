@@ -4,6 +4,8 @@
 #include <CircleLightSource.h>
 #include <AboveLightSource.h>
 #include <LightBlockerContainer.h>
+#include <GaussianKernelData.h>
+#include <GaussianBlurrer.h>
 
 using namespace AllegroExt;
 using namespace lighting;
@@ -20,6 +22,8 @@ public:
 	~TestCore();
 
 private:
+	GaussianKernelData kernelData;
+	GaussianBlurrer* blurrer;
 	LightLayer* lightLayer;
 	CircleLightSource* lightSource;
 	AboveLightSource* sun;

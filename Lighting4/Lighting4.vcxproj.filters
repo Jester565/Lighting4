@@ -51,6 +51,12 @@
     <ClInclude Include="AboveShadePoint.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="GaussianBlurrer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GaussianKernelData.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="LightSource.cpp">
@@ -87,6 +93,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="AboveShadePoint.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GaussianBlurrer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GaussianKernelData.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

@@ -10,6 +10,7 @@
 namespace lighting
 {
 	class LightRunnable;
+	class GaussianBlurrer;
 
 	/// <summary>
 	/// The core of the lighting system.  Holds all <see cref="LightSource" />s and LightBlockers, handles drawing operations, and manages threads.
@@ -20,6 +21,8 @@ namespace lighting
 		friend class AboveLightSource;
 		friend class CircleLightSource;
 		friend class LightSource;
+		friend class GaussianBlurrer;
+
 	public:
 		static const int MAX_THREAD_TO_CORES = 0;
 
@@ -77,6 +80,16 @@ namespace lighting
 		/// </summary>
 		static const int LIGHT_MAP_FLAGS = ALLEGRO_NO_PRESERVE_TEXTURE | ALLEGRO_MIN_LINEAR | ALLEGRO_MAG_LINEAR;
 
+		void addGaussianBlurrer(GaussianBlurrer* blurrer)
+		{
+			blurrers.push_back(blurrer);
+		}
+
+		void removeGaussianBlurrer(GaussianBlurrer* blurrer)
+		{
+			blurrers.remove(blurrer);
+		}
+		
 		/// <summary>
 		/// Adds the <paramref name="aboveLightBlocker"/>.
 		/// </summary>
@@ -136,6 +149,8 @@ namespace lighting
 		/// </summary>
 		void setMaxThreadsToNumCores();
 
+		std::list <GaussianBlurrer*> blurrers;
+
 		/// <summary>
 		/// The <see cref="LightRunnable"/>s used to handle various <see cref="LightSource"/> methods in a seperate thread.
 		/// </summary>
@@ -175,6 +190,11 @@ namespace lighting
 		/// The bitmap where all <see cref="LightSource"/>s are drawn to and blurring and blending operations are preformed.  Initialized by the constructor and is not reassigned.
 		/// </summary>
 		ALLEGRO_BITMAP* lightMap;
+		
+		/// <summary>
+		/// The bitmap to temporarily store blurs.
+		/// </summary>
+		ALLEGRO_BITMAP* blurMap;
 		
 		/// <summary>
 		/// The scale of the <see cref="lightMap"/> to the display.

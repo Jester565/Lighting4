@@ -10,9 +10,16 @@ namespace lighting
 	/// A child of <see cref="LightSource" /> represents a full circle of light that would be produced by an oil lamp or a light bulb.
 	/// </summary>
 	/// <seealso cref="LightSource" />
+
 	class CircleLightSource : public LightSource
 	{
-	public:		
+	public:	
+
+		static uint64_t ShadePointsProcessed;
+		static uint64_t ShadowCalled;
+		static uint64_t CastPointsProcessed;
+		static uint64_t TotalCycles;
+
 		/// <summary>
 		/// Number of bits for the radix base
 		/// </summary>

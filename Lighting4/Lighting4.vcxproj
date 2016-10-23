@@ -120,6 +120,8 @@
     <ClInclude Include="CircleLightSource.h" />
     <ClInclude Include="CircleShadePoint.h" />
     <ClInclude Include="DirectionalLightSource.h" />
+    <ClInclude Include="GaussianBlurrer.h" />
+    <ClInclude Include="GaussianKernelData.h" />
     <ClInclude Include="LightBlocker.h" />
     <ClInclude Include="LightBlockerContainer.h" />
     <ClInclude Include="LightLayer.h" />
@@ -134,6 +136,8 @@
     <ClCompile Include="CircleLightSource.cpp" />
     <ClCompile Include="CircleShadePoint.cpp" />
     <ClCompile Include="DirectionalLightSource.cpp" />
+    <ClCompile Include="GaussianBlurrer.cpp" />
+    <ClCompile Include="GaussianKernelData.cpp" />
     <ClCompile Include="LightBlocker.cpp" />
     <ClCompile Include="LightBlockerContainer.cpp" />
     <ClCompile Include="LightLayer.cpp" />
