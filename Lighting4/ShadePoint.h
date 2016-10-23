@@ -2,7 +2,10 @@
 
 
 namespace lighting
-{
+{	
+	/// <summary>
+	/// Abstract class for endpoints of <see cref="LightBlocker"/>s in <see cref="LightSource"/>s.
+	/// </summary>
 	class ShadePoint
 	{
 	public:

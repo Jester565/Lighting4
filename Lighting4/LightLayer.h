@@ -202,7 +202,7 @@ namespace lighting
 		float lightBmpScale;
 		
 		/// <summary>
-		/// Indicates whether the lightRunnables are processing shadows.  Set to <code>true</code> by <see cref="detach()"/ and set to <code>false</code> by <see cref="draw()"/>.
+		/// Indicates whether the lightRunnables are processing shadows.  Set to <c>true</c> by <see cref="detach()"/ and set to <c>false</c> by <see cref="draw()"/>.
 		/// </summary>
 		bool threadsProcessing;
 		

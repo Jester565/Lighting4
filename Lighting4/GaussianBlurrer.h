@@ -16,7 +16,7 @@ namespace lighting
 		/// <summary>
 		/// Initializes a new instance of the <see cref="GaussianBlurrer"/> class.  Creating new shaders with the proper <paramref name="kernelData"/>.
 		/// </summary>
-		/// <param name="owner">The <see cref="LightLayer"/> that owns <code>this</code>.</param>
+		/// <param name="owner">The <see cref="LightLayer"/> that owns <c>this</c>.</param>
 		/// <param name="kernelData">The <see cref="GaussianKernelData"/> used to set the variables of the shaders.  Uses the PixelOffsets and PixelWeights to set the shaders.  The size of PixelOffsets and PixelWeights must be less than 12 (When generating the KernelData, use values less than 44)</param>
 		/// <param name="vertShaderPath">The vertex shader path, must be compatible with Allegro (See their default shader for an example).</param>
 		/// <param name="pixelShaderPathX">The pixel shader path for horizontal gaussian blur.  Should have BmpWidth, PixelOffsets, and PixelWeights variables to set.</param>
@@ -54,7 +54,7 @@ namespace lighting
 		/// </summary>
 		ALLEGRO_SHADER* shaderY;		
 		/// <summary>
-		/// The <see cref="LightLayer"/> that owns <code>this</code>.
+		/// The <see cref="LightLayer"/> that owns <c>this</c>.
 		/// </summary>
 		LightLayer* owner;
 	};

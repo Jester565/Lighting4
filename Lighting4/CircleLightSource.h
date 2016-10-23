@@ -24,25 +24,31 @@ namespace lighting
 		/// Number of bits for the radix base
 		/// </summary>
 		static const uint8_t RADIX_BASE_BITS = 4;
-
+		
+		/// <summary>
+		/// The maximum decimal value for the radix base.
+		/// </summary>
 		static const unsigned int RADIX_BASE_NUM = 16;
 		
 		/// <summary>
 		/// Number of bits for the maximum value of elements sorted by radix sort
 		/// </summary>
 		static const uint8_t RADIX_MAX_BITS = 32;
-
+		
+		/// <summary>
+		/// The maximum decimal value of the elements sorted by <see cref="::radixSortShadePoints"/>.
+		/// </summary>
 		static unsigned int RADIX_MAX_NUM;
 
 		/// <summary>
-		/// Set to the most negative possible value of float
+		/// Set to the most negative possible value of float.
 		/// </summary>
 		static const float MAX_NEG_FLOAT;
 				
 		/// <summary>
 		/// Initializes a new instance of the <see cref="CircleLightSource"/> class.  Automatically adds itself to the <paramref name="ownerLightLayer"/>.
 		/// </summary>
-		/// <param name="ownerLightLayer">The <see cref="LightLayer"/> <code>this</code> should be added to.</param>
+		/// <param name="ownerLightLayer">The <see cref="LightLayer"/> <c>this</c> should be added to.</param>
 		/// <param name="radius">The radius of the light circle.  Determines the width of <see cref="shadeMap"/>.</param>
 		/// <param name="r">The red value of <see cref="lightColor"/>(0 to 255).</param>
 		/// <param name="g">The green value of <see cref="lightColor"/> (0 to 255).</param>
@@ -93,7 +99,7 @@ namespace lighting
 		static const int BOUND_POINTS_SIZE = 8;
 
 		/// <summary>
-		/// If the line created by <paramref name="testPoint"/> and its connected point cross angle = 0, return <code>true</code>, <code>false</code> otherwise.
+		/// If the line created by <paramref name="testPoint"/> and its connected point cross angle = 0, return <c>true</c>, <c>false</c> otherwise.
 		/// </summary>
 		/// <param name="testPoint"> The <see cref="CircleShadePoint"/> which represents one of the endpoints of the line to test.</param>
 		/// <returns>If the line passes through angle = 0.</returns>
@@ -103,7 +109,7 @@ namespace lighting
 		/// Finds the angle of <paramref name="ep2"/> from origin <paramref name="ep1"/> relative to <paramref name="oriRads"/>.
 		/// </summary>
 		/// <par>
-		/// If <code>0</code>was returned, that means the angle between <paramref name="ep2"/> and <paramref name="ep1"/> is in line with the <paramref name="oriRads"/>.
+		/// If <c>0</c>was returned, that means the angle between <paramref name="ep2"/> and <paramref name="ep1"/> is in line with the <paramref name="oriRads"/>.
 		/// </par>
 		/// <param name="ep1">The <see cref="CircleShadePoint"/> representing the first endpoint.</param>
 		/// <param name="ep2">The <see cref="CircleShadePoint"/> representing the second endpoint (this is usually just the <see cref="ShadePoint::connectedPoint"/> of <paramref name="ep1"/>.</param>
@@ -116,7 +122,7 @@ namespace lighting
 		/// </summary>
 		/// <param name="alphaPoint">The <see cref="CircleShadePoint"/> representing one of the endpoints of the line that will be used to check <paramref name="checkPoint"/>.</param>
 		/// <param name="checkPoint">The <see cref="CircleShadePoint"/> to check if in front of line made by <paramref name="alphaPoint"/>.</param>
-		/// <returns><code>true</code> if  <paramref name="checkPoint"/> is closer to the center of the <see cref="LightSource"/> than the line made by <paramref name="alphaPoint"/></returns>
+		/// <returns><c>true</c> if  <paramref name="checkPoint"/> is closer to the center of the <see cref="LightSource"/> than the line made by <paramref name="alphaPoint"/></returns>
 		static bool CheckPointFront(CircleShadePoint* alphaPoint, CircleShadePoint* checkPoint);
 
 		/// <summary>
@@ -180,24 +186,31 @@ namespace lighting
 				num = radius - 1;
 			}
 		}
-
+		
+		/// <summary>
+		/// Converts parameters into screen coordinates and pushes them to <see cref="drawPoints"/>.
+		/// </summary>
+		/// <param name="x1">The horizontal position of the first endpoint.</param>
+		/// <param name="y1">The vertical position of the first endpoint.</param>
+		/// <param name="x2">The horizontal position of the second endpoint.</param>
+		/// <param name="y2">The vertical position of the second endpoint.</param>
 		virtual void addDrawPoints(float x1, float y1, float x2, float y2);
 
 		/// <summary>
 		/// Handles the first <see cref="CircleShadePoint"/> from <see cref="shadePoints"/> appropiatly.  Called at beginning of <see cref="::mapShadePoints"/> function.
 		/// </summary>
 		/// <param name="alphaPoint">One of the endpoints of the line closest to origin.  Completely an output parameter.</param>
-		/// <param name="firstX">The first x of the collision with the line created by <paramref name="alphaPoint"/> at angle=<code>0</code></param>
-		/// <param name="firstY">The first y of the collision with the line created by <paramref name="alphaPoint"/> at angle=<code>0</code>.</param>
+		/// <param name="firstX">The first x of the collision with the line created by <paramref name="alphaPoint"/> at angle=<c>0</c></param>
+		/// <param name="firstY">The first y of the collision with the line created by <paramref name="alphaPoint"/> at angle=<c>0</c>.</param>
 		/// <param name="i">Used as an output parameter for the number of elements of <see cref="shadePoints"/> that were processed finding the first valid line.</param>
-		/// <param name="radAtZero"><code>true</code> when a <see cref="CircleShadePoint"/> was found exactly at angle=<code>0</code>.</param>
+		/// <param name="radAtZero"><c>true</c> when a <see cref="CircleShadePoint"/> was found exactly at angle=<c>0</c>.</param>
 		virtual void handleFirstShadePoint(CircleShadePoint*& alphaPoint, float& firstX, float& firstY, int& i, bool& radAtZero);
 				
 		/// <summary>
 		/// Called after the <see cref="shadePoints"/> have been entirely iterated over by <see cref="::mapShadePoints"/>.
 		/// </summary>
 		/// <param name="alphaPoint">The last <see cref="ShadePoint"/> that had a line closest to the origin.</param>
-		/// <param name="radAtZero">Whether the first <see cref="ShadePoint"/> was a point directly at angle=<code>0</code>.</param>
+		/// <param name="radAtZero">Whether the first <see cref="ShadePoint"/> was a point directly at angle=<c>0</c>.</param>
 		/// <param name="prevX">The previousX value when a collision with <see cref="alphaPoint"/> occured.</param>
 		/// <param name="prevY">The previousY value when a collision with <see cref="alphaPoint"/> occured.</param>
 		/// <param name="firstX">The x value of the first <see cref="CirleShadePoint"/>.</param>
@@ -234,7 +247,7 @@ namespace lighting
 		/// <param name="i">The index of the <see cref="ShadePoint"/> we want to check the radians of in the <see cref="shadePoints"> attribute.  Output parameter.</param>
 		/// <param name="prevX">The previous collision position with the line created by <paramref name="alphaPoint"/>. Output parameter.</param>
 		/// <param name="prevY">The previous collision position with the line created by <paramref name="alphaPoint"/>. Output parameter.</param>
-		/// <returns><code>true</code> if a valid point was found, <code>false</code> otherwise.</returns>
+		/// <returns><c>true</c> if a valid point was found, <c>false</c> otherwise.</returns>
 		bool getAlphaLineAtRad(CircleShadePoint*& alphaPoint, int& i, float& prevX, float& prevY);
 
 		/// <summary>
@@ -277,13 +290,18 @@ namespace lighting
 		float y;
 		
 		/// <summary>
-		/// The radius of the <code>this</code> <see cref="LightBlocker"/>.
+		/// The radius of the <c>this</c> <see cref="LightBlocker"/>.
 		/// </summary>
 		float radius;
 
 		/// <summary>
 		/// Temporarily stores position of the <see cref="CircleLightSource"/> until <see cref="transferHeldVars()"/> is called, where the values are assigned to <see cref="x"/> and <see cref="y"/>.
 		/// </summary>
-		float heldX, heldY;
+		float heldX;
+		
+		/// <summary>
+		/// Temporarily stores position of the <see cref="CircleLightSource"/> until <see cref="transferHeldVars()"/> is called, where the values are assigned to <see cref="x"/> and <see cref="y"/>.
+		/// </summary>
+		float heldY;
 	};
 }

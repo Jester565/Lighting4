@@ -6,7 +6,7 @@
 namespace lighting
 {	
 	/// <summary>
-	/// Represents the sun or any planetary source of light.  Can be blocked by <see cref="AboveLightBlocker">s or <see cref="LightBlocker"/>s.
+	/// Represents the sun or any planetary source of light.  Can be blocked by <see cref="AboveLightBlocker"/>s or <see cref="LightBlocker"/>s.
 	/// </summary>
 	/// <seealso cref="LightSource" />
 	class AboveLightSource : public LightSource
@@ -17,11 +17,6 @@ namespace lighting
 		/// The default color code value for r, g, b, a
 		/// </summary>
 		static const uint8_t DEFAULT_COLOR_VAL = 180;
-		
-		/// <summary>
-		/// The y value <see cref="AboveLightBlocker"/> will be added at.
-		/// </summary>
-		static const int ABOVE_LIGHT_BLOCKER_Y = -30;
 		
 		/// <summary>
 		/// How far the bound points are from the screen.
@@ -51,7 +46,7 @@ namespace lighting
 		/// <summary>
 		/// Initializes a new instance of the <see cref="AboveLightSource"/> class.  Automatically adds itelf to <paramref name="ownerLightLayer"/>.
 		/// </summary>
-		/// <param name="ownerLightLayer">The <see cref="LightLayer"/> <code>this</code> will be added to.</param>
+		/// <param name="ownerLightLayer">The <see cref="LightLayer"/> <c>this</c> will be added to.</param>
 		/// <param name="yOff">This value is added to the light y so the light can go further than the object it hit.</param>
 		/// <param name="r">The red color value.</param>
 		/// <param name="g">The green color value.</param>
@@ -197,7 +192,14 @@ namespace lighting
 		/// </summary>
 		/// <returns></returns>
 		int getMaxX();
-
+		
+		/// <summary>
+		/// Converts parameter coordinates to screen coordinates and pushes them to <see cref="drawPoints"/>.
+		/// </summary>
+		/// <param name="x1">The horizotnal position of the first endpoint.</param>
+		/// <param name="y1">The vertical position of the first endpoint.</param>
+		/// <param name="x2">The horizontal position of the second endpoint.</param>
+		/// <param name="y2">The vertical position of the second endpoint.</param>
 		void addDrawPoints(float x1, float y1, float x2, float y2);
 
 		/// <summary>

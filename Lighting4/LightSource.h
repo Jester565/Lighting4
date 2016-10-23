@@ -88,7 +88,7 @@ namespace lighting
 		virtual void transferHeldVars() = 0;
 
 		/// <summary>
-		/// The owner of <code>this</code>.  Set by constructor and is not reassigned afterwards.  Pointer is used to access lightBmpW and lightBmpH for drawing operations.  Also allows <c>this</c> to remove itself when <see cref="~LightSource()"/> is called.
+		/// The owner of <c>this</c>.  Set by constructor and is not reassigned afterwards.  Pointer is used to access lightBmpW and lightBmpH for drawing operations.  Also allows <c>this</c> to remove itself when <see cref="~LightSource()"/> is called.
 		/// </summary>
 		LightLayer* owner;
 	};

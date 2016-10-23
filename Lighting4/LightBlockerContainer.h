@@ -117,7 +117,7 @@ namespace lighting
 			}
 		}
 		/// <summary>
-		/// The <see cref="LightBlocker"/>s created by <code>this</code>.  Should form a shape.
+		/// The <see cref="LightBlocker"/>s created by <c>this</c>.  Should form a shape.
 		/// </summary>
 		std::list <LightBlocker*> lightBlockers;
 				

@@ -38,7 +38,7 @@ namespace lighting
 		void removeLightSource(std::list <LightSource*>::iterator removeIter);
 		
 		/// <summary>
-		/// When elements of <see cref="lightBlockers"/> copy data of <see cref="LightBlocker"/>s in the method <see cref="run()"/>, this is set to <code>true</code>.  Set to <code>false</code> when <see cref="LightLayer::detach()"/> is called.
+		/// When elements of <see cref="lightBlockers"/> copy data of <see cref="LightBlocker"/>s in the method <see cref="run()"/>, this is set to <c>true</c>.  Set to <c>false</c> when <see cref="LightLayer::detach()"/> is called.
 		/// </summary>
 		bool lightBlockersCopied;
 		
@@ -48,7 +48,7 @@ namespace lighting
 		std::mutex lightBlockersCopiedMutex;
 		
 		/// <summary>
-		/// When <see cref="run()"/> has finished calling <see cref="LightSource::mapShadePoints()"/> on each element in <see cref="lightBlockers"/>, this is set to <code>true</code>.  Set to <code>false</code> when <see cref="LightLayer::detach()"/> is called.
+		/// When <see cref="run()"/> has finished calling <see cref="LightSource::mapShadePoints()"/> on each element in <see cref="lightBlockers"/>, this is set to <c>true</c>.  Set to <c>false</c> when <see cref="LightLayer::detach()"/> is called.
 		/// </summary>
 		bool shadowsProcessed;
 		

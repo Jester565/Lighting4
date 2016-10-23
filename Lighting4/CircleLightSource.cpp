@@ -12,6 +12,9 @@ namespace lighting
 	uint64_t CircleLightSource::CastPointsProcessed = 0;
 	uint64_t CircleLightSource::TotalCycles = 0;
 
+	/// <summary>
+	/// The radix maximum number{CC2D43FA-BBC4-448A-9D0B-7B57ADF2655C}
+	/// </summary>
 	unsigned int CircleLightSource::RADIX_MAX_NUM = pow(2, 32) - 1;
 
 	const float CircleLightSource::MAX_NEG_FLOAT = -std::numeric_limits<float>::max();
