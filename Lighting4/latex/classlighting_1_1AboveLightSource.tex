@@ -1,0 +1,609 @@
+\hypertarget{classlighting_1_1AboveLightSource}{}\section{lighting\+:\+:Above\+Light\+Source Class Reference}
+\label{classlighting_1_1AboveLightSource}\index{lighting\+::\+Above\+Light\+Source@{lighting\+::\+Above\+Light\+Source}}
+
+
+Represents the sun or any planetary source of light. Can be blocked by \hyperlink{classlighting_1_1AboveLightBlocker}{s or }s.  
+
+
+
+
+{\ttfamily \#include $<$Above\+Light\+Source.\+h$>$}
+
+
+
+Inheritance diagram for lighting\+:\+:Above\+Light\+Source\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=213pt]{classlighting_1_1AboveLightSource__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for lighting\+:\+:Above\+Light\+Source\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=213pt]{classlighting_1_1AboveLightSource__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classlighting_1_1AboveLightSource_a0d155c74d7ce68008a17bff184d72db5}{Above\+Light\+Source} (\hyperlink{classlighting_1_1LightLayer}{Light\+Layer} $\ast$owner\+Light\+Layer, int \hyperlink{classlighting_1_1AboveLightSource_a558b3b3a03cdabc36a6ae73cbd41083d}{y\+Off}=0, uint8\+\_\+t r=\hyperlink{classlighting_1_1AboveLightSource_aa3134b6aa1f08719f50290094f014eb2}{D\+E\+F\+A\+U\+L\+T\+\_\+\+C\+O\+L\+O\+R\+\_\+\+V\+AL}, uint8\+\_\+t g=\hyperlink{classlighting_1_1AboveLightSource_aa3134b6aa1f08719f50290094f014eb2}{D\+E\+F\+A\+U\+L\+T\+\_\+\+C\+O\+L\+O\+R\+\_\+\+V\+AL}, uint8\+\_\+t b=\hyperlink{classlighting_1_1AboveLightSource_aa3134b6aa1f08719f50290094f014eb2}{D\+E\+F\+A\+U\+L\+T\+\_\+\+C\+O\+L\+O\+R\+\_\+\+V\+AL}, uint8\+\_\+t a=\hyperlink{classlighting_1_1AboveLightSource_aa3134b6aa1f08719f50290094f014eb2}{D\+E\+F\+A\+U\+L\+T\+\_\+\+C\+O\+L\+O\+R\+\_\+\+V\+AL})
+\begin{DoxyCompactList}\small\item\em Initializes a new instance of the \hyperlink{classlighting_1_1AboveLightSource}{Above\+Light\+Source} class. Automatically adds itelf to {\itshape owner\+Light\+Layer} . \end{DoxyCompactList}\item 
+void \hyperlink{classlighting_1_1AboveLightSource_a5a1e95ad0bc1ae4c4538f2899f46b37d}{set\+Light\+Color} (uint8\+\_\+t r, uint8\+\_\+t g, uint8\+\_\+t b, uint8\+\_\+t a)
+\begin{DoxyCompactList}\small\item\em Sets \hyperlink{classlighting_1_1AboveLightSource_a67835e37619d5d86023ef1fbc315546b}{light\+Color}. \end{DoxyCompactList}\item 
+virtual \hyperlink{classlighting_1_1AboveLightSource_a5f7e204332d81a44fbb2a89df03acfbd}{$\sim$\+Above\+Light\+Source} ()
+\begin{DoxyCompactList}\small\item\em Finalizes an instance of the \hyperlink{classlighting_1_1AboveLightSource}{Above\+Light\+Source} class. Automatically removes itself from the \hyperlink{classlighting_1_1LightSource_ab991aac9d9ab3a1583f4acdc209055d5}{owner}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const uint8\+\_\+t \hyperlink{classlighting_1_1AboveLightSource_aa3134b6aa1f08719f50290094f014eb2}{D\+E\+F\+A\+U\+L\+T\+\_\+\+C\+O\+L\+O\+R\+\_\+\+V\+AL} = 180
+\begin{DoxyCompactList}\small\item\em The default color code value for r, g, b, a \end{DoxyCompactList}\item 
+static const int \hyperlink{classlighting_1_1AboveLightSource_aefd3bdb1bb3d0a20657812f75b23f8b2}{A\+B\+O\+V\+E\+\_\+\+L\+I\+G\+H\+T\+\_\+\+B\+L\+O\+C\+K\+E\+R\+\_\+Y} = -\/30
+\begin{DoxyCompactList}\small\item\em The y value \hyperlink{classlighting_1_1AboveLightBlocker}{Above\+Light\+Blocker} will be added at. \end{DoxyCompactList}\item 
+static const int \hyperlink{classlighting_1_1AboveLightSource_aa87131309853cc76a946de6e004aa778}{B\+O\+U\+N\+D\+\_\+\+O\+FF} = 400
+\begin{DoxyCompactList}\small\item\em How far the bound points are from the screen. \end{DoxyCompactList}\item 
+static const uint8\+\_\+t \hyperlink{classlighting_1_1AboveLightSource_a698c4d291629788288537b8d9c166132}{R\+A\+D\+I\+X\+\_\+\+B\+A\+S\+E\+\_\+\+B\+I\+TS} = 4
+\begin{DoxyCompactList}\small\item\em The amount of bits in the radix base \end{DoxyCompactList}\item 
+static const unsigned int \hyperlink{classlighting_1_1AboveLightSource_aa27d69b85b99509a937f3b6cf34e6f5b}{R\+A\+D\+I\+X\+\_\+\+B\+A\+S\+E\+\_\+\+N\+UM} = 16
+\begin{DoxyCompactList}\small\item\em The max value of the radix base \end{DoxyCompactList}\item 
+static const uint8\+\_\+t \hyperlink{classlighting_1_1AboveLightSource_a4154fa07c5a68055db8c6a710cf0dbec}{R\+A\+D\+I\+X\+\_\+\+M\+A\+X\+\_\+\+B\+I\+TS} = 16
+\begin{DoxyCompactList}\small\item\em The maximum radix value in bits. \end{DoxyCompactList}\item 
+static const unsigned int \hyperlink{classlighting_1_1AboveLightSource_afb7f4c5e212f5fcc97bcf06a16b21ac3}{R\+A\+D\+I\+X\+\_\+\+M\+A\+X\+\_\+\+N\+UM} = 65535
+\begin{DoxyCompactList}\small\item\em The maximum value of the radix. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classlighting_1_1AboveLightSource_a40e7b34c807c7c91ff6889551a89ec88}{counting\+Sort\+Shade\+Points} (int bI)
+\begin{DoxyCompactList}\small\item\em Countings the sort shade points. \end{DoxyCompactList}\item 
+void \hyperlink{classlighting_1_1AboveLightSource_af874db3015b41b546bcc178d0904572a}{radix\+Sort\+Shade\+Points} ()
+\begin{DoxyCompactList}\small\item\em Radixes the sort shade points based on their x-\/values. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classlighting_1_1AboveLightSource_a4b18ea492b7f63bc34f7bd269317c20e}{transfer\+Held\+Vars} () override
+\begin{DoxyCompactList}\small\item\em Transfers the held vars. No implementation. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classlighting_1_1AboveLightSource_a13665ac64b61239624b430a49ab609ab}{create\+Shade\+Points} () override
+\begin{DoxyCompactList}\small\item\em Populates \hyperlink{classlighting_1_1AboveLightSource_a255e98bb6aae0099178cb7aa2d9671a5}{shade\+Points} by using \hyperlink{classlighting_1_1LightSource_ab991aac9d9ab3a1583f4acdc209055d5}{owner}\textquotesingle{}s above\+Light\+Blockers and light\+Blockers. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classlighting_1_1AboveLightSource_a9331dd2674565685388ef044b71a4881}{map\+Shade\+Points} () override
+\begin{DoxyCompactList}\small\item\em Processes the \hyperlink{classlighting_1_1AboveLightSource_a255e98bb6aae0099178cb7aa2d9671a5}{shade\+Points} and converts them to \hyperlink{classlighting_1_1AboveLightSource_a225b94f0f210561668b94e412c66443b}{draw\+Points}. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classlighting_1_1AboveLightSource_af858515032138900888d8db1a5f6812d}{draw\+Local} () override
+\begin{DoxyCompactList}\small\item\em No body, there is no local drawing needed. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classlighting_1_1AboveLightSource_ae941abaa5da73f24c11d1e2c120af9ae}{draw\+To\+Light\+Map} () override
+\begin{DoxyCompactList}\small\item\em Iterates through \hyperlink{classlighting_1_1AboveLightSource_a225b94f0f210561668b94e412c66443b}{draw\+Points} to draw to light\+Map. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classlighting_1_1AboveLightSource_a3625f4a181c5a2e78bc8549491e4e683}{create\+Bound\+Shade\+Points} ()
+\begin{DoxyCompactList}\small\item\em Populates \hyperlink{classlighting_1_1AboveLightSource_a255e98bb6aae0099178cb7aa2d9671a5}{shade\+Points} with the boundary \hyperlink{classlighting_1_1AboveShadePoint}{Above\+Shade\+Point}s. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classlighting_1_1AboveLightSource_acc4e52dba4a3c64994b238f03b57df08}{reset\+Points} ()
+\begin{DoxyCompactList}\small\item\em Clears and deletes elements in all point containers. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classlighting_1_1AboveLightSource_a86df533c28394981eb877e78fea594fb}{update\+Cast\+Points} (\hyperlink{classlighting_1_1AboveShadePoint}{Above\+Shade\+Point} $\ast$update\+Point)
+\begin{DoxyCompactList}\small\item\em Updates the cast points. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classlighting_1_1AboveLightSource_aa4fe1a6e9a19287417d66c911b98d0d0}{get\+Alpha\+Line\+AtX} (\hyperlink{classlighting_1_1AboveShadePoint}{Above\+Shade\+Point} $\ast$\&alpha\+Point, int \&i, float \&alpha\+ContactX, float \&alpha\+ContactY)
+\begin{DoxyCompactList}\small\item\em Will iterate through all of the \hyperlink{classlighting_1_1ShadePoint}{Shade\+Point}s with the same x as the element in \hyperlink{classlighting_1_1AboveLightSource_a255e98bb6aae0099178cb7aa2d9671a5}{shade\+Points} at index {\itshape i}  and set the {\itshape alpha\+Point} , {\itshape alpha\+ContactX} , and {\itshape alpha\+ContactY}  to the point that has the minimum distance from the origin, and the highest angle between it and its connecting point. If a valid point is not found, return false and leave alpha\+Point, prevX, prevY as they were. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classlighting_1_1AboveLightSource_a43c39f611519c6f94a8a8a8165ed8a64}{handle\+First\+Shade\+Points} (\hyperlink{classlighting_1_1AboveShadePoint}{Above\+Shade\+Point} $\ast$\&alpha\+Point, float \&firstX, float \&firstY, int \&i)
+\begin{DoxyCompactList}\small\item\em Handles the first shade points. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classlighting_1_1AboveLightSource_a4752f8d26b2d2584e79f5dbbe93f043d}{handle\+Last\+Shade\+Points} (\hyperlink{classlighting_1_1AboveShadePoint}{Above\+Shade\+Point} $\ast$alpha\+Point, float alpha\+ContactX, float alpha\+ContactY)
+\begin{DoxyCompactList}\small\item\em Handles the last shade points. Currently no body. \end{DoxyCompactList}\item 
+int \hyperlink{classlighting_1_1AboveLightSource_a113938f6773c454f6c36e553df6f1886}{get\+MinX} ()
+\begin{DoxyCompactList}\small\item\em The minimum value of x for elements of \hyperlink{classlighting_1_1AboveLightSource_a255e98bb6aae0099178cb7aa2d9671a5}{shade\+Points}. \end{DoxyCompactList}\item 
+int \hyperlink{classlighting_1_1AboveLightSource_a5818e15ade8eaaeb20ecb02c198e57bf}{get\+MaxX} ()
+\begin{DoxyCompactList}\small\item\em The maximum value of x for elements of \hyperlink{classlighting_1_1AboveLightSource_a255e98bb6aae0099178cb7aa2d9671a5}{shade\+Points}. \end{DoxyCompactList}\item 
+void {\bfseries add\+Draw\+Points} (float x1, float y1, float x2, float y2)\hypertarget{classlighting_1_1AboveLightSource_a926900f786af28265cac95751c3ce2ac}{}\label{classlighting_1_1AboveLightSource_a926900f786af28265cac95751c3ce2ac}
+
+\item 
+\hyperlink{classlighting_1_1AboveShadePoint}{Above\+Shade\+Point} $\ast$ \hyperlink{classlighting_1_1AboveLightSource_ac65260afb16ddd15ff49628168268cdb}{shadow\+Cast} (float x, float \&cY, \hyperlink{classlighting_1_1AboveShadePoint}{Above\+Shade\+Point} $\ast$exception\+Point=nullptr)
+\begin{DoxyCompactList}\small\item\em Returns the line closest to the top of the screen at the given {\itshape x}  \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \hyperlink{classlighting_1_1AboveLightSource_a31861d0bb4bfa3a25e2f88b1662e0744}{Check\+Point\+Front} (\hyperlink{classlighting_1_1AboveShadePoint}{Above\+Shade\+Point} $\ast$alpha\+Point, \hyperlink{classlighting_1_1AboveShadePoint}{Above\+Shade\+Point} $\ast$check\+Point)
+\begin{DoxyCompactList}\small\item\em Checks if {\itshape check\+Point}  is in front of the line created by alpha\+Point. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{classlighting_1_1AboveLightSource_a558b3b3a03cdabc36a6ae73cbd41083d}{y\+Off}
+\begin{DoxyCompactList}\small\item\em Value added to the y-\/component of \hyperlink{classlighting_1_1AboveLightSource_a225b94f0f210561668b94e412c66443b}{draw\+Points}. \end{DoxyCompactList}\item 
+std\+::vector$<$ float $>$ \hyperlink{classlighting_1_1AboveLightSource_a225b94f0f210561668b94e412c66443b}{draw\+Points}
+\begin{DoxyCompactList}\small\item\em The coordinates of the points to draw. Even is x, odd is y. \end{DoxyCompactList}\item 
+std\+::unordered\+\_\+set$<$ \hyperlink{classlighting_1_1AboveShadePoint}{Above\+Shade\+Point} $\ast$ $>$ \hyperlink{classlighting_1_1AboveLightSource_a59d73c54616c32422d4cbea6b981022e}{cast\+Points}
+\begin{DoxyCompactList}\small\item\em Keeps track of the \hyperlink{classlighting_1_1AboveShadePoint}{Above\+Shade\+Point}s that can be shadow casted to. \end{DoxyCompactList}\item 
+std\+::vector$<$ \hyperlink{classlighting_1_1AboveShadePoint}{Above\+Shade\+Point} $\ast$ $>$ \hyperlink{classlighting_1_1AboveLightSource_a255e98bb6aae0099178cb7aa2d9671a5}{shade\+Points}
+\begin{DoxyCompactList}\small\item\em The \hyperlink{classlighting_1_1ShadePoint}{Shade\+Point}s created by \+::create\+Shade\+Points. \end{DoxyCompactList}\item 
+A\+L\+L\+E\+G\+R\+O\+\_\+\+C\+O\+L\+OR \hyperlink{classlighting_1_1AboveLightSource_a67835e37619d5d86023ef1fbc315546b}{light\+Color}
+\begin{DoxyCompactList}\small\item\em The color of the light. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const int \hyperlink{classlighting_1_1AboveLightSource_ac0d8f43e71b18876416b4091fb44bba6}{B\+O\+U\+N\+D\+\_\+\+P\+O\+I\+N\+T\+S\+\_\+\+S\+I\+ZE} = 2
+\begin{DoxyCompactList}\small\item\em Amount of bound \hyperlink{classlighting_1_1AboveShadePoint}{Above\+Shade\+Point}s. \end{DoxyCompactList}\item 
+static const int \hyperlink{classlighting_1_1AboveLightSource_a7f58e4685c32acd0c33f644b3578bcf4}{L\+I\+N\+E\+\_\+\+C\+H\+E\+C\+K\+\_\+\+O\+FF} = 2000
+\begin{DoxyCompactList}\small\item\em When shadow\+Casting or checking points, this is how far off the y value is from the sceen to check for collisoins. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class {\bfseries Light\+Layer}\hypertarget{classlighting_1_1AboveLightSource_aa4da5897890a726ecc5247c37419663b}{}\label{classlighting_1_1AboveLightSource_aa4da5897890a726ecc5247c37419663b}
+
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Represents the sun or any planetary source of light. Can be blocked by \hyperlink{classlighting_1_1AboveLightBlocker}{s or }s. 
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classlighting_1_1LightSource}{Light\+Source}
+
+
+\end{DoxySeeAlso}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{lighting\+::\+Above\+Light\+Source@{lighting\+::\+Above\+Light\+Source}!Above\+Light\+Source@{Above\+Light\+Source}}
+\index{Above\+Light\+Source@{Above\+Light\+Source}!lighting\+::\+Above\+Light\+Source@{lighting\+::\+Above\+Light\+Source}}
+\subsubsection[{\texorpdfstring{Above\+Light\+Source(\+Light\+Layer $\ast$owner\+Light\+Layer, int y\+Off=0, uint8\+\_\+t r=\+D\+E\+F\+A\+U\+L\+T\+\_\+\+C\+O\+L\+O\+R\+\_\+\+V\+A\+L, uint8\+\_\+t g=\+D\+E\+F\+A\+U\+L\+T\+\_\+\+C\+O\+L\+O\+R\+\_\+\+V\+A\+L, uint8\+\_\+t b=\+D\+E\+F\+A\+U\+L\+T\+\_\+\+C\+O\+L\+O\+R\+\_\+\+V\+A\+L, uint8\+\_\+t a=\+D\+E\+F\+A\+U\+L\+T\+\_\+\+C\+O\+L\+O\+R\+\_\+\+V\+A\+L)}{AboveLightSource(LightLayer *ownerLightLayer, int yOff=0, uint8_t r=DEFAULT_COLOR_VAL, uint8_t g=DEFAULT_COLOR_VAL, uint8_t b=DEFAULT_COLOR_VAL, uint8_t a=DEFAULT_COLOR_VAL)}}]{\setlength{\rightskip}{0pt plus 5cm}lighting\+::\+Above\+Light\+Source\+::\+Above\+Light\+Source (
+\begin{DoxyParamCaption}
+\item[{{\bf Light\+Layer} $\ast$}]{owner\+Light\+Layer, }
+\item[{int}]{y\+Off = {\ttfamily 0}, }
+\item[{uint8\+\_\+t}]{r = {\ttfamily {\bf D\+E\+F\+A\+U\+L\+T\+\_\+\+C\+O\+L\+O\+R\+\_\+\+V\+AL}}, }
+\item[{uint8\+\_\+t}]{g = {\ttfamily {\bf D\+E\+F\+A\+U\+L\+T\+\_\+\+C\+O\+L\+O\+R\+\_\+\+V\+AL}}, }
+\item[{uint8\+\_\+t}]{b = {\ttfamily {\bf D\+E\+F\+A\+U\+L\+T\+\_\+\+C\+O\+L\+O\+R\+\_\+\+V\+AL}}, }
+\item[{uint8\+\_\+t}]{a = {\ttfamily {\bf D\+E\+F\+A\+U\+L\+T\+\_\+\+C\+O\+L\+O\+R\+\_\+\+V\+AL}}}
+\end{DoxyParamCaption}
+)}\hypertarget{classlighting_1_1AboveLightSource_a0d155c74d7ce68008a17bff184d72db5}{}\label{classlighting_1_1AboveLightSource_a0d155c74d7ce68008a17bff184d72db5}
+
+
+Initializes a new instance of the \hyperlink{classlighting_1_1AboveLightSource}{Above\+Light\+Source} class. Automatically adds itelf to {\itshape owner\+Light\+Layer} . 
+
+
+\begin{DoxyParams}{Parameters}
+{\em owner\+Light\+Layer} & The \hyperlink{classlighting_1_1LightLayer}{Light\+Layer} 
+\begin{DoxyCode}
+\textcolor{keyword}{this}
+\end{DoxyCode}
+ will be added to.\\
+\hline
+{\em y\+Off} & This value is added to the light y so the light can go further than the object it hit.\\
+\hline
+{\em r} & The red color value.\\
+\hline
+{\em g} & The green color value.\\
+\hline
+{\em b} & The blue color value.\\
+\hline
+{\em a} & a.\\
+\hline
+\end{DoxyParams}
+\index{lighting\+::\+Above\+Light\+Source@{lighting\+::\+Above\+Light\+Source}!````~Above\+Light\+Source@{$\sim$\+Above\+Light\+Source}}
+\index{````~Above\+Light\+Source@{$\sim$\+Above\+Light\+Source}!lighting\+::\+Above\+Light\+Source@{lighting\+::\+Above\+Light\+Source}}
+\subsubsection[{\texorpdfstring{$\sim$\+Above\+Light\+Source()}{~AboveLightSource()}}]{\setlength{\rightskip}{0pt plus 5cm}lighting\+::\+Above\+Light\+Source\+::$\sim$\+Above\+Light\+Source (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classlighting_1_1AboveLightSource_a5f7e204332d81a44fbb2a89df03acfbd}{}\label{classlighting_1_1AboveLightSource_a5f7e204332d81a44fbb2a89df03acfbd}
+
+
+Finalizes an instance of the \hyperlink{classlighting_1_1AboveLightSource}{Above\+Light\+Source} class. Automatically removes itself from the \hyperlink{classlighting_1_1LightSource_ab991aac9d9ab3a1583f4acdc209055d5}{owner}. 
+
+
+
+\subsection{Member Function Documentation}
+\index{lighting\+::\+Above\+Light\+Source@{lighting\+::\+Above\+Light\+Source}!Check\+Point\+Front@{Check\+Point\+Front}}
+\index{Check\+Point\+Front@{Check\+Point\+Front}!lighting\+::\+Above\+Light\+Source@{lighting\+::\+Above\+Light\+Source}}
+\subsubsection[{\texorpdfstring{Check\+Point\+Front(\+Above\+Shade\+Point $\ast$alpha\+Point, Above\+Shade\+Point $\ast$check\+Point)}{CheckPointFront(AboveShadePoint *alphaPoint, AboveShadePoint *checkPoint)}}]{\setlength{\rightskip}{0pt plus 5cm}bool lighting\+::\+Above\+Light\+Source\+::\+Check\+Point\+Front (
+\begin{DoxyParamCaption}
+\item[{{\bf Above\+Shade\+Point} $\ast$}]{alpha\+Point, }
+\item[{{\bf Above\+Shade\+Point} $\ast$}]{check\+Point}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}\hypertarget{classlighting_1_1AboveLightSource_a31861d0bb4bfa3a25e2f88b1662e0744}{}\label{classlighting_1_1AboveLightSource_a31861d0bb4bfa3a25e2f88b1662e0744}
+
+
+Checks if {\itshape check\+Point}  is in front of the line created by alpha\+Point. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em alpha\+Point} & One of the endpoints of the alpha line.\\
+\hline
+{\em check\+Point} & The point to check if in front of alpha line.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+If {\itshape check\+Point}  is in front of the line made by alpha\+Point.
+\end{DoxyReturn}
+\index{lighting\+::\+Above\+Light\+Source@{lighting\+::\+Above\+Light\+Source}!counting\+Sort\+Shade\+Points@{counting\+Sort\+Shade\+Points}}
+\index{counting\+Sort\+Shade\+Points@{counting\+Sort\+Shade\+Points}!lighting\+::\+Above\+Light\+Source@{lighting\+::\+Above\+Light\+Source}}
+\subsubsection[{\texorpdfstring{counting\+Sort\+Shade\+Points(int b\+I)}{countingSortShadePoints(int bI)}}]{\setlength{\rightskip}{0pt plus 5cm}void lighting\+::\+Above\+Light\+Source\+::counting\+Sort\+Shade\+Points (
+\begin{DoxyParamCaption}
+\item[{int}]{bI}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classlighting_1_1AboveLightSource_a40e7b34c807c7c91ff6889551a89ec88}{}\label{classlighting_1_1AboveLightSource_a40e7b34c807c7c91ff6889551a89ec88}
+
+
+Countings the sort shade points. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bI} & The bits to shift by.\\
+\hline
+\end{DoxyParams}
+\index{lighting\+::\+Above\+Light\+Source@{lighting\+::\+Above\+Light\+Source}!create\+Bound\+Shade\+Points@{create\+Bound\+Shade\+Points}}
+\index{create\+Bound\+Shade\+Points@{create\+Bound\+Shade\+Points}!lighting\+::\+Above\+Light\+Source@{lighting\+::\+Above\+Light\+Source}}
+\subsubsection[{\texorpdfstring{create\+Bound\+Shade\+Points()}{createBoundShadePoints()}}]{\setlength{\rightskip}{0pt plus 5cm}void lighting\+::\+Above\+Light\+Source\+::create\+Bound\+Shade\+Points (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\hypertarget{classlighting_1_1AboveLightSource_a3625f4a181c5a2e78bc8549491e4e683}{}\label{classlighting_1_1AboveLightSource_a3625f4a181c5a2e78bc8549491e4e683}
+
+
+Populates \hyperlink{classlighting_1_1AboveLightSource_a255e98bb6aae0099178cb7aa2d9671a5}{shade\+Points} with the boundary \hyperlink{classlighting_1_1AboveShadePoint}{Above\+Shade\+Point}s. 
+
+\index{lighting\+::\+Above\+Light\+Source@{lighting\+::\+Above\+Light\+Source}!create\+Shade\+Points@{create\+Shade\+Points}}
+\index{create\+Shade\+Points@{create\+Shade\+Points}!lighting\+::\+Above\+Light\+Source@{lighting\+::\+Above\+Light\+Source}}
+\subsubsection[{\texorpdfstring{create\+Shade\+Points() override}{createShadePoints() override}}]{\setlength{\rightskip}{0pt plus 5cm}void lighting\+::\+Above\+Light\+Source\+::create\+Shade\+Points (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}\hypertarget{classlighting_1_1AboveLightSource_a13665ac64b61239624b430a49ab609ab}{}\label{classlighting_1_1AboveLightSource_a13665ac64b61239624b430a49ab609ab}
+
+
+Populates \hyperlink{classlighting_1_1AboveLightSource_a255e98bb6aae0099178cb7aa2d9671a5}{shade\+Points} by using \hyperlink{classlighting_1_1LightSource_ab991aac9d9ab3a1583f4acdc209055d5}{owner}\textquotesingle{}s above\+Light\+Blockers and light\+Blockers. 
+
+
+
+Implements \hyperlink{classlighting_1_1LightSource_a5bf73ee0586ba7620b917e57148d67be}{lighting\+::\+Light\+Source}.
+
+\index{lighting\+::\+Above\+Light\+Source@{lighting\+::\+Above\+Light\+Source}!draw\+Local@{draw\+Local}}
+\index{draw\+Local@{draw\+Local}!lighting\+::\+Above\+Light\+Source@{lighting\+::\+Above\+Light\+Source}}
+\subsubsection[{\texorpdfstring{draw\+Local() override}{drawLocal() override}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void lighting\+::\+Above\+Light\+Source\+::draw\+Local (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}\hypertarget{classlighting_1_1AboveLightSource_af858515032138900888d8db1a5f6812d}{}\label{classlighting_1_1AboveLightSource_af858515032138900888d8db1a5f6812d}
+
+
+No body, there is no local drawing needed. 
+
+
+
+Implements \hyperlink{classlighting_1_1LightSource_ab15af06660d5cd4658d61ac2075aedea}{lighting\+::\+Light\+Source}.
+
+\index{lighting\+::\+Above\+Light\+Source@{lighting\+::\+Above\+Light\+Source}!draw\+To\+Light\+Map@{draw\+To\+Light\+Map}}
+\index{draw\+To\+Light\+Map@{draw\+To\+Light\+Map}!lighting\+::\+Above\+Light\+Source@{lighting\+::\+Above\+Light\+Source}}
+\subsubsection[{\texorpdfstring{draw\+To\+Light\+Map() override}{drawToLightMap() override}}]{\setlength{\rightskip}{0pt plus 5cm}void lighting\+::\+Above\+Light\+Source\+::draw\+To\+Light\+Map (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}\hypertarget{classlighting_1_1AboveLightSource_ae941abaa5da73f24c11d1e2c120af9ae}{}\label{classlighting_1_1AboveLightSource_ae941abaa5da73f24c11d1e2c120af9ae}
+
+
+Iterates through \hyperlink{classlighting_1_1AboveLightSource_a225b94f0f210561668b94e412c66443b}{draw\+Points} to draw to light\+Map. 
+
+
+
+Implements \hyperlink{classlighting_1_1LightSource_a4e292cccdfb5784e97a1924ca00533b9}{lighting\+::\+Light\+Source}.
+
+\index{lighting\+::\+Above\+Light\+Source@{lighting\+::\+Above\+Light\+Source}!get\+Alpha\+Line\+AtX@{get\+Alpha\+Line\+AtX}}
+\index{get\+Alpha\+Line\+AtX@{get\+Alpha\+Line\+AtX}!lighting\+::\+Above\+Light\+Source@{lighting\+::\+Above\+Light\+Source}}
+\subsubsection[{\texorpdfstring{get\+Alpha\+Line\+At\+X(\+Above\+Shade\+Point $\ast$\&alpha\+Point, int \&i, float \&alpha\+Contact\+X, float \&alpha\+Contact\+Y)}{getAlphaLineAtX(AboveShadePoint *&alphaPoint, int &i, float &alphaContactX, float &alphaContactY)}}]{\setlength{\rightskip}{0pt plus 5cm}bool lighting\+::\+Above\+Light\+Source\+::get\+Alpha\+Line\+AtX (
+\begin{DoxyParamCaption}
+\item[{{\bf Above\+Shade\+Point} $\ast$\&}]{alpha\+Point, }
+\item[{int \&}]{i, }
+\item[{float \&}]{alpha\+ContactX, }
+\item[{float \&}]{alpha\+ContactY}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\hypertarget{classlighting_1_1AboveLightSource_aa4fe1a6e9a19287417d66c911b98d0d0}{}\label{classlighting_1_1AboveLightSource_aa4fe1a6e9a19287417d66c911b98d0d0}
+
+
+Will iterate through all of the \hyperlink{classlighting_1_1ShadePoint}{Shade\+Point}s with the same x as the element in \hyperlink{classlighting_1_1AboveLightSource_a255e98bb6aae0099178cb7aa2d9671a5}{shade\+Points} at index {\itshape i}  and set the {\itshape alpha\+Point} , {\itshape alpha\+ContactX} , and {\itshape alpha\+ContactY}  to the point that has the minimum distance from the origin, and the highest angle between it and its connecting point. If a valid point is not found, return false and leave alpha\+Point, prevX, prevY as they were. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em alpha\+Point} & \hyperlink{classlighting_1_1ShadePoint}{Shade\+Point} represneting of the end points of the alpha\+Line.\\
+\hline
+{\em i} & The index of \hyperlink{classlighting_1_1AboveLightSource_a255e98bb6aae0099178cb7aa2d9671a5}{shade\+Points} with the x-\/value to check.\\
+\hline
+{\em alpha\+ContactX} & The last place an alpha\+Contact occured.\\
+\hline
+{\em alpha\+ContactY} & The last place an alpha\+Contact occureed.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\index{lighting\+::\+Above\+Light\+Source@{lighting\+::\+Above\+Light\+Source}!get\+MaxX@{get\+MaxX}}
+\index{get\+MaxX@{get\+MaxX}!lighting\+::\+Above\+Light\+Source@{lighting\+::\+Above\+Light\+Source}}
+\subsubsection[{\texorpdfstring{get\+Max\+X()}{getMaxX()}}]{\setlength{\rightskip}{0pt plus 5cm}int lighting\+::\+Above\+Light\+Source\+::get\+MaxX (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classlighting_1_1AboveLightSource_a5818e15ade8eaaeb20ecb02c198e57bf}{}\label{classlighting_1_1AboveLightSource_a5818e15ade8eaaeb20ecb02c198e57bf}
+
+
+The maximum value of x for elements of \hyperlink{classlighting_1_1AboveLightSource_a255e98bb6aae0099178cb7aa2d9671a5}{shade\+Points}. 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\index{lighting\+::\+Above\+Light\+Source@{lighting\+::\+Above\+Light\+Source}!get\+MinX@{get\+MinX}}
+\index{get\+MinX@{get\+MinX}!lighting\+::\+Above\+Light\+Source@{lighting\+::\+Above\+Light\+Source}}
+\subsubsection[{\texorpdfstring{get\+Min\+X()}{getMinX()}}]{\setlength{\rightskip}{0pt plus 5cm}int lighting\+::\+Above\+Light\+Source\+::get\+MinX (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}\hypertarget{classlighting_1_1AboveLightSource_a113938f6773c454f6c36e553df6f1886}{}\label{classlighting_1_1AboveLightSource_a113938f6773c454f6c36e553df6f1886}
+
+
+The minimum value of x for elements of \hyperlink{classlighting_1_1AboveLightSource_a255e98bb6aae0099178cb7aa2d9671a5}{shade\+Points}. 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\index{lighting\+::\+Above\+Light\+Source@{lighting\+::\+Above\+Light\+Source}!handle\+First\+Shade\+Points@{handle\+First\+Shade\+Points}}
+\index{handle\+First\+Shade\+Points@{handle\+First\+Shade\+Points}!lighting\+::\+Above\+Light\+Source@{lighting\+::\+Above\+Light\+Source}}
+\subsubsection[{\texorpdfstring{handle\+First\+Shade\+Points(\+Above\+Shade\+Point $\ast$\&alpha\+Point, float \&first\+X, float \&first\+Y, int \&i)}{handleFirstShadePoints(AboveShadePoint *&alphaPoint, float &firstX, float &firstY, int &i)}}]{\setlength{\rightskip}{0pt plus 5cm}void lighting\+::\+Above\+Light\+Source\+::handle\+First\+Shade\+Points (
+\begin{DoxyParamCaption}
+\item[{{\bf Above\+Shade\+Point} $\ast$\&}]{alpha\+Point, }
+\item[{float \&}]{firstX, }
+\item[{float \&}]{firstY, }
+\item[{int \&}]{i}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\hypertarget{classlighting_1_1AboveLightSource_a43c39f611519c6f94a8a8a8165ed8a64}{}\label{classlighting_1_1AboveLightSource_a43c39f611519c6f94a8a8a8165ed8a64}
+
+
+Handles the first shade points. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em alpha\+Point} & The alpha point.\\
+\hline
+{\em firstX} & The first x.\\
+\hline
+{\em firstY} & The first y.\\
+\hline
+{\em i} & The i.\\
+\hline
+\end{DoxyParams}
+\index{lighting\+::\+Above\+Light\+Source@{lighting\+::\+Above\+Light\+Source}!handle\+Last\+Shade\+Points@{handle\+Last\+Shade\+Points}}
+\index{handle\+Last\+Shade\+Points@{handle\+Last\+Shade\+Points}!lighting\+::\+Above\+Light\+Source@{lighting\+::\+Above\+Light\+Source}}
+\subsubsection[{\texorpdfstring{handle\+Last\+Shade\+Points(\+Above\+Shade\+Point $\ast$alpha\+Point, float alpha\+Contact\+X, float alpha\+Contact\+Y)}{handleLastShadePoints(AboveShadePoint *alphaPoint, float alphaContactX, float alphaContactY)}}]{\setlength{\rightskip}{0pt plus 5cm}void lighting\+::\+Above\+Light\+Source\+::handle\+Last\+Shade\+Points (
+\begin{DoxyParamCaption}
+\item[{{\bf Above\+Shade\+Point} $\ast$}]{alpha\+Point, }
+\item[{float}]{alpha\+ContactX, }
+\item[{float}]{alpha\+ContactY}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\hypertarget{classlighting_1_1AboveLightSource_a4752f8d26b2d2584e79f5dbbe93f043d}{}\label{classlighting_1_1AboveLightSource_a4752f8d26b2d2584e79f5dbbe93f043d}
+
+
+Handles the last shade points. Currently no body. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em alpha\+Point} & The alpha point.\\
+\hline
+{\em alpha\+ContactX} & The alpha contact x.\\
+\hline
+{\em alpha\+ContactY} & The alpha contact y.\\
+\hline
+\end{DoxyParams}
+\index{lighting\+::\+Above\+Light\+Source@{lighting\+::\+Above\+Light\+Source}!map\+Shade\+Points@{map\+Shade\+Points}}
+\index{map\+Shade\+Points@{map\+Shade\+Points}!lighting\+::\+Above\+Light\+Source@{lighting\+::\+Above\+Light\+Source}}
+\subsubsection[{\texorpdfstring{map\+Shade\+Points() override}{mapShadePoints() override}}]{\setlength{\rightskip}{0pt plus 5cm}void lighting\+::\+Above\+Light\+Source\+::map\+Shade\+Points (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}\hypertarget{classlighting_1_1AboveLightSource_a9331dd2674565685388ef044b71a4881}{}\label{classlighting_1_1AboveLightSource_a9331dd2674565685388ef044b71a4881}
+
+
+Processes the \hyperlink{classlighting_1_1AboveLightSource_a255e98bb6aae0099178cb7aa2d9671a5}{shade\+Points} and converts them to \hyperlink{classlighting_1_1AboveLightSource_a225b94f0f210561668b94e412c66443b}{draw\+Points}. 
+
+
+
+Implements \hyperlink{classlighting_1_1LightSource_a5bbde61a54af327d43dc4afee751412c}{lighting\+::\+Light\+Source}.
+
+\index{lighting\+::\+Above\+Light\+Source@{lighting\+::\+Above\+Light\+Source}!radix\+Sort\+Shade\+Points@{radix\+Sort\+Shade\+Points}}
+\index{radix\+Sort\+Shade\+Points@{radix\+Sort\+Shade\+Points}!lighting\+::\+Above\+Light\+Source@{lighting\+::\+Above\+Light\+Source}}
+\subsubsection[{\texorpdfstring{radix\+Sort\+Shade\+Points()}{radixSortShadePoints()}}]{\setlength{\rightskip}{0pt plus 5cm}void lighting\+::\+Above\+Light\+Source\+::radix\+Sort\+Shade\+Points (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classlighting_1_1AboveLightSource_af874db3015b41b546bcc178d0904572a}{}\label{classlighting_1_1AboveLightSource_af874db3015b41b546bcc178d0904572a}
+
+
+Radixes the sort shade points based on their x-\/values. 
+
+\index{lighting\+::\+Above\+Light\+Source@{lighting\+::\+Above\+Light\+Source}!reset\+Points@{reset\+Points}}
+\index{reset\+Points@{reset\+Points}!lighting\+::\+Above\+Light\+Source@{lighting\+::\+Above\+Light\+Source}}
+\subsubsection[{\texorpdfstring{reset\+Points()}{resetPoints()}}]{\setlength{\rightskip}{0pt plus 5cm}void lighting\+::\+Above\+Light\+Source\+::reset\+Points (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\hypertarget{classlighting_1_1AboveLightSource_acc4e52dba4a3c64994b238f03b57df08}{}\label{classlighting_1_1AboveLightSource_acc4e52dba4a3c64994b238f03b57df08}
+
+
+Clears and deletes elements in all point containers. 
+
+\index{lighting\+::\+Above\+Light\+Source@{lighting\+::\+Above\+Light\+Source}!set\+Light\+Color@{set\+Light\+Color}}
+\index{set\+Light\+Color@{set\+Light\+Color}!lighting\+::\+Above\+Light\+Source@{lighting\+::\+Above\+Light\+Source}}
+\subsubsection[{\texorpdfstring{set\+Light\+Color(uint8\+\_\+t r, uint8\+\_\+t g, uint8\+\_\+t b, uint8\+\_\+t a)}{setLightColor(uint8_t r, uint8_t g, uint8_t b, uint8_t a)}}]{\setlength{\rightskip}{0pt plus 5cm}void lighting\+::\+Above\+Light\+Source\+::set\+Light\+Color (
+\begin{DoxyParamCaption}
+\item[{uint8\+\_\+t}]{r, }
+\item[{uint8\+\_\+t}]{g, }
+\item[{uint8\+\_\+t}]{b, }
+\item[{uint8\+\_\+t}]{a}
+\end{DoxyParamCaption}
+)}\hypertarget{classlighting_1_1AboveLightSource_a5a1e95ad0bc1ae4c4538f2899f46b37d}{}\label{classlighting_1_1AboveLightSource_a5a1e95ad0bc1ae4c4538f2899f46b37d}
+
+
+Sets \hyperlink{classlighting_1_1AboveLightSource_a67835e37619d5d86023ef1fbc315546b}{light\+Color}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & The red color value.\\
+\hline
+{\em g} & The green color value.\\
+\hline
+{\em b} & The blue color value.\\
+\hline
+{\em a} & The alpha color value.\\
+\hline
+\end{DoxyParams}
+\index{lighting\+::\+Above\+Light\+Source@{lighting\+::\+Above\+Light\+Source}!shadow\+Cast@{shadow\+Cast}}
+\index{shadow\+Cast@{shadow\+Cast}!lighting\+::\+Above\+Light\+Source@{lighting\+::\+Above\+Light\+Source}}
+\subsubsection[{\texorpdfstring{shadow\+Cast(float x, float \&c\+Y, Above\+Shade\+Point $\ast$exception\+Point=nullptr)}{shadowCast(float x, float &cY, AboveShadePoint *exceptionPoint=nullptr)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Above\+Shade\+Point} $\ast$ lighting\+::\+Above\+Light\+Source\+::shadow\+Cast (
+\begin{DoxyParamCaption}
+\item[{float}]{x, }
+\item[{float \&}]{cY, }
+\item[{{\bf Above\+Shade\+Point} $\ast$}]{exception\+Point = {\ttfamily nullptr}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classlighting_1_1AboveLightSource_ac65260afb16ddd15ff49628168268cdb}{}\label{classlighting_1_1AboveLightSource_ac65260afb16ddd15ff49628168268cdb}
+
+
+Returns the line closest to the top of the screen at the given {\itshape x}  
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The x.\\
+\hline
+{\em cY} & The contactY, output parameter.\\
+\hline
+{\em exception\+Point} & The exception point, will not be returned.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\index{lighting\+::\+Above\+Light\+Source@{lighting\+::\+Above\+Light\+Source}!transfer\+Held\+Vars@{transfer\+Held\+Vars}}
+\index{transfer\+Held\+Vars@{transfer\+Held\+Vars}!lighting\+::\+Above\+Light\+Source@{lighting\+::\+Above\+Light\+Source}}
+\subsubsection[{\texorpdfstring{transfer\+Held\+Vars() override}{transferHeldVars() override}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void lighting\+::\+Above\+Light\+Source\+::transfer\+Held\+Vars (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}\hypertarget{classlighting_1_1AboveLightSource_a4b18ea492b7f63bc34f7bd269317c20e}{}\label{classlighting_1_1AboveLightSource_a4b18ea492b7f63bc34f7bd269317c20e}
+
+
+Transfers the held vars. No implementation. 
+
+
+
+Implements \hyperlink{classlighting_1_1LightSource_ae4be8445f78d1314e112aed9c25933fc}{lighting\+::\+Light\+Source}.
+
+\index{lighting\+::\+Above\+Light\+Source@{lighting\+::\+Above\+Light\+Source}!update\+Cast\+Points@{update\+Cast\+Points}}
+\index{update\+Cast\+Points@{update\+Cast\+Points}!lighting\+::\+Above\+Light\+Source@{lighting\+::\+Above\+Light\+Source}}
+\subsubsection[{\texorpdfstring{update\+Cast\+Points(\+Above\+Shade\+Point $\ast$update\+Point)}{updateCastPoints(AboveShadePoint *updatePoint)}}]{\setlength{\rightskip}{0pt plus 5cm}void lighting\+::\+Above\+Light\+Source\+::update\+Cast\+Points (
+\begin{DoxyParamCaption}
+\item[{{\bf Above\+Shade\+Point} $\ast$}]{update\+Point}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\hypertarget{classlighting_1_1AboveLightSource_a86df533c28394981eb877e78fea594fb}{}\label{classlighting_1_1AboveLightSource_a86df533c28394981eb877e78fea594fb}
+
+
+Updates the cast points. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em update\+Point} & The \hyperlink{classlighting_1_1AboveShadePoint}{Above\+Shade\+Point} to check if needing adding or removing from \hyperlink{classlighting_1_1AboveLightSource_a59d73c54616c32422d4cbea6b981022e}{cast\+Points}.\\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\index{lighting\+::\+Above\+Light\+Source@{lighting\+::\+Above\+Light\+Source}!A\+B\+O\+V\+E\+\_\+\+L\+I\+G\+H\+T\+\_\+\+B\+L\+O\+C\+K\+E\+R\+\_\+Y@{A\+B\+O\+V\+E\+\_\+\+L\+I\+G\+H\+T\+\_\+\+B\+L\+O\+C\+K\+E\+R\+\_\+Y}}
+\index{A\+B\+O\+V\+E\+\_\+\+L\+I\+G\+H\+T\+\_\+\+B\+L\+O\+C\+K\+E\+R\+\_\+Y@{A\+B\+O\+V\+E\+\_\+\+L\+I\+G\+H\+T\+\_\+\+B\+L\+O\+C\+K\+E\+R\+\_\+Y}!lighting\+::\+Above\+Light\+Source@{lighting\+::\+Above\+Light\+Source}}
+\subsubsection[{\texorpdfstring{A\+B\+O\+V\+E\+\_\+\+L\+I\+G\+H\+T\+\_\+\+B\+L\+O\+C\+K\+E\+R\+\_\+Y}{ABOVE_LIGHT_BLOCKER_Y}}]{\setlength{\rightskip}{0pt plus 5cm}const int lighting\+::\+Above\+Light\+Source\+::\+A\+B\+O\+V\+E\+\_\+\+L\+I\+G\+H\+T\+\_\+\+B\+L\+O\+C\+K\+E\+R\+\_\+Y = -\/30\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{classlighting_1_1AboveLightSource_aefd3bdb1bb3d0a20657812f75b23f8b2}{}\label{classlighting_1_1AboveLightSource_aefd3bdb1bb3d0a20657812f75b23f8b2}
+
+
+The y value \hyperlink{classlighting_1_1AboveLightBlocker}{Above\+Light\+Blocker} will be added at. 
+
+\index{lighting\+::\+Above\+Light\+Source@{lighting\+::\+Above\+Light\+Source}!B\+O\+U\+N\+D\+\_\+\+O\+FF@{B\+O\+U\+N\+D\+\_\+\+O\+FF}}
+\index{B\+O\+U\+N\+D\+\_\+\+O\+FF@{B\+O\+U\+N\+D\+\_\+\+O\+FF}!lighting\+::\+Above\+Light\+Source@{lighting\+::\+Above\+Light\+Source}}
+\subsubsection[{\texorpdfstring{B\+O\+U\+N\+D\+\_\+\+O\+FF}{BOUND_OFF}}]{\setlength{\rightskip}{0pt plus 5cm}const int lighting\+::\+Above\+Light\+Source\+::\+B\+O\+U\+N\+D\+\_\+\+O\+FF = 400\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{classlighting_1_1AboveLightSource_aa87131309853cc76a946de6e004aa778}{}\label{classlighting_1_1AboveLightSource_aa87131309853cc76a946de6e004aa778}
+
+
+How far the bound points are from the screen. 
+
+\index{lighting\+::\+Above\+Light\+Source@{lighting\+::\+Above\+Light\+Source}!B\+O\+U\+N\+D\+\_\+\+P\+O\+I\+N\+T\+S\+\_\+\+S\+I\+ZE@{B\+O\+U\+N\+D\+\_\+\+P\+O\+I\+N\+T\+S\+\_\+\+S\+I\+ZE}}
+\index{B\+O\+U\+N\+D\+\_\+\+P\+O\+I\+N\+T\+S\+\_\+\+S\+I\+ZE@{B\+O\+U\+N\+D\+\_\+\+P\+O\+I\+N\+T\+S\+\_\+\+S\+I\+ZE}!lighting\+::\+Above\+Light\+Source@{lighting\+::\+Above\+Light\+Source}}
+\subsubsection[{\texorpdfstring{B\+O\+U\+N\+D\+\_\+\+P\+O\+I\+N\+T\+S\+\_\+\+S\+I\+ZE}{BOUND_POINTS_SIZE}}]{\setlength{\rightskip}{0pt plus 5cm}const int lighting\+::\+Above\+Light\+Source\+::\+B\+O\+U\+N\+D\+\_\+\+P\+O\+I\+N\+T\+S\+\_\+\+S\+I\+ZE = 2\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}\hypertarget{classlighting_1_1AboveLightSource_ac0d8f43e71b18876416b4091fb44bba6}{}\label{classlighting_1_1AboveLightSource_ac0d8f43e71b18876416b4091fb44bba6}
+
+
+Amount of bound \hyperlink{classlighting_1_1AboveShadePoint}{Above\+Shade\+Point}s. 
+
+\index{lighting\+::\+Above\+Light\+Source@{lighting\+::\+Above\+Light\+Source}!cast\+Points@{cast\+Points}}
+\index{cast\+Points@{cast\+Points}!lighting\+::\+Above\+Light\+Source@{lighting\+::\+Above\+Light\+Source}}
+\subsubsection[{\texorpdfstring{cast\+Points}{castPoints}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::unordered\+\_\+set$<${\bf Above\+Shade\+Point}$\ast$$>$ lighting\+::\+Above\+Light\+Source\+::cast\+Points\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classlighting_1_1AboveLightSource_a59d73c54616c32422d4cbea6b981022e}{}\label{classlighting_1_1AboveLightSource_a59d73c54616c32422d4cbea6b981022e}
+
+
+Keeps track of the \hyperlink{classlighting_1_1AboveShadePoint}{Above\+Shade\+Point}s that can be shadow casted to. 
+
+\index{lighting\+::\+Above\+Light\+Source@{lighting\+::\+Above\+Light\+Source}!D\+E\+F\+A\+U\+L\+T\+\_\+\+C\+O\+L\+O\+R\+\_\+\+V\+AL@{D\+E\+F\+A\+U\+L\+T\+\_\+\+C\+O\+L\+O\+R\+\_\+\+V\+AL}}
+\index{D\+E\+F\+A\+U\+L\+T\+\_\+\+C\+O\+L\+O\+R\+\_\+\+V\+AL@{D\+E\+F\+A\+U\+L\+T\+\_\+\+C\+O\+L\+O\+R\+\_\+\+V\+AL}!lighting\+::\+Above\+Light\+Source@{lighting\+::\+Above\+Light\+Source}}
+\subsubsection[{\texorpdfstring{D\+E\+F\+A\+U\+L\+T\+\_\+\+C\+O\+L\+O\+R\+\_\+\+V\+AL}{DEFAULT_COLOR_VAL}}]{\setlength{\rightskip}{0pt plus 5cm}const uint8\+\_\+t lighting\+::\+Above\+Light\+Source\+::\+D\+E\+F\+A\+U\+L\+T\+\_\+\+C\+O\+L\+O\+R\+\_\+\+V\+AL = 180\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{classlighting_1_1AboveLightSource_aa3134b6aa1f08719f50290094f014eb2}{}\label{classlighting_1_1AboveLightSource_aa3134b6aa1f08719f50290094f014eb2}
+
+
+The default color code value for r, g, b, a 
+
+\index{lighting\+::\+Above\+Light\+Source@{lighting\+::\+Above\+Light\+Source}!draw\+Points@{draw\+Points}}
+\index{draw\+Points@{draw\+Points}!lighting\+::\+Above\+Light\+Source@{lighting\+::\+Above\+Light\+Source}}
+\subsubsection[{\texorpdfstring{draw\+Points}{drawPoints}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$float$>$ lighting\+::\+Above\+Light\+Source\+::draw\+Points\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classlighting_1_1AboveLightSource_a225b94f0f210561668b94e412c66443b}{}\label{classlighting_1_1AboveLightSource_a225b94f0f210561668b94e412c66443b}
+
+
+The coordinates of the points to draw. Even is x, odd is y. 
+
+\index{lighting\+::\+Above\+Light\+Source@{lighting\+::\+Above\+Light\+Source}!light\+Color@{light\+Color}}
+\index{light\+Color@{light\+Color}!lighting\+::\+Above\+Light\+Source@{lighting\+::\+Above\+Light\+Source}}
+\subsubsection[{\texorpdfstring{light\+Color}{lightColor}}]{\setlength{\rightskip}{0pt plus 5cm}A\+L\+L\+E\+G\+R\+O\+\_\+\+C\+O\+L\+OR lighting\+::\+Above\+Light\+Source\+::light\+Color\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classlighting_1_1AboveLightSource_a67835e37619d5d86023ef1fbc315546b}{}\label{classlighting_1_1AboveLightSource_a67835e37619d5d86023ef1fbc315546b}
+
+
+The color of the light. 
+
+\index{lighting\+::\+Above\+Light\+Source@{lighting\+::\+Above\+Light\+Source}!L\+I\+N\+E\+\_\+\+C\+H\+E\+C\+K\+\_\+\+O\+FF@{L\+I\+N\+E\+\_\+\+C\+H\+E\+C\+K\+\_\+\+O\+FF}}
+\index{L\+I\+N\+E\+\_\+\+C\+H\+E\+C\+K\+\_\+\+O\+FF@{L\+I\+N\+E\+\_\+\+C\+H\+E\+C\+K\+\_\+\+O\+FF}!lighting\+::\+Above\+Light\+Source@{lighting\+::\+Above\+Light\+Source}}
+\subsubsection[{\texorpdfstring{L\+I\+N\+E\+\_\+\+C\+H\+E\+C\+K\+\_\+\+O\+FF}{LINE_CHECK_OFF}}]{\setlength{\rightskip}{0pt plus 5cm}const int lighting\+::\+Above\+Light\+Source\+::\+L\+I\+N\+E\+\_\+\+C\+H\+E\+C\+K\+\_\+\+O\+FF = 2000\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}\hypertarget{classlighting_1_1AboveLightSource_a7f58e4685c32acd0c33f644b3578bcf4}{}\label{classlighting_1_1AboveLightSource_a7f58e4685c32acd0c33f644b3578bcf4}
+
+
+When shadow\+Casting or checking points, this is how far off the y value is from the sceen to check for collisoins. 
+
+\index{lighting\+::\+Above\+Light\+Source@{lighting\+::\+Above\+Light\+Source}!R\+A\+D\+I\+X\+\_\+\+B\+A\+S\+E\+\_\+\+B\+I\+TS@{R\+A\+D\+I\+X\+\_\+\+B\+A\+S\+E\+\_\+\+B\+I\+TS}}
+\index{R\+A\+D\+I\+X\+\_\+\+B\+A\+S\+E\+\_\+\+B\+I\+TS@{R\+A\+D\+I\+X\+\_\+\+B\+A\+S\+E\+\_\+\+B\+I\+TS}!lighting\+::\+Above\+Light\+Source@{lighting\+::\+Above\+Light\+Source}}
+\subsubsection[{\texorpdfstring{R\+A\+D\+I\+X\+\_\+\+B\+A\+S\+E\+\_\+\+B\+I\+TS}{RADIX_BASE_BITS}}]{\setlength{\rightskip}{0pt plus 5cm}const uint8\+\_\+t lighting\+::\+Above\+Light\+Source\+::\+R\+A\+D\+I\+X\+\_\+\+B\+A\+S\+E\+\_\+\+B\+I\+TS = 4\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{classlighting_1_1AboveLightSource_a698c4d291629788288537b8d9c166132}{}\label{classlighting_1_1AboveLightSource_a698c4d291629788288537b8d9c166132}
+
+
+The amount of bits in the radix base 
+
+\index{lighting\+::\+Above\+Light\+Source@{lighting\+::\+Above\+Light\+Source}!R\+A\+D\+I\+X\+\_\+\+B\+A\+S\+E\+\_\+\+N\+UM@{R\+A\+D\+I\+X\+\_\+\+B\+A\+S\+E\+\_\+\+N\+UM}}
+\index{R\+A\+D\+I\+X\+\_\+\+B\+A\+S\+E\+\_\+\+N\+UM@{R\+A\+D\+I\+X\+\_\+\+B\+A\+S\+E\+\_\+\+N\+UM}!lighting\+::\+Above\+Light\+Source@{lighting\+::\+Above\+Light\+Source}}
+\subsubsection[{\texorpdfstring{R\+A\+D\+I\+X\+\_\+\+B\+A\+S\+E\+\_\+\+N\+UM}{RADIX_BASE_NUM}}]{\setlength{\rightskip}{0pt plus 5cm}const unsigned int lighting\+::\+Above\+Light\+Source\+::\+R\+A\+D\+I\+X\+\_\+\+B\+A\+S\+E\+\_\+\+N\+UM = 16\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{classlighting_1_1AboveLightSource_aa27d69b85b99509a937f3b6cf34e6f5b}{}\label{classlighting_1_1AboveLightSource_aa27d69b85b99509a937f3b6cf34e6f5b}
+
+
+The max value of the radix base 
+
+\index{lighting\+::\+Above\+Light\+Source@{lighting\+::\+Above\+Light\+Source}!R\+A\+D\+I\+X\+\_\+\+M\+A\+X\+\_\+\+B\+I\+TS@{R\+A\+D\+I\+X\+\_\+\+M\+A\+X\+\_\+\+B\+I\+TS}}
+\index{R\+A\+D\+I\+X\+\_\+\+M\+A\+X\+\_\+\+B\+I\+TS@{R\+A\+D\+I\+X\+\_\+\+M\+A\+X\+\_\+\+B\+I\+TS}!lighting\+::\+Above\+Light\+Source@{lighting\+::\+Above\+Light\+Source}}
+\subsubsection[{\texorpdfstring{R\+A\+D\+I\+X\+\_\+\+M\+A\+X\+\_\+\+B\+I\+TS}{RADIX_MAX_BITS}}]{\setlength{\rightskip}{0pt plus 5cm}const uint8\+\_\+t lighting\+::\+Above\+Light\+Source\+::\+R\+A\+D\+I\+X\+\_\+\+M\+A\+X\+\_\+\+B\+I\+TS = 16\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{classlighting_1_1AboveLightSource_a4154fa07c5a68055db8c6a710cf0dbec}{}\label{classlighting_1_1AboveLightSource_a4154fa07c5a68055db8c6a710cf0dbec}
+
+
+The maximum radix value in bits. 
+
+\index{lighting\+::\+Above\+Light\+Source@{lighting\+::\+Above\+Light\+Source}!R\+A\+D\+I\+X\+\_\+\+M\+A\+X\+\_\+\+N\+UM@{R\+A\+D\+I\+X\+\_\+\+M\+A\+X\+\_\+\+N\+UM}}
+\index{R\+A\+D\+I\+X\+\_\+\+M\+A\+X\+\_\+\+N\+UM@{R\+A\+D\+I\+X\+\_\+\+M\+A\+X\+\_\+\+N\+UM}!lighting\+::\+Above\+Light\+Source@{lighting\+::\+Above\+Light\+Source}}
+\subsubsection[{\texorpdfstring{R\+A\+D\+I\+X\+\_\+\+M\+A\+X\+\_\+\+N\+UM}{RADIX_MAX_NUM}}]{\setlength{\rightskip}{0pt plus 5cm}const unsigned int lighting\+::\+Above\+Light\+Source\+::\+R\+A\+D\+I\+X\+\_\+\+M\+A\+X\+\_\+\+N\+UM = 65535\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{classlighting_1_1AboveLightSource_afb7f4c5e212f5fcc97bcf06a16b21ac3}{}\label{classlighting_1_1AboveLightSource_afb7f4c5e212f5fcc97bcf06a16b21ac3}
+
+
+The maximum value of the radix. 
+
+\index{lighting\+::\+Above\+Light\+Source@{lighting\+::\+Above\+Light\+Source}!shade\+Points@{shade\+Points}}
+\index{shade\+Points@{shade\+Points}!lighting\+::\+Above\+Light\+Source@{lighting\+::\+Above\+Light\+Source}}
+\subsubsection[{\texorpdfstring{shade\+Points}{shadePoints}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<${\bf Above\+Shade\+Point}$\ast$$>$ lighting\+::\+Above\+Light\+Source\+::shade\+Points\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classlighting_1_1AboveLightSource_a255e98bb6aae0099178cb7aa2d9671a5}{}\label{classlighting_1_1AboveLightSource_a255e98bb6aae0099178cb7aa2d9671a5}
+
+
+The \hyperlink{classlighting_1_1ShadePoint}{Shade\+Point}s created by \+::create\+Shade\+Points. 
+
+\index{lighting\+::\+Above\+Light\+Source@{lighting\+::\+Above\+Light\+Source}!y\+Off@{y\+Off}}
+\index{y\+Off@{y\+Off}!lighting\+::\+Above\+Light\+Source@{lighting\+::\+Above\+Light\+Source}}
+\subsubsection[{\texorpdfstring{y\+Off}{yOff}}]{\setlength{\rightskip}{0pt plus 5cm}int lighting\+::\+Above\+Light\+Source\+::y\+Off\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classlighting_1_1AboveLightSource_a558b3b3a03cdabc36a6ae73cbd41083d}{}\label{classlighting_1_1AboveLightSource_a558b3b3a03cdabc36a6ae73cbd41083d}
+
+
+Value added to the y-\/component of \hyperlink{classlighting_1_1AboveLightSource_a225b94f0f210561668b94e412c66443b}{draw\+Points}. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Above\+Light\+Source.\+h\item 
+Above\+Light\+Source.\+cpp\end{DoxyCompactItemize}

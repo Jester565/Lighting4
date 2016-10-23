@@ -1,0 +1,777 @@
+\hypertarget{classlighting_1_1CircleLightSource}{}\section{lighting\+:\+:Circle\+Light\+Source Class Reference}
+\label{classlighting_1_1CircleLightSource}\index{lighting\+::\+Circle\+Light\+Source@{lighting\+::\+Circle\+Light\+Source}}
+
+
+A child of \hyperlink{classlighting_1_1LightSource}{Light\+Source} represents a full circle of light that would be produced by an oil lamp or a light bulb.  
+
+
+
+
+{\ttfamily \#include $<$Circle\+Light\+Source.\+h$>$}
+
+
+
+Inheritance diagram for lighting\+:\+:Circle\+Light\+Source\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=211pt]{classlighting_1_1CircleLightSource__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for lighting\+:\+:Circle\+Light\+Source\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=211pt]{classlighting_1_1CircleLightSource__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classlighting_1_1CircleLightSource_ade3ca945a040132851a26bef3c22fe6e}{Circle\+Light\+Source} (\hyperlink{classlighting_1_1LightLayer}{Light\+Layer} $\ast$owner\+Light\+Layer, float \hyperlink{classlighting_1_1CircleLightSource_a4da9b32f524563c2faeba5ea81dfe6fb}{radius}, uint8\+\_\+t r=U\+I\+N\+T8\+\_\+\+M\+AX, uint8\+\_\+t g=U\+I\+N\+T8\+\_\+\+M\+AX, uint8\+\_\+t b=U\+I\+N\+T8\+\_\+\+M\+AX)
+\begin{DoxyCompactList}\small\item\em Initializes a new instance of the \hyperlink{classlighting_1_1CircleLightSource}{Circle\+Light\+Source} class. Automatically adds itself to the {\itshape owner\+Light\+Layer} . \end{DoxyCompactList}\item 
+void \hyperlink{classlighting_1_1CircleLightSource_ae035f07aeb1e540c6066a4ff82bf4b54}{set\+XY} (float \hyperlink{classlighting_1_1CircleLightSource_afd27de5d967e2a308dadeff29d3c2883}{x}, float \hyperlink{classlighting_1_1CircleLightSource_ac05186b92c9bdfcef8a27cc89f8c9b52}{y})
+\begin{DoxyCompactList}\small\item\em Sets the horizontal and vertical position of the center of the \hyperlink{classlighting_1_1CircleLightSource}{Circle\+Light\+Source} on the screen. Values are stored in \hyperlink{classlighting_1_1CircleLightSource_aa008d846fd893f0ff40e5994af4d487e}{heldX} and heldY until \hyperlink{classlighting_1_1CircleLightSource_afc39570a33c19b17fb8153be592b01e9}{transfer\+Held\+Vars()} is called. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classlighting_1_1CircleLightSource_a8ca70332ba3b1926e6c65a56cb30416c}{set\+Light\+Color} (uint8\+\_\+t r, uint8\+\_\+t g, uint8\+\_\+t b)
+\begin{DoxyCompactList}\small\item\em Sets the color of the light. Modifier for \hyperlink{classlighting_1_1CircleLightSource_a39d1b9f5bfb54facf6a7e36ed0ffda82}{light\+Color}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static uint64\+\_\+t {\bfseries Shade\+Points\+Processed} = 0\hypertarget{classlighting_1_1CircleLightSource_ac5ee6f2194afd0dfd04470ca554d7c3a}{}\label{classlighting_1_1CircleLightSource_ac5ee6f2194afd0dfd04470ca554d7c3a}
+
+\item 
+static uint64\+\_\+t {\bfseries Shadow\+Called} = 0\hypertarget{classlighting_1_1CircleLightSource_a9ad414cfb620c9253fbda3d6a9b89f50}{}\label{classlighting_1_1CircleLightSource_a9ad414cfb620c9253fbda3d6a9b89f50}
+
+\item 
+static uint64\+\_\+t {\bfseries Cast\+Points\+Processed} = 0\hypertarget{classlighting_1_1CircleLightSource_aee2dd14e70c371618e6d7161b2e8187e}{}\label{classlighting_1_1CircleLightSource_aee2dd14e70c371618e6d7161b2e8187e}
+
+\item 
+static uint64\+\_\+t {\bfseries Total\+Cycles} = 0\hypertarget{classlighting_1_1CircleLightSource_ada2d8673056053ec59ce2053eb691e0a}{}\label{classlighting_1_1CircleLightSource_ada2d8673056053ec59ce2053eb691e0a}
+
+\item 
+static const uint8\+\_\+t \hyperlink{classlighting_1_1CircleLightSource_a94be83c3a3e575b5670ec6c6abe8a6e7}{R\+A\+D\+I\+X\+\_\+\+B\+A\+S\+E\+\_\+\+B\+I\+TS} = 4
+\begin{DoxyCompactList}\small\item\em Number of bits for the radix base \end{DoxyCompactList}\item 
+static const unsigned int {\bfseries R\+A\+D\+I\+X\+\_\+\+B\+A\+S\+E\+\_\+\+N\+UM} = 16\hypertarget{classlighting_1_1CircleLightSource_afa4c65f061bb4201a36aa7feee13b4c0}{}\label{classlighting_1_1CircleLightSource_afa4c65f061bb4201a36aa7feee13b4c0}
+
+\item 
+static const uint8\+\_\+t \hyperlink{classlighting_1_1CircleLightSource_a9a4d058eac85eeb8c542abd69069e4b2}{R\+A\+D\+I\+X\+\_\+\+M\+A\+X\+\_\+\+B\+I\+TS} = 32
+\begin{DoxyCompactList}\small\item\em Number of bits for the maximum value of elements sorted by radix sort \end{DoxyCompactList}\item 
+static unsigned int {\bfseries R\+A\+D\+I\+X\+\_\+\+M\+A\+X\+\_\+\+N\+UM} = pow(2, 32) -\/ 1\hypertarget{classlighting_1_1CircleLightSource_adaa12ee54e0cecf9691061646b7e71f4}{}\label{classlighting_1_1CircleLightSource_adaa12ee54e0cecf9691061646b7e71f4}
+
+\item 
+static const float \hyperlink{classlighting_1_1CircleLightSource_a139a7246edba5531259b778ce0ca79b3}{M\+A\+X\+\_\+\+N\+E\+G\+\_\+\+F\+L\+O\+AT} = -\/std\+::numeric\+\_\+limits$<$float$>$\+::max()
+\begin{DoxyCompactList}\small\item\em Set to the most negative possible value of float \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classlighting_1_1CircleLightSource_a850ea8b5a1480473bd40a82a9687f229}{radix\+Sort\+Shade\+Points} ()
+\begin{DoxyCompactList}\small\item\em Uses radix sort to sort the elements of \hyperlink{classlighting_1_1CircleLightSource_acdfea64be9d142f669338c5e206e753e}{shade\+Points}. \end{DoxyCompactList}\item 
+void \hyperlink{classlighting_1_1CircleLightSource_ac7cbab4f6a38d8359a2637a875427e75}{counting\+Sort\+Shade\+Points} (int bI)
+\begin{DoxyCompactList}\small\item\em Called by \hyperlink{classlighting_1_1CircleLightSource_a850ea8b5a1480473bd40a82a9687f229}{radix\+Sort\+Shade\+Points} as a helper method for the sorting process \end{DoxyCompactList}\item 
+virtual void \hyperlink{classlighting_1_1CircleLightSource_afc39570a33c19b17fb8153be592b01e9}{transfer\+Held\+Vars} () override
+\begin{DoxyCompactList}\small\item\em Sets the ,  attributes to the corresponding \char`\"{}held\char`\"{} attributes. Called from Light\+Layer\+::dispatch(). \end{DoxyCompactList}\item 
+virtual void \hyperlink{classlighting_1_1CircleLightSource_aaa80bb9a9a27f3c74bf86cfd547d5f36}{create\+Shade\+Points} () override
+\begin{DoxyCompactList}\small\item\em Converts all elements of {\itshape light\+Blockers}  into two \hyperlink{classlighting_1_1CircleShadePoint}{Circle\+Shade\+Point}s which are stored in the \hyperlink{classlighting_1_1CircleLightSource_acdfea64be9d142f669338c5e206e753e}{shade\+Points} vector and then sorted using \+::radix\+Sort\+Shade\+Points. Function also handles edge cases. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classlighting_1_1CircleLightSource_aea43f0005a2ffbc50e8898e2e967693b}{map\+Shade\+Points} ()
+\begin{DoxyCompactList}\small\item\em Processes all of the elements in \hyperlink{classlighting_1_1CircleLightSource_acdfea64be9d142f669338c5e206e753e}{shade\+Points} and converts them to elements of Light\+Source\+::draw\+Points. The Light\+Source\+::draw\+Points are placed at the end of shadows. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classlighting_1_1CircleLightSource_a6ab6f8f8eaf003e52ac2c86d88496c77}{draw\+Local} () override
+\begin{DoxyCompactList}\small\item\em Uses the Light\+Source\+::draw\+Point vector, which was set by \hyperlink{classlighting_1_1CircleLightSource_aea43f0005a2ffbc50e8898e2e967693b}{map\+Shade\+Points}, to draw onto the \hyperlink{classlighting_1_1CircleLightSource_a382414c9318853e93c85bc64bcd19f4e}{shade\+Map}. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classlighting_1_1CircleLightSource_ab0f9107c09ae9c6966bab14538505894}{draw\+To\+Light\+Map} () override
+\begin{DoxyCompactList}\small\item\em Draws \hyperlink{classlighting_1_1CircleLightSource_a382414c9318853e93c85bc64bcd19f4e}{shade\+Map} to the \hyperlink{}{. Assumes light\+Map is already set as the target bitmap. } \end{DoxyCompactList}\item 
+virtual void \hyperlink{classlighting_1_1CircleLightSource_a3bdcfaba7976f0cd3399f89ecd635524}{reset\+Points} (size\+\_\+t light\+Blockers\+Size)
+\begin{DoxyCompactList}\small\item\em Restores \hyperlink{classlighting_1_1CircleLightSource_acdfea64be9d142f669338c5e206e753e}{shade\+Points} and \end{DoxyCompactList}\item 
+virtual void \hyperlink{classlighting_1_1CircleLightSource_a357178ac79b3cadaead529e5e37e2cce}{create\+Bound\+Shade\+Points} ()
+\begin{DoxyCompactList}\small\item\em Creates and pushes \hyperlink{classlighting_1_1CircleShadePoint}{Circle\+Shade\+Point}s representing the edges of the light to \hyperlink{classlighting_1_1CircleLightSource_acdfea64be9d142f669338c5e206e753e}{shade\+Points}. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classlighting_1_1CircleLightSource_a7e0946ab60f06af4f77b9b65e73ab3f3}{handle\+Bound\+Collisions} (float \&x1, float \&y1, float \&x2, float \&y2)
+\begin{DoxyCompactList}\small\item\em Checks if the lines created by these coordinates intersect with the boundaries. If they do, find the collision point and set the coordinates to that. Calls \+::move\+Into\+Radius on all coordinates. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classlighting_1_1CircleLightSource_af8866a49ad68c131c15c67ae622a1ecf}{bring\+Equal\+Bound\+To\+In\+Bound} (float \&num)
+\begin{DoxyCompactList}\small\item\em If num is on the radius, it is brought into the radius to avoid collisions with \hyperlink{classlighting_1_1ShadePoint}{Shade\+Point}s. \end{DoxyCompactList}\item 
+virtual void {\bfseries add\+Draw\+Points} (float x1, float y1, float x2, float y2)\hypertarget{classlighting_1_1CircleLightSource_a98ef03cb0c9cb276fa8cd66bbd3a8dc5}{}\label{classlighting_1_1CircleLightSource_a98ef03cb0c9cb276fa8cd66bbd3a8dc5}
+
+\item 
+virtual void \hyperlink{classlighting_1_1CircleLightSource_a228a02c6c4064d349d0471d86d4c177d}{handle\+First\+Shade\+Point} (\hyperlink{classlighting_1_1CircleShadePoint}{Circle\+Shade\+Point} $\ast$\&alpha\+Point, float \&firstX, float \&firstY, int \&i, bool \&rad\+At\+Zero)
+\begin{DoxyCompactList}\small\item\em Handles the first \hyperlink{classlighting_1_1CircleShadePoint}{Circle\+Shade\+Point} from \hyperlink{classlighting_1_1CircleLightSource_acdfea64be9d142f669338c5e206e753e}{shade\+Points} appropiatly. Called at beginning of \+::map\+Shade\+Points function. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classlighting_1_1CircleLightSource_aa31a12e3693654b21ee7e19acd067cf1}{handle\+Last\+Shade\+Point} (\hyperlink{classlighting_1_1CircleShadePoint}{Circle\+Shade\+Point} $\ast$alpha\+Point, bool rad\+At\+Zero, float prevX, float prevY, float firstX, float firstY)
+\begin{DoxyCompactList}\small\item\em Called after the \hyperlink{classlighting_1_1CircleLightSource_acdfea64be9d142f669338c5e206e753e}{shade\+Points} have been entirely iterated over by \+::map\+Shade\+Points. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classlighting_1_1CircleLightSource_a9a8312eb2e60e2a0c8b472d226b0600f}{update\+Cast\+Points} (\hyperlink{classlighting_1_1CircleShadePoint}{Circle\+Shade\+Point} $\ast$update\+Point)
+\begin{DoxyCompactList}\small\item\em When the end of the line of an alpha\+Point is reached, this function will check if any \hyperlink{classlighting_1_1ShadePoint}{Shade\+Point}s at the same radian as the endpoint are valid. If any are valid, it will return the line that will be closest to the origin using the output parameters. \end{DoxyCompactList}\item 
+virtual \hyperlink{classlighting_1_1CircleShadePoint}{Circle\+Shade\+Point} $\ast$ \hyperlink{classlighting_1_1CircleLightSource_a57f45ad27f3863aa6834a13ee71c88c5}{shadow\+Cast} (float rads, float \&cX, float \&cY, \hyperlink{classlighting_1_1CircleShadePoint}{Circle\+Shade\+Point} $\ast$exception\+Point=nullptr)
+\begin{DoxyCompactList}\small\item\em When a line ends and there is no clear point to go to, this method is called to iterate through all of the lines below the radian and find which one is closest to the origin and return it. \end{DoxyCompactList}\item 
+bool \hyperlink{classlighting_1_1CircleLightSource_a5ceaeef808c64338ffc91b725f53faf1}{get\+Alpha\+Line\+At\+Rad} (\hyperlink{classlighting_1_1CircleShadePoint}{Circle\+Shade\+Point} $\ast$\&alpha\+Point, int \&i, float \&prevX, float \&prevY)
+\begin{DoxyCompactList}\small\item\em Will iterate through all of the \hyperlink{classlighting_1_1ShadePoint}{Shade\+Point}s with the same radian as the element in \hyperlink{classlighting_1_1CircleLightSource_acdfea64be9d142f669338c5e206e753e}{shade\+Points} at index {\itshape i}  and set the {\itshape alpha\+Point} , {\itshape prevX} , and lastY to the point that has the minimum distance from the origin, and the highest angle between it and its connecting point. If a valid point is not found, return false and leave alpha\+Point, prevX, prevY as they were. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \hyperlink{classlighting_1_1CircleLightSource_a93208152ff678f3aa3b985db81a5d450}{Crosses\+Zero} (\hyperlink{classlighting_1_1CircleShadePoint}{Circle\+Shade\+Point} $\ast$test\+Point)
+\begin{DoxyCompactList}\small\item\em If the line created by {\itshape test\+Point}  and its connected point cross angle = 0, return 
+\begin{DoxyCode}
+\textcolor{keyword}{true}
+\end{DoxyCode}
+, 
+\begin{DoxyCode}
+\textcolor{keyword}{false}
+\end{DoxyCode}
+ otherwise. \end{DoxyCompactList}\item 
+static float \hyperlink{classlighting_1_1CircleLightSource_a8d273bde1c1330b8a38f7f6ad99914a5}{Get\+Rad\+Dif} (\hyperlink{classlighting_1_1CircleShadePoint}{Circle\+Shade\+Point} $\ast$ep1, \hyperlink{classlighting_1_1CircleShadePoint}{Circle\+Shade\+Point} $\ast$ep2, float ori\+Rads)
+\begin{DoxyCompactList}\small\item\em Finds the angle of {\itshape ep2}  from origin {\itshape ep1}  relative to {\itshape ori\+Rads} . \end{DoxyCompactList}\item 
+static bool \hyperlink{classlighting_1_1CircleLightSource_a2e8494e55de7dfcff7b4a5f1c60ad0d1}{Check\+Point\+Front} (\hyperlink{classlighting_1_1CircleShadePoint}{Circle\+Shade\+Point} $\ast$alpha\+Point, \hyperlink{classlighting_1_1CircleShadePoint}{Circle\+Shade\+Point} $\ast$check\+Point)
+\begin{DoxyCompactList}\small\item\em Calculates if the {\itshape check\+Point}  is in front of {\itshape alpha\+Point} . \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::unordered\+\_\+set$<$ \hyperlink{classlighting_1_1CircleShadePoint}{Circle\+Shade\+Point} $\ast$ $>$ \hyperlink{classlighting_1_1CircleLightSource_ab25c86954fad0715d502d1f60649ede4}{cast\+Points}
+\begin{DoxyCompactList}\small\item\em Keeps track of all of the \hyperlink{classlighting_1_1CircleShadePoint}{Circle\+Shade\+Point}s that have a line that could be shadow casted to. \end{DoxyCompactList}\item 
+std\+::vector$<$ \hyperlink{classlighting_1_1CircleShadePoint}{Circle\+Shade\+Point} $\ast$ $>$ \hyperlink{classlighting_1_1CircleLightSource_acdfea64be9d142f669338c5e206e753e}{shade\+Points}
+\begin{DoxyCompactList}\small\item\em Endpoints of \hyperlink{classlighting_1_1LightBlocker}{Light\+Blocker}s. Populated by \+::create\+Shade\+Points. \end{DoxyCompactList}\item 
+std\+::vector$<$ float $>$ \hyperlink{classlighting_1_1CircleLightSource_ac1a26422cd969278b321679503d42a07}{draw\+Points}
+\begin{DoxyCompactList}\small\item\em Stores the x and y of the edges of shadows in the local bitmap. Populated by \+::map\+Shade\+Points. \end{DoxyCompactList}\item 
+A\+L\+L\+E\+G\+R\+O\+\_\+\+C\+O\+L\+OR \hyperlink{classlighting_1_1CircleLightSource_a39d1b9f5bfb54facf6a7e36ed0ffda82}{light\+Color}
+\begin{DoxyCompactList}\small\item\em The color of the light. \end{DoxyCompactList}\item 
+A\+L\+L\+E\+G\+R\+O\+\_\+\+B\+I\+T\+M\+AP $\ast$ \hyperlink{classlighting_1_1CircleLightSource_a382414c9318853e93c85bc64bcd19f4e}{shade\+Map}
+\begin{DoxyCompactList}\small\item\em Bitmap where shadows are drawn to. \end{DoxyCompactList}\item 
+float \hyperlink{classlighting_1_1CircleLightSource_afd27de5d967e2a308dadeff29d3c2883}{x}
+\begin{DoxyCompactList}\small\item\em Horizontal position of the center of the light on the screen. \end{DoxyCompactList}\item 
+float \hyperlink{classlighting_1_1CircleLightSource_ac05186b92c9bdfcef8a27cc89f8c9b52}{y}
+\begin{DoxyCompactList}\small\item\em Vertical position of the center of the light on the screen. \end{DoxyCompactList}\item 
+float \hyperlink{classlighting_1_1CircleLightSource_a4da9b32f524563c2faeba5ea81dfe6fb}{radius}
+\begin{DoxyCompactList}\small\item\em The radius of the 
+\begin{DoxyCode}
+\textcolor{keyword}{this}
+\end{DoxyCode}
+ \hyperlink{classlighting_1_1LightBlocker}{Light\+Blocker}. \end{DoxyCompactList}\item 
+float \hyperlink{classlighting_1_1CircleLightSource_aa008d846fd893f0ff40e5994af4d487e}{heldX}
+\begin{DoxyCompactList}\small\item\em Temporarily stores position of the \hyperlink{classlighting_1_1CircleLightSource}{Circle\+Light\+Source} until \hyperlink{classlighting_1_1CircleLightSource_afc39570a33c19b17fb8153be592b01e9}{transfer\+Held\+Vars()} is called, where the values are assigned to \hyperlink{classlighting_1_1CircleLightSource_afd27de5d967e2a308dadeff29d3c2883}{x} and \hyperlink{classlighting_1_1CircleLightSource_ac05186b92c9bdfcef8a27cc89f8c9b52}{y}. \end{DoxyCompactList}\item 
+float {\bfseries heldY}\hypertarget{classlighting_1_1CircleLightSource_a9aff8b920ad87fa895b1dd7c379bc99b}{}\label{classlighting_1_1CircleLightSource_a9aff8b920ad87fa895b1dd7c379bc99b}
+
+\end{DoxyCompactItemize}
+\subsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const int \hyperlink{classlighting_1_1CircleLightSource_a92467001dc94731494055acc7465fe82}{S\+H\+A\+D\+E\+\_\+\+M\+A\+P\+\_\+\+F\+L\+A\+GS} = A\+L\+L\+E\+G\+R\+O\+\_\+\+N\+O\+\_\+\+P\+R\+E\+S\+E\+R\+V\+E\+\_\+\+T\+E\+X\+T\+U\+RE $\vert$ A\+L\+L\+E\+G\+R\+O\+\_\+\+M\+I\+N\+\_\+\+L\+I\+N\+E\+AR $\vert$ A\+L\+L\+E\+G\+R\+O\+\_\+\+M\+A\+G\+\_\+\+L\+I\+N\+E\+AR
+\begin{DoxyCompactList}\small\item\em The allegro bitmap flags for creating the \hyperlink{classlighting_1_1CircleLightSource_a382414c9318853e93c85bc64bcd19f4e}{shade\+Map}. \end{DoxyCompactList}\item 
+static const int \hyperlink{classlighting_1_1CircleLightSource_a87ecfd274f02278cefe416a8c48133e8}{B\+O\+U\+N\+D\+\_\+\+P\+O\+I\+N\+T\+S\+\_\+\+S\+I\+ZE} = 8
+\begin{DoxyCompactList}\small\item\em The amount of preset \hyperlink{classlighting_1_1CircleShadePoint}{Circle\+Shade\+Point}s that will be added to \hyperlink{classlighting_1_1CircleLightSource_acdfea64be9d142f669338c5e206e753e}{shade\+Points}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+A child of \hyperlink{classlighting_1_1LightSource}{Light\+Source} represents a full circle of light that would be produced by an oil lamp or a light bulb. 
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classlighting_1_1LightSource}{Light\+Source}
+
+
+\end{DoxySeeAlso}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{lighting\+::\+Circle\+Light\+Source@{lighting\+::\+Circle\+Light\+Source}!Circle\+Light\+Source@{Circle\+Light\+Source}}
+\index{Circle\+Light\+Source@{Circle\+Light\+Source}!lighting\+::\+Circle\+Light\+Source@{lighting\+::\+Circle\+Light\+Source}}
+\subsubsection[{\texorpdfstring{Circle\+Light\+Source(\+Light\+Layer $\ast$owner\+Light\+Layer, float radius, uint8\+\_\+t r=\+U\+I\+N\+T8\+\_\+\+M\+A\+X, uint8\+\_\+t g=\+U\+I\+N\+T8\+\_\+\+M\+A\+X, uint8\+\_\+t b=\+U\+I\+N\+T8\+\_\+\+M\+A\+X)}{CircleLightSource(LightLayer *ownerLightLayer, float radius, uint8_t r=UINT8_MAX, uint8_t g=UINT8_MAX, uint8_t b=UINT8_MAX)}}]{\setlength{\rightskip}{0pt plus 5cm}lighting\+::\+Circle\+Light\+Source\+::\+Circle\+Light\+Source (
+\begin{DoxyParamCaption}
+\item[{{\bf Light\+Layer} $\ast$}]{owner\+Light\+Layer, }
+\item[{float}]{radius, }
+\item[{uint8\+\_\+t}]{r = {\ttfamily UINT8\+\_\+MAX}, }
+\item[{uint8\+\_\+t}]{g = {\ttfamily UINT8\+\_\+MAX}, }
+\item[{uint8\+\_\+t}]{b = {\ttfamily UINT8\+\_\+MAX}}
+\end{DoxyParamCaption}
+)}\hypertarget{classlighting_1_1CircleLightSource_ade3ca945a040132851a26bef3c22fe6e}{}\label{classlighting_1_1CircleLightSource_ade3ca945a040132851a26bef3c22fe6e}
+
+
+Initializes a new instance of the \hyperlink{classlighting_1_1CircleLightSource}{Circle\+Light\+Source} class. Automatically adds itself to the {\itshape owner\+Light\+Layer} . 
+
+
+\begin{DoxyParams}{Parameters}
+{\em owner\+Light\+Layer} & The \hyperlink{classlighting_1_1LightLayer}{Light\+Layer} 
+\begin{DoxyCode}
+\textcolor{keyword}{this}
+\end{DoxyCode}
+ should be added to.\\
+\hline
+{\em radius} & The radius of the light circle. Determines the width of \hyperlink{classlighting_1_1CircleLightSource_a382414c9318853e93c85bc64bcd19f4e}{shade\+Map}.\\
+\hline
+{\em r} & The red value of \hyperlink{classlighting_1_1CircleLightSource_a39d1b9f5bfb54facf6a7e36ed0ffda82}{light\+Color}(0 to 255).\\
+\hline
+{\em g} & The green value of \hyperlink{classlighting_1_1CircleLightSource_a39d1b9f5bfb54facf6a7e36ed0ffda82}{light\+Color} (0 to 255).\\
+\hline
+{\em b} & The blue value of \hyperlink{classlighting_1_1CircleLightSource_a39d1b9f5bfb54facf6a7e36ed0ffda82}{light\+Color} (0 to 255).\\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\index{lighting\+::\+Circle\+Light\+Source@{lighting\+::\+Circle\+Light\+Source}!bring\+Equal\+Bound\+To\+In\+Bound@{bring\+Equal\+Bound\+To\+In\+Bound}}
+\index{bring\+Equal\+Bound\+To\+In\+Bound@{bring\+Equal\+Bound\+To\+In\+Bound}!lighting\+::\+Circle\+Light\+Source@{lighting\+::\+Circle\+Light\+Source}}
+\subsubsection[{\texorpdfstring{bring\+Equal\+Bound\+To\+In\+Bound(float \&num)}{bringEqualBoundToInBound(float &num)}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void lighting\+::\+Circle\+Light\+Source\+::bring\+Equal\+Bound\+To\+In\+Bound (
+\begin{DoxyParamCaption}
+\item[{float \&}]{num}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}\hypertarget{classlighting_1_1CircleLightSource_af8866a49ad68c131c15c67ae622a1ecf}{}\label{classlighting_1_1CircleLightSource_af8866a49ad68c131c15c67ae622a1ecf}
+
+
+If num is on the radius, it is brought into the radius to avoid collisions with \hyperlink{classlighting_1_1ShadePoint}{Shade\+Point}s. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em num} & The value to check if on bound. Output parameter\\
+\hline
+\end{DoxyParams}
+\index{lighting\+::\+Circle\+Light\+Source@{lighting\+::\+Circle\+Light\+Source}!Check\+Point\+Front@{Check\+Point\+Front}}
+\index{Check\+Point\+Front@{Check\+Point\+Front}!lighting\+::\+Circle\+Light\+Source@{lighting\+::\+Circle\+Light\+Source}}
+\subsubsection[{\texorpdfstring{Check\+Point\+Front(\+Circle\+Shade\+Point $\ast$alpha\+Point, Circle\+Shade\+Point $\ast$check\+Point)}{CheckPointFront(CircleShadePoint *alphaPoint, CircleShadePoint *checkPoint)}}]{\setlength{\rightskip}{0pt plus 5cm}bool lighting\+::\+Circle\+Light\+Source\+::\+Check\+Point\+Front (
+\begin{DoxyParamCaption}
+\item[{{\bf Circle\+Shade\+Point} $\ast$}]{alpha\+Point, }
+\item[{{\bf Circle\+Shade\+Point} $\ast$}]{check\+Point}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}\hypertarget{classlighting_1_1CircleLightSource_a2e8494e55de7dfcff7b4a5f1c60ad0d1}{}\label{classlighting_1_1CircleLightSource_a2e8494e55de7dfcff7b4a5f1c60ad0d1}
+
+
+Calculates if the {\itshape check\+Point}  is in front of {\itshape alpha\+Point} . 
+
+
+\begin{DoxyParams}{Parameters}
+{\em alpha\+Point} & The \hyperlink{classlighting_1_1CircleShadePoint}{Circle\+Shade\+Point} representing one of the endpoints of the line that will be used to check {\itshape check\+Point} .\\
+\hline
+{\em check\+Point} & The \hyperlink{classlighting_1_1CircleShadePoint}{Circle\+Shade\+Point} to check if in front of line made by {\itshape alpha\+Point} .\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyCode}
+\textcolor{keyword}{true}
+\end{DoxyCode}
+ if {\itshape check\+Point}  is closer to the center of the \hyperlink{classlighting_1_1LightSource}{Light\+Source} than the line made by {\itshape alpha\+Point} 
+\end{DoxyReturn}
+\index{lighting\+::\+Circle\+Light\+Source@{lighting\+::\+Circle\+Light\+Source}!counting\+Sort\+Shade\+Points@{counting\+Sort\+Shade\+Points}}
+\index{counting\+Sort\+Shade\+Points@{counting\+Sort\+Shade\+Points}!lighting\+::\+Circle\+Light\+Source@{lighting\+::\+Circle\+Light\+Source}}
+\subsubsection[{\texorpdfstring{counting\+Sort\+Shade\+Points(int b\+I)}{countingSortShadePoints(int bI)}}]{\setlength{\rightskip}{0pt plus 5cm}void lighting\+::\+Circle\+Light\+Source\+::counting\+Sort\+Shade\+Points (
+\begin{DoxyParamCaption}
+\item[{int}]{bI}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classlighting_1_1CircleLightSource_ac7cbab4f6a38d8359a2637a875427e75}{}\label{classlighting_1_1CircleLightSource_ac7cbab4f6a38d8359a2637a875427e75}
+
+
+Called by \hyperlink{classlighting_1_1CircleLightSource_a850ea8b5a1480473bd40a82a9687f229}{radix\+Sort\+Shade\+Points} as a helper method for the sorting process 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bI} & The amount of bits to shift by.\\
+\hline
+\end{DoxyParams}
+\index{lighting\+::\+Circle\+Light\+Source@{lighting\+::\+Circle\+Light\+Source}!create\+Bound\+Shade\+Points@{create\+Bound\+Shade\+Points}}
+\index{create\+Bound\+Shade\+Points@{create\+Bound\+Shade\+Points}!lighting\+::\+Circle\+Light\+Source@{lighting\+::\+Circle\+Light\+Source}}
+\subsubsection[{\texorpdfstring{create\+Bound\+Shade\+Points()}{createBoundShadePoints()}}]{\setlength{\rightskip}{0pt plus 5cm}void lighting\+::\+Circle\+Light\+Source\+::create\+Bound\+Shade\+Points (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\hypertarget{classlighting_1_1CircleLightSource_a357178ac79b3cadaead529e5e37e2cce}{}\label{classlighting_1_1CircleLightSource_a357178ac79b3cadaead529e5e37e2cce}
+
+
+Creates and pushes \hyperlink{classlighting_1_1CircleShadePoint}{Circle\+Shade\+Point}s representing the edges of the light to \hyperlink{classlighting_1_1CircleLightSource_acdfea64be9d142f669338c5e206e753e}{shade\+Points}. 
+
+\index{lighting\+::\+Circle\+Light\+Source@{lighting\+::\+Circle\+Light\+Source}!create\+Shade\+Points@{create\+Shade\+Points}}
+\index{create\+Shade\+Points@{create\+Shade\+Points}!lighting\+::\+Circle\+Light\+Source@{lighting\+::\+Circle\+Light\+Source}}
+\subsubsection[{\texorpdfstring{create\+Shade\+Points() override}{createShadePoints() override}}]{\setlength{\rightskip}{0pt plus 5cm}void lighting\+::\+Circle\+Light\+Source\+::create\+Shade\+Points (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}\hypertarget{classlighting_1_1CircleLightSource_aaa80bb9a9a27f3c74bf86cfd547d5f36}{}\label{classlighting_1_1CircleLightSource_aaa80bb9a9a27f3c74bf86cfd547d5f36}
+
+
+Converts all elements of {\itshape light\+Blockers}  into two \hyperlink{classlighting_1_1CircleShadePoint}{Circle\+Shade\+Point}s which are stored in the \hyperlink{classlighting_1_1CircleLightSource_acdfea64be9d142f669338c5e206e753e}{shade\+Points} vector and then sorted using \+::radix\+Sort\+Shade\+Points. Function also handles edge cases. 
+
+
+
+Implements \hyperlink{classlighting_1_1LightSource_a5bf73ee0586ba7620b917e57148d67be}{lighting\+::\+Light\+Source}.
+
+\index{lighting\+::\+Circle\+Light\+Source@{lighting\+::\+Circle\+Light\+Source}!Crosses\+Zero@{Crosses\+Zero}}
+\index{Crosses\+Zero@{Crosses\+Zero}!lighting\+::\+Circle\+Light\+Source@{lighting\+::\+Circle\+Light\+Source}}
+\subsubsection[{\texorpdfstring{Crosses\+Zero(\+Circle\+Shade\+Point $\ast$test\+Point)}{CrossesZero(CircleShadePoint *testPoint)}}]{\setlength{\rightskip}{0pt plus 5cm}bool lighting\+::\+Circle\+Light\+Source\+::\+Crosses\+Zero (
+\begin{DoxyParamCaption}
+\item[{{\bf Circle\+Shade\+Point} $\ast$}]{test\+Point}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}\hypertarget{classlighting_1_1CircleLightSource_a93208152ff678f3aa3b985db81a5d450}{}\label{classlighting_1_1CircleLightSource_a93208152ff678f3aa3b985db81a5d450}
+
+
+If the line created by {\itshape test\+Point}  and its connected point cross angle = 0, return 
+\begin{DoxyCode}
+\textcolor{keyword}{true}
+\end{DoxyCode}
+, 
+\begin{DoxyCode}
+\textcolor{keyword}{false}
+\end{DoxyCode}
+ otherwise. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em test\+Point} & The \hyperlink{classlighting_1_1CircleShadePoint}{Circle\+Shade\+Point} which represents one of the endpoints of the line to test.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+If the line passes through angle = 0.
+\end{DoxyReturn}
+\index{lighting\+::\+Circle\+Light\+Source@{lighting\+::\+Circle\+Light\+Source}!draw\+Local@{draw\+Local}}
+\index{draw\+Local@{draw\+Local}!lighting\+::\+Circle\+Light\+Source@{lighting\+::\+Circle\+Light\+Source}}
+\subsubsection[{\texorpdfstring{draw\+Local() override}{drawLocal() override}}]{\setlength{\rightskip}{0pt plus 5cm}void lighting\+::\+Circle\+Light\+Source\+::draw\+Local (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}\hypertarget{classlighting_1_1CircleLightSource_a6ab6f8f8eaf003e52ac2c86d88496c77}{}\label{classlighting_1_1CircleLightSource_a6ab6f8f8eaf003e52ac2c86d88496c77}
+
+
+Uses the Light\+Source\+::draw\+Point vector, which was set by \hyperlink{classlighting_1_1CircleLightSource_aea43f0005a2ffbc50e8898e2e967693b}{map\+Shade\+Points}, to draw onto the \hyperlink{classlighting_1_1CircleLightSource_a382414c9318853e93c85bc64bcd19f4e}{shade\+Map}. 
+
+
+
+Implements \hyperlink{classlighting_1_1LightSource_ab15af06660d5cd4658d61ac2075aedea}{lighting\+::\+Light\+Source}.
+
+
+
+Reimplemented in \hyperlink{classlighting_1_1DirectionalLightSource_a52f9f09a4088a44bf3f8b08df435a7aa}{lighting\+::\+Directional\+Light\+Source}.
+
+\index{lighting\+::\+Circle\+Light\+Source@{lighting\+::\+Circle\+Light\+Source}!draw\+To\+Light\+Map@{draw\+To\+Light\+Map}}
+\index{draw\+To\+Light\+Map@{draw\+To\+Light\+Map}!lighting\+::\+Circle\+Light\+Source@{lighting\+::\+Circle\+Light\+Source}}
+\subsubsection[{\texorpdfstring{draw\+To\+Light\+Map() override}{drawToLightMap() override}}]{\setlength{\rightskip}{0pt plus 5cm}void lighting\+::\+Circle\+Light\+Source\+::draw\+To\+Light\+Map (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}\hypertarget{classlighting_1_1CircleLightSource_ab0f9107c09ae9c6966bab14538505894}{}\label{classlighting_1_1CircleLightSource_ab0f9107c09ae9c6966bab14538505894}
+
+
+Draws \hyperlink{classlighting_1_1CircleLightSource_a382414c9318853e93c85bc64bcd19f4e}{shade\+Map} to the \hyperlink{}{. Assumes light\+Map is already set as the target bitmap. } 
+
+
+
+Implements \hyperlink{classlighting_1_1LightSource_a4e292cccdfb5784e97a1924ca00533b9}{lighting\+::\+Light\+Source}.
+
+
+
+Reimplemented in \hyperlink{classlighting_1_1DirectionalLightSource_ab41be6321df178f861cd71462ab47553}{lighting\+::\+Directional\+Light\+Source}.
+
+\index{lighting\+::\+Circle\+Light\+Source@{lighting\+::\+Circle\+Light\+Source}!get\+Alpha\+Line\+At\+Rad@{get\+Alpha\+Line\+At\+Rad}}
+\index{get\+Alpha\+Line\+At\+Rad@{get\+Alpha\+Line\+At\+Rad}!lighting\+::\+Circle\+Light\+Source@{lighting\+::\+Circle\+Light\+Source}}
+\subsubsection[{\texorpdfstring{get\+Alpha\+Line\+At\+Rad(\+Circle\+Shade\+Point $\ast$\&alpha\+Point, int \&i, float \&prev\+X, float \&prev\+Y)}{getAlphaLineAtRad(CircleShadePoint *&alphaPoint, int &i, float &prevX, float &prevY)}}]{\setlength{\rightskip}{0pt plus 5cm}bool lighting\+::\+Circle\+Light\+Source\+::get\+Alpha\+Line\+At\+Rad (
+\begin{DoxyParamCaption}
+\item[{{\bf Circle\+Shade\+Point} $\ast$\&}]{alpha\+Point, }
+\item[{int \&}]{i, }
+\item[{float \&}]{prevX, }
+\item[{float \&}]{prevY}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classlighting_1_1CircleLightSource_a5ceaeef808c64338ffc91b725f53faf1}{}\label{classlighting_1_1CircleLightSource_a5ceaeef808c64338ffc91b725f53faf1}
+
+
+Will iterate through all of the \hyperlink{classlighting_1_1ShadePoint}{Shade\+Point}s with the same radian as the element in \hyperlink{classlighting_1_1CircleLightSource_acdfea64be9d142f669338c5e206e753e}{shade\+Points} at index {\itshape i}  and set the {\itshape alpha\+Point} , {\itshape prevX} , and lastY to the point that has the minimum distance from the origin, and the highest angle between it and its connecting point. If a valid point is not found, return false and leave alpha\+Point, prevX, prevY as they were. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em alpha\+Point} & A \hyperlink{classlighting_1_1ShadePoint}{Shade\+Point} representing an endpoint of the line that was last closest to the origin. Output parameter.\\
+\hline
+{\em i} & The index of the \hyperlink{classlighting_1_1ShadePoint}{Shade\+Point} we want to check the radians of in the \hyperlink{classlighting_1_1CircleLightSource_acdfea64be9d142f669338c5e206e753e}{attribute. Output parameter.} 
+\begin{DoxyParams}{Parameters}
+{\em prevX} & The previous collision position with the line created by {\itshape alpha\+Point} . Output parameter.\\
+\hline
+{\em prevY} & The previous collision position with the line created by {\itshape alpha\+Point} . Output parameter.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyCode}
+\textcolor{keyword}{true}
+\end{DoxyCode}
+ if a valid point was found, 
+\begin{DoxyCode}
+\textcolor{keyword}{false}
+\end{DoxyCode}
+ otherwise.
+\end{DoxyReturn}
+\\
+\hline
+\end{DoxyParams}
+\index{lighting\+::\+Circle\+Light\+Source@{lighting\+::\+Circle\+Light\+Source}!Get\+Rad\+Dif@{Get\+Rad\+Dif}}
+\index{Get\+Rad\+Dif@{Get\+Rad\+Dif}!lighting\+::\+Circle\+Light\+Source@{lighting\+::\+Circle\+Light\+Source}}
+\subsubsection[{\texorpdfstring{Get\+Rad\+Dif(\+Circle\+Shade\+Point $\ast$ep1, Circle\+Shade\+Point $\ast$ep2, float ori\+Rads)}{GetRadDif(CircleShadePoint *ep1, CircleShadePoint *ep2, float oriRads)}}]{\setlength{\rightskip}{0pt plus 5cm}float lighting\+::\+Circle\+Light\+Source\+::\+Get\+Rad\+Dif (
+\begin{DoxyParamCaption}
+\item[{{\bf Circle\+Shade\+Point} $\ast$}]{ep1, }
+\item[{{\bf Circle\+Shade\+Point} $\ast$}]{ep2, }
+\item[{float}]{ori\+Rads}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}\hypertarget{classlighting_1_1CircleLightSource_a8d273bde1c1330b8a38f7f6ad99914a5}{}\label{classlighting_1_1CircleLightSource_a8d273bde1c1330b8a38f7f6ad99914a5}
+
+
+Finds the angle of {\itshape ep2}  from origin {\itshape ep1}  relative to {\itshape ori\+Rads} . 
+
+$<$par$>$ If {\ttfamily 0}was returned, that means the angle between {\itshape ep2}  and {\itshape ep1}  is in line with the {\itshape ori\+Rads} . $<$/par$>$ 
+\begin{DoxyParams}{Parameters}
+{\em ep1} & The \hyperlink{classlighting_1_1CircleShadePoint}{Circle\+Shade\+Point} representing the first endpoint.\\
+\hline
+{\em ep2} & The \hyperlink{classlighting_1_1CircleShadePoint}{Circle\+Shade\+Point} representing the second endpoint (this is usually just the \hyperlink{classlighting_1_1ShadePoint_a0840495febcd385a90e89e003aa15972}{Shade\+Point\+::connected\+Point} of {\itshape ep1} .\\
+\hline
+{\em ori\+Rads} & The radian the line relative to the \hyperlink{classlighting_1_1CircleLightSource}{Circle\+Light\+Source} center (this is usualy just the Shade\+Point\+::rads of {\itshape ep1} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The angle of {\itshape ep2}  from origin {\itshape ep1}  relative to {\itshape ori\+Rads} .
+\end{DoxyReturn}
+\index{lighting\+::\+Circle\+Light\+Source@{lighting\+::\+Circle\+Light\+Source}!handle\+Bound\+Collisions@{handle\+Bound\+Collisions}}
+\index{handle\+Bound\+Collisions@{handle\+Bound\+Collisions}!lighting\+::\+Circle\+Light\+Source@{lighting\+::\+Circle\+Light\+Source}}
+\subsubsection[{\texorpdfstring{handle\+Bound\+Collisions(float \&x1, float \&y1, float \&x2, float \&y2)}{handleBoundCollisions(float &x1, float &y1, float &x2, float &y2)}}]{\setlength{\rightskip}{0pt plus 5cm}bool lighting\+::\+Circle\+Light\+Source\+::handle\+Bound\+Collisions (
+\begin{DoxyParamCaption}
+\item[{float \&}]{x1, }
+\item[{float \&}]{y1, }
+\item[{float \&}]{x2, }
+\item[{float \&}]{y2}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\hypertarget{classlighting_1_1CircleLightSource_a7e0946ab60f06af4f77b9b65e73ab3f3}{}\label{classlighting_1_1CircleLightSource_a7e0946ab60f06af4f77b9b65e73ab3f3}
+
+
+Checks if the lines created by these coordinates intersect with the boundaries. If they do, find the collision point and set the coordinates to that. Calls \+::move\+Into\+Radius on all coordinates. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x1} & The horizontal position of the first endpoint. Used as out parameter.\\
+\hline
+{\em y1} & The vertical position of the first endpoint. Used as out parameter.\\
+\hline
+{\em x2} & The horizontal position of the second endpoint. Used as out parameter.\\
+\hline
+{\em y2} & The vertical position of the second endpoint. Used as out parameter\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Whether the line is within the bounds of the light.
+\end{DoxyReturn}
+\index{lighting\+::\+Circle\+Light\+Source@{lighting\+::\+Circle\+Light\+Source}!handle\+First\+Shade\+Point@{handle\+First\+Shade\+Point}}
+\index{handle\+First\+Shade\+Point@{handle\+First\+Shade\+Point}!lighting\+::\+Circle\+Light\+Source@{lighting\+::\+Circle\+Light\+Source}}
+\subsubsection[{\texorpdfstring{handle\+First\+Shade\+Point(\+Circle\+Shade\+Point $\ast$\&alpha\+Point, float \&first\+X, float \&first\+Y, int \&i, bool \&rad\+At\+Zero)}{handleFirstShadePoint(CircleShadePoint *&alphaPoint, float &firstX, float &firstY, int &i, bool &radAtZero)}}]{\setlength{\rightskip}{0pt plus 5cm}void lighting\+::\+Circle\+Light\+Source\+::handle\+First\+Shade\+Point (
+\begin{DoxyParamCaption}
+\item[{{\bf Circle\+Shade\+Point} $\ast$\&}]{alpha\+Point, }
+\item[{float \&}]{firstX, }
+\item[{float \&}]{firstY, }
+\item[{int \&}]{i, }
+\item[{bool \&}]{rad\+At\+Zero}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\hypertarget{classlighting_1_1CircleLightSource_a228a02c6c4064d349d0471d86d4c177d}{}\label{classlighting_1_1CircleLightSource_a228a02c6c4064d349d0471d86d4c177d}
+
+
+Handles the first \hyperlink{classlighting_1_1CircleShadePoint}{Circle\+Shade\+Point} from \hyperlink{classlighting_1_1CircleLightSource_acdfea64be9d142f669338c5e206e753e}{shade\+Points} appropiatly. Called at beginning of \+::map\+Shade\+Points function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em alpha\+Point} & One of the endpoints of the line closest to origin. Completely an output parameter.\\
+\hline
+{\em firstX} & The first x of the collision with the line created by {\itshape alpha\+Point}  at angle=
+\begin{DoxyCode}
+0
+\end{DoxyCode}
+\\
+\hline
+{\em firstY} & The first y of the collision with the line created by {\itshape alpha\+Point}  at angle=
+\begin{DoxyCode}
+0
+\end{DoxyCode}
+.\\
+\hline
+{\em i} & Used as an output parameter for the number of elements of \hyperlink{classlighting_1_1CircleLightSource_acdfea64be9d142f669338c5e206e753e}{shade\+Points} that were processed finding the first valid line.\\
+\hline
+{\em rad\+At\+Zero} & 
+\begin{DoxyCode}
+\textcolor{keyword}{true}
+\end{DoxyCode}
+ when a \hyperlink{classlighting_1_1CircleShadePoint}{Circle\+Shade\+Point} was found exactly at angle=
+\begin{DoxyCode}
+0
+\end{DoxyCode}
+.\\
+\hline
+\end{DoxyParams}
+\index{lighting\+::\+Circle\+Light\+Source@{lighting\+::\+Circle\+Light\+Source}!handle\+Last\+Shade\+Point@{handle\+Last\+Shade\+Point}}
+\index{handle\+Last\+Shade\+Point@{handle\+Last\+Shade\+Point}!lighting\+::\+Circle\+Light\+Source@{lighting\+::\+Circle\+Light\+Source}}
+\subsubsection[{\texorpdfstring{handle\+Last\+Shade\+Point(\+Circle\+Shade\+Point $\ast$alpha\+Point, bool rad\+At\+Zero, float prev\+X, float prev\+Y, float first\+X, float first\+Y)}{handleLastShadePoint(CircleShadePoint *alphaPoint, bool radAtZero, float prevX, float prevY, float firstX, float firstY)}}]{\setlength{\rightskip}{0pt plus 5cm}void lighting\+::\+Circle\+Light\+Source\+::handle\+Last\+Shade\+Point (
+\begin{DoxyParamCaption}
+\item[{{\bf Circle\+Shade\+Point} $\ast$}]{alpha\+Point, }
+\item[{bool}]{rad\+At\+Zero, }
+\item[{float}]{prevX, }
+\item[{float}]{prevY, }
+\item[{float}]{firstX, }
+\item[{float}]{firstY}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\hypertarget{classlighting_1_1CircleLightSource_aa31a12e3693654b21ee7e19acd067cf1}{}\label{classlighting_1_1CircleLightSource_aa31a12e3693654b21ee7e19acd067cf1}
+
+
+Called after the \hyperlink{classlighting_1_1CircleLightSource_acdfea64be9d142f669338c5e206e753e}{shade\+Points} have been entirely iterated over by \+::map\+Shade\+Points. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em alpha\+Point} & The last \hyperlink{classlighting_1_1ShadePoint}{Shade\+Point} that had a line closest to the origin.\\
+\hline
+{\em rad\+At\+Zero} & Whether the first \hyperlink{classlighting_1_1ShadePoint}{Shade\+Point} was a point directly at angle=
+\begin{DoxyCode}
+0
+\end{DoxyCode}
+.\\
+\hline
+{\em prevX} & The previousX value when a collision with alpha\+Point occured.\\
+\hline
+{\em prevY} & The previousY value when a collision with alpha\+Point occured.\\
+\hline
+{\em firstX} & The x value of the first Cirle\+Shade\+Point.\\
+\hline
+{\em firstY} & The y value of the first \hyperlink{classlighting_1_1CircleShadePoint}{Circle\+Shade\+Point}.\\
+\hline
+\end{DoxyParams}
+\index{lighting\+::\+Circle\+Light\+Source@{lighting\+::\+Circle\+Light\+Source}!map\+Shade\+Points@{map\+Shade\+Points}}
+\index{map\+Shade\+Points@{map\+Shade\+Points}!lighting\+::\+Circle\+Light\+Source@{lighting\+::\+Circle\+Light\+Source}}
+\subsubsection[{\texorpdfstring{map\+Shade\+Points()}{mapShadePoints()}}]{\setlength{\rightskip}{0pt plus 5cm}void lighting\+::\+Circle\+Light\+Source\+::map\+Shade\+Points (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\hypertarget{classlighting_1_1CircleLightSource_aea43f0005a2ffbc50e8898e2e967693b}{}\label{classlighting_1_1CircleLightSource_aea43f0005a2ffbc50e8898e2e967693b}
+
+
+Processes all of the elements in \hyperlink{classlighting_1_1CircleLightSource_acdfea64be9d142f669338c5e206e753e}{shade\+Points} and converts them to elements of Light\+Source\+::draw\+Points. The Light\+Source\+::draw\+Points are placed at the end of shadows. 
+
+
+
+Implements \hyperlink{classlighting_1_1LightSource_a5bbde61a54af327d43dc4afee751412c}{lighting\+::\+Light\+Source}.
+
+\index{lighting\+::\+Circle\+Light\+Source@{lighting\+::\+Circle\+Light\+Source}!radix\+Sort\+Shade\+Points@{radix\+Sort\+Shade\+Points}}
+\index{radix\+Sort\+Shade\+Points@{radix\+Sort\+Shade\+Points}!lighting\+::\+Circle\+Light\+Source@{lighting\+::\+Circle\+Light\+Source}}
+\subsubsection[{\texorpdfstring{radix\+Sort\+Shade\+Points()}{radixSortShadePoints()}}]{\setlength{\rightskip}{0pt plus 5cm}void lighting\+::\+Circle\+Light\+Source\+::radix\+Sort\+Shade\+Points (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classlighting_1_1CircleLightSource_a850ea8b5a1480473bd40a82a9687f229}{}\label{classlighting_1_1CircleLightSource_a850ea8b5a1480473bd40a82a9687f229}
+
+
+Uses radix sort to sort the elements of \hyperlink{classlighting_1_1CircleLightSource_acdfea64be9d142f669338c5e206e753e}{shade\+Points}. 
+
+\index{lighting\+::\+Circle\+Light\+Source@{lighting\+::\+Circle\+Light\+Source}!reset\+Points@{reset\+Points}}
+\index{reset\+Points@{reset\+Points}!lighting\+::\+Circle\+Light\+Source@{lighting\+::\+Circle\+Light\+Source}}
+\subsubsection[{\texorpdfstring{reset\+Points(size\+\_\+t light\+Blockers\+Size)}{resetPoints(size_t lightBlockersSize)}}]{\setlength{\rightskip}{0pt plus 5cm}void lighting\+::\+Circle\+Light\+Source\+::reset\+Points (
+\begin{DoxyParamCaption}
+\item[{size\+\_\+t}]{light\+Blockers\+Size}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\hypertarget{classlighting_1_1CircleLightSource_a3bdcfaba7976f0cd3399f89ecd635524}{}\label{classlighting_1_1CircleLightSource_a3bdcfaba7976f0cd3399f89ecd635524}
+
+
+Restores \hyperlink{classlighting_1_1CircleLightSource_acdfea64be9d142f669338c5e206e753e}{shade\+Points} and 
+
+
+\begin{DoxyParams}{Parameters}
+{\em light\+Blockers\+Size} & Size of the list of light\+Blockers passed to be converted to \hyperlink{classlighting_1_1CircleShadePoint}{Circle\+Shade\+Point}s.\\
+\hline
+\end{DoxyParams}
+\index{lighting\+::\+Circle\+Light\+Source@{lighting\+::\+Circle\+Light\+Source}!set\+Light\+Color@{set\+Light\+Color}}
+\index{set\+Light\+Color@{set\+Light\+Color}!lighting\+::\+Circle\+Light\+Source@{lighting\+::\+Circle\+Light\+Source}}
+\subsubsection[{\texorpdfstring{set\+Light\+Color(uint8\+\_\+t r, uint8\+\_\+t g, uint8\+\_\+t b)}{setLightColor(uint8_t r, uint8_t g, uint8_t b)}}]{\setlength{\rightskip}{0pt plus 5cm}void lighting\+::\+Circle\+Light\+Source\+::set\+Light\+Color (
+\begin{DoxyParamCaption}
+\item[{uint8\+\_\+t}]{r, }
+\item[{uint8\+\_\+t}]{g, }
+\item[{uint8\+\_\+t}]{b}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classlighting_1_1CircleLightSource_a8ca70332ba3b1926e6c65a56cb30416c}{}\label{classlighting_1_1CircleLightSource_a8ca70332ba3b1926e6c65a56cb30416c}
+
+
+Sets the color of the light. Modifier for \hyperlink{classlighting_1_1CircleLightSource_a39d1b9f5bfb54facf6a7e36ed0ffda82}{light\+Color}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & The red value of the color (0 to 255).\\
+\hline
+{\em g} & The green value of the color (0 to 255).\\
+\hline
+{\em b} & The blue value of the color (0 to 255).\\
+\hline
+\end{DoxyParams}
+\index{lighting\+::\+Circle\+Light\+Source@{lighting\+::\+Circle\+Light\+Source}!set\+XY@{set\+XY}}
+\index{set\+XY@{set\+XY}!lighting\+::\+Circle\+Light\+Source@{lighting\+::\+Circle\+Light\+Source}}
+\subsubsection[{\texorpdfstring{set\+X\+Y(float x, float y)}{setXY(float x, float y)}}]{\setlength{\rightskip}{0pt plus 5cm}void lighting\+::\+Circle\+Light\+Source\+::set\+XY (
+\begin{DoxyParamCaption}
+\item[{float}]{x, }
+\item[{float}]{y}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classlighting_1_1CircleLightSource_ae035f07aeb1e540c6066a4ff82bf4b54}{}\label{classlighting_1_1CircleLightSource_ae035f07aeb1e540c6066a4ff82bf4b54}
+
+
+Sets the horizontal and vertical position of the center of the \hyperlink{classlighting_1_1CircleLightSource}{Circle\+Light\+Source} on the screen. Values are stored in \hyperlink{classlighting_1_1CircleLightSource_aa008d846fd893f0ff40e5994af4d487e}{heldX} and heldY until \hyperlink{classlighting_1_1CircleLightSource_afc39570a33c19b17fb8153be592b01e9}{transfer\+Held\+Vars()} is called. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The horizontal position.\\
+\hline
+{\em y} & The vertical position.\\
+\hline
+\end{DoxyParams}
+\index{lighting\+::\+Circle\+Light\+Source@{lighting\+::\+Circle\+Light\+Source}!shadow\+Cast@{shadow\+Cast}}
+\index{shadow\+Cast@{shadow\+Cast}!lighting\+::\+Circle\+Light\+Source@{lighting\+::\+Circle\+Light\+Source}}
+\subsubsection[{\texorpdfstring{shadow\+Cast(float rads, float \&c\+X, float \&c\+Y, Circle\+Shade\+Point $\ast$exception\+Point=nullptr)}{shadowCast(float rads, float &cX, float &cY, CircleShadePoint *exceptionPoint=nullptr)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Circle\+Shade\+Point} $\ast$ lighting\+::\+Circle\+Light\+Source\+::shadow\+Cast (
+\begin{DoxyParamCaption}
+\item[{float}]{rads, }
+\item[{float \&}]{cX, }
+\item[{float \&}]{cY, }
+\item[{{\bf Circle\+Shade\+Point} $\ast$}]{exception\+Point = {\ttfamily nullptr}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\hypertarget{classlighting_1_1CircleLightSource_a57f45ad27f3863aa6834a13ee71c88c5}{}\label{classlighting_1_1CircleLightSource_a57f45ad27f3863aa6834a13ee71c88c5}
+
+
+When a line ends and there is no clear point to go to, this method is called to iterate through all of the lines below the radian and find which one is closest to the origin and return it. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rads} & The radian to check.\\
+\hline
+{\em cX} & Output parameter of the horizontal position of a collision with the \hyperlink{classlighting_1_1ShadePoint}{Shade\+Point} being returned.\\
+\hline
+{\em cY} & $>$Output parameter of the vertical position of a collision with the \hyperlink{classlighting_1_1ShadePoint}{Shade\+Point} being returned.\\
+\hline
+{\em exception\+Point} & Set a point that cannot be a valid return, will be ignored.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \hyperlink{classlighting_1_1CircleShadePoint}{Circle\+Shade\+Point} representing an endpoint for a line closest to the origin at angle {\itshape rads} 
+\end{DoxyReturn}
+\index{lighting\+::\+Circle\+Light\+Source@{lighting\+::\+Circle\+Light\+Source}!transfer\+Held\+Vars@{transfer\+Held\+Vars}}
+\index{transfer\+Held\+Vars@{transfer\+Held\+Vars}!lighting\+::\+Circle\+Light\+Source@{lighting\+::\+Circle\+Light\+Source}}
+\subsubsection[{\texorpdfstring{transfer\+Held\+Vars() override}{transferHeldVars() override}}]{\setlength{\rightskip}{0pt plus 5cm}void lighting\+::\+Circle\+Light\+Source\+::transfer\+Held\+Vars (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}\hypertarget{classlighting_1_1CircleLightSource_afc39570a33c19b17fb8153be592b01e9}{}\label{classlighting_1_1CircleLightSource_afc39570a33c19b17fb8153be592b01e9}
+
+
+Sets the ,  attributes to the corresponding \char`\"{}held\char`\"{} attributes. Called from Light\+Layer\+::dispatch(). 
+
+
+
+Implements \hyperlink{classlighting_1_1LightSource_ae4be8445f78d1314e112aed9c25933fc}{lighting\+::\+Light\+Source}.
+
+\index{lighting\+::\+Circle\+Light\+Source@{lighting\+::\+Circle\+Light\+Source}!update\+Cast\+Points@{update\+Cast\+Points}}
+\index{update\+Cast\+Points@{update\+Cast\+Points}!lighting\+::\+Circle\+Light\+Source@{lighting\+::\+Circle\+Light\+Source}}
+\subsubsection[{\texorpdfstring{update\+Cast\+Points(\+Circle\+Shade\+Point $\ast$update\+Point)}{updateCastPoints(CircleShadePoint *updatePoint)}}]{\setlength{\rightskip}{0pt plus 5cm}void lighting\+::\+Circle\+Light\+Source\+::update\+Cast\+Points (
+\begin{DoxyParamCaption}
+\item[{{\bf Circle\+Shade\+Point} $\ast$}]{update\+Point}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\hypertarget{classlighting_1_1CircleLightSource_a9a8312eb2e60e2a0c8b472d226b0600f}{}\label{classlighting_1_1CircleLightSource_a9a8312eb2e60e2a0c8b472d226b0600f}
+
+
+When the end of the line of an alpha\+Point is reached, this function will check if any \hyperlink{classlighting_1_1ShadePoint}{Shade\+Point}s at the same radian as the endpoint are valid. If any are valid, it will return the line that will be closest to the origin using the output parameters. 
+
+$<$par$>$ Will add the {\itshape update\+Point}  to \hyperlink{classlighting_1_1CircleLightSource_ab25c86954fad0715d502d1f60649ede4}{cast\+Points} if the \hyperlink{classlighting_1_1ShadePoint_a0840495febcd385a90e89e003aa15972}{Shade\+Point\+::connected\+Point} has a greater angle. Will remove {\itshape update\+Point} \textquotesingle{}s \hyperlink{classlighting_1_1ShadePoint_a0840495febcd385a90e89e003aa15972}{Shade\+Point\+::connected\+Point} from cast\+P\+Oints if {\itshape update\+Point}  has a radian greater than the \hyperlink{classlighting_1_1ShadePoint_a0840495febcd385a90e89e003aa15972}{Shade\+Point\+::connected\+Point}. Will account for lines crossing radian zero. $<$/par$>$ 
+\begin{DoxyParams}{Parameters}
+{\em update\+Point} & The \hyperlink{classlighting_1_1CircleShadePoint}{Circle\+Shade\+Point} to check if adding or removing is needed.\\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\index{lighting\+::\+Circle\+Light\+Source@{lighting\+::\+Circle\+Light\+Source}!B\+O\+U\+N\+D\+\_\+\+P\+O\+I\+N\+T\+S\+\_\+\+S\+I\+ZE@{B\+O\+U\+N\+D\+\_\+\+P\+O\+I\+N\+T\+S\+\_\+\+S\+I\+ZE}}
+\index{B\+O\+U\+N\+D\+\_\+\+P\+O\+I\+N\+T\+S\+\_\+\+S\+I\+ZE@{B\+O\+U\+N\+D\+\_\+\+P\+O\+I\+N\+T\+S\+\_\+\+S\+I\+ZE}!lighting\+::\+Circle\+Light\+Source@{lighting\+::\+Circle\+Light\+Source}}
+\subsubsection[{\texorpdfstring{B\+O\+U\+N\+D\+\_\+\+P\+O\+I\+N\+T\+S\+\_\+\+S\+I\+ZE}{BOUND_POINTS_SIZE}}]{\setlength{\rightskip}{0pt plus 5cm}const int lighting\+::\+Circle\+Light\+Source\+::\+B\+O\+U\+N\+D\+\_\+\+P\+O\+I\+N\+T\+S\+\_\+\+S\+I\+ZE = 8\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}\hypertarget{classlighting_1_1CircleLightSource_a87ecfd274f02278cefe416a8c48133e8}{}\label{classlighting_1_1CircleLightSource_a87ecfd274f02278cefe416a8c48133e8}
+
+
+The amount of preset \hyperlink{classlighting_1_1CircleShadePoint}{Circle\+Shade\+Point}s that will be added to \hyperlink{classlighting_1_1CircleLightSource_acdfea64be9d142f669338c5e206e753e}{shade\+Points}. 
+
+\index{lighting\+::\+Circle\+Light\+Source@{lighting\+::\+Circle\+Light\+Source}!cast\+Points@{cast\+Points}}
+\index{cast\+Points@{cast\+Points}!lighting\+::\+Circle\+Light\+Source@{lighting\+::\+Circle\+Light\+Source}}
+\subsubsection[{\texorpdfstring{cast\+Points}{castPoints}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::unordered\+\_\+set$<${\bf Circle\+Shade\+Point}$\ast$$>$ lighting\+::\+Circle\+Light\+Source\+::cast\+Points\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classlighting_1_1CircleLightSource_ab25c86954fad0715d502d1f60649ede4}{}\label{classlighting_1_1CircleLightSource_ab25c86954fad0715d502d1f60649ede4}
+
+
+Keeps track of all of the \hyperlink{classlighting_1_1CircleShadePoint}{Circle\+Shade\+Point}s that have a line that could be shadow casted to. 
+
+$<$par$>$ Constantly added and removed from by \+::update\+Cast\+Points as \hyperlink{classlighting_1_1CircleLightSource_acdfea64be9d142f669338c5e206e753e}{shade\+Points} are processed by \+::map\+Shade\+Points. Elements in this list should only include lines that can possibly be shadow casted onto by \hyperlink{}{. } \index{lighting\+::\+Circle\+Light\+Source@{lighting\+::\+Circle\+Light\+Source}!draw\+Points@{draw\+Points}}
+\index{draw\+Points@{draw\+Points}!lighting\+::\+Circle\+Light\+Source@{lighting\+::\+Circle\+Light\+Source}}
+\subsubsection[{\texorpdfstring{draw\+Points}{drawPoints}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$float$>$ lighting\+::\+Circle\+Light\+Source\+::draw\+Points\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classlighting_1_1CircleLightSource_ac1a26422cd969278b321679503d42a07}{}\label{classlighting_1_1CircleLightSource_ac1a26422cd969278b321679503d42a07}
+
+
+Stores the x and y of the edges of shadows in the local bitmap. Populated by \+::map\+Shade\+Points. 
+
+\index{lighting\+::\+Circle\+Light\+Source@{lighting\+::\+Circle\+Light\+Source}!heldX@{heldX}}
+\index{heldX@{heldX}!lighting\+::\+Circle\+Light\+Source@{lighting\+::\+Circle\+Light\+Source}}
+\subsubsection[{\texorpdfstring{heldX}{heldX}}]{\setlength{\rightskip}{0pt plus 5cm}float lighting\+::\+Circle\+Light\+Source\+::heldX\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classlighting_1_1CircleLightSource_aa008d846fd893f0ff40e5994af4d487e}{}\label{classlighting_1_1CircleLightSource_aa008d846fd893f0ff40e5994af4d487e}
+
+
+Temporarily stores position of the \hyperlink{classlighting_1_1CircleLightSource}{Circle\+Light\+Source} until \hyperlink{classlighting_1_1CircleLightSource_afc39570a33c19b17fb8153be592b01e9}{transfer\+Held\+Vars()} is called, where the values are assigned to \hyperlink{classlighting_1_1CircleLightSource_afd27de5d967e2a308dadeff29d3c2883}{x} and \hyperlink{classlighting_1_1CircleLightSource_ac05186b92c9bdfcef8a27cc89f8c9b52}{y}. 
+
+\index{lighting\+::\+Circle\+Light\+Source@{lighting\+::\+Circle\+Light\+Source}!light\+Color@{light\+Color}}
+\index{light\+Color@{light\+Color}!lighting\+::\+Circle\+Light\+Source@{lighting\+::\+Circle\+Light\+Source}}
+\subsubsection[{\texorpdfstring{light\+Color}{lightColor}}]{\setlength{\rightskip}{0pt plus 5cm}A\+L\+L\+E\+G\+R\+O\+\_\+\+C\+O\+L\+OR lighting\+::\+Circle\+Light\+Source\+::light\+Color\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classlighting_1_1CircleLightSource_a39d1b9f5bfb54facf6a7e36ed0ffda82}{}\label{classlighting_1_1CircleLightSource_a39d1b9f5bfb54facf6a7e36ed0ffda82}
+
+
+The color of the light. 
+
+\index{lighting\+::\+Circle\+Light\+Source@{lighting\+::\+Circle\+Light\+Source}!M\+A\+X\+\_\+\+N\+E\+G\+\_\+\+F\+L\+O\+AT@{M\+A\+X\+\_\+\+N\+E\+G\+\_\+\+F\+L\+O\+AT}}
+\index{M\+A\+X\+\_\+\+N\+E\+G\+\_\+\+F\+L\+O\+AT@{M\+A\+X\+\_\+\+N\+E\+G\+\_\+\+F\+L\+O\+AT}!lighting\+::\+Circle\+Light\+Source@{lighting\+::\+Circle\+Light\+Source}}
+\subsubsection[{\texorpdfstring{M\+A\+X\+\_\+\+N\+E\+G\+\_\+\+F\+L\+O\+AT}{MAX_NEG_FLOAT}}]{\setlength{\rightskip}{0pt plus 5cm}const float lighting\+::\+Circle\+Light\+Source\+::\+M\+A\+X\+\_\+\+N\+E\+G\+\_\+\+F\+L\+O\+AT = -\/std\+::numeric\+\_\+limits$<$float$>$\+::max()\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{classlighting_1_1CircleLightSource_a139a7246edba5531259b778ce0ca79b3}{}\label{classlighting_1_1CircleLightSource_a139a7246edba5531259b778ce0ca79b3}
+
+
+Set to the most negative possible value of float 
+
+\index{lighting\+::\+Circle\+Light\+Source@{lighting\+::\+Circle\+Light\+Source}!radius@{radius}}
+\index{radius@{radius}!lighting\+::\+Circle\+Light\+Source@{lighting\+::\+Circle\+Light\+Source}}
+\subsubsection[{\texorpdfstring{radius}{radius}}]{\setlength{\rightskip}{0pt plus 5cm}float lighting\+::\+Circle\+Light\+Source\+::radius\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classlighting_1_1CircleLightSource_a4da9b32f524563c2faeba5ea81dfe6fb}{}\label{classlighting_1_1CircleLightSource_a4da9b32f524563c2faeba5ea81dfe6fb}
+
+
+The radius of the 
+\begin{DoxyCode}
+\textcolor{keyword}{this}
+\end{DoxyCode}
+ \hyperlink{classlighting_1_1LightBlocker}{Light\+Blocker}. 
+
+\index{lighting\+::\+Circle\+Light\+Source@{lighting\+::\+Circle\+Light\+Source}!R\+A\+D\+I\+X\+\_\+\+B\+A\+S\+E\+\_\+\+B\+I\+TS@{R\+A\+D\+I\+X\+\_\+\+B\+A\+S\+E\+\_\+\+B\+I\+TS}}
+\index{R\+A\+D\+I\+X\+\_\+\+B\+A\+S\+E\+\_\+\+B\+I\+TS@{R\+A\+D\+I\+X\+\_\+\+B\+A\+S\+E\+\_\+\+B\+I\+TS}!lighting\+::\+Circle\+Light\+Source@{lighting\+::\+Circle\+Light\+Source}}
+\subsubsection[{\texorpdfstring{R\+A\+D\+I\+X\+\_\+\+B\+A\+S\+E\+\_\+\+B\+I\+TS}{RADIX_BASE_BITS}}]{\setlength{\rightskip}{0pt plus 5cm}const uint8\+\_\+t lighting\+::\+Circle\+Light\+Source\+::\+R\+A\+D\+I\+X\+\_\+\+B\+A\+S\+E\+\_\+\+B\+I\+TS = 4\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{classlighting_1_1CircleLightSource_a94be83c3a3e575b5670ec6c6abe8a6e7}{}\label{classlighting_1_1CircleLightSource_a94be83c3a3e575b5670ec6c6abe8a6e7}
+
+
+Number of bits for the radix base 
+
+\index{lighting\+::\+Circle\+Light\+Source@{lighting\+::\+Circle\+Light\+Source}!R\+A\+D\+I\+X\+\_\+\+M\+A\+X\+\_\+\+B\+I\+TS@{R\+A\+D\+I\+X\+\_\+\+M\+A\+X\+\_\+\+B\+I\+TS}}
+\index{R\+A\+D\+I\+X\+\_\+\+M\+A\+X\+\_\+\+B\+I\+TS@{R\+A\+D\+I\+X\+\_\+\+M\+A\+X\+\_\+\+B\+I\+TS}!lighting\+::\+Circle\+Light\+Source@{lighting\+::\+Circle\+Light\+Source}}
+\subsubsection[{\texorpdfstring{R\+A\+D\+I\+X\+\_\+\+M\+A\+X\+\_\+\+B\+I\+TS}{RADIX_MAX_BITS}}]{\setlength{\rightskip}{0pt plus 5cm}const uint8\+\_\+t lighting\+::\+Circle\+Light\+Source\+::\+R\+A\+D\+I\+X\+\_\+\+M\+A\+X\+\_\+\+B\+I\+TS = 32\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{classlighting_1_1CircleLightSource_a9a4d058eac85eeb8c542abd69069e4b2}{}\label{classlighting_1_1CircleLightSource_a9a4d058eac85eeb8c542abd69069e4b2}
+
+
+Number of bits for the maximum value of elements sorted by radix sort 
+
+\index{lighting\+::\+Circle\+Light\+Source@{lighting\+::\+Circle\+Light\+Source}!S\+H\+A\+D\+E\+\_\+\+M\+A\+P\+\_\+\+F\+L\+A\+GS@{S\+H\+A\+D\+E\+\_\+\+M\+A\+P\+\_\+\+F\+L\+A\+GS}}
+\index{S\+H\+A\+D\+E\+\_\+\+M\+A\+P\+\_\+\+F\+L\+A\+GS@{S\+H\+A\+D\+E\+\_\+\+M\+A\+P\+\_\+\+F\+L\+A\+GS}!lighting\+::\+Circle\+Light\+Source@{lighting\+::\+Circle\+Light\+Source}}
+\subsubsection[{\texorpdfstring{S\+H\+A\+D\+E\+\_\+\+M\+A\+P\+\_\+\+F\+L\+A\+GS}{SHADE_MAP_FLAGS}}]{\setlength{\rightskip}{0pt plus 5cm}const int lighting\+::\+Circle\+Light\+Source\+::\+S\+H\+A\+D\+E\+\_\+\+M\+A\+P\+\_\+\+F\+L\+A\+GS = A\+L\+L\+E\+G\+R\+O\+\_\+\+N\+O\+\_\+\+P\+R\+E\+S\+E\+R\+V\+E\+\_\+\+T\+E\+X\+T\+U\+RE $\vert$ A\+L\+L\+E\+G\+R\+O\+\_\+\+M\+I\+N\+\_\+\+L\+I\+N\+E\+AR $\vert$ A\+L\+L\+E\+G\+R\+O\+\_\+\+M\+A\+G\+\_\+\+L\+I\+N\+E\+AR\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}\hypertarget{classlighting_1_1CircleLightSource_a92467001dc94731494055acc7465fe82}{}\label{classlighting_1_1CircleLightSource_a92467001dc94731494055acc7465fe82}
+
+
+The allegro bitmap flags for creating the \hyperlink{classlighting_1_1CircleLightSource_a382414c9318853e93c85bc64bcd19f4e}{shade\+Map}. 
+
+\index{lighting\+::\+Circle\+Light\+Source@{lighting\+::\+Circle\+Light\+Source}!shade\+Map@{shade\+Map}}
+\index{shade\+Map@{shade\+Map}!lighting\+::\+Circle\+Light\+Source@{lighting\+::\+Circle\+Light\+Source}}
+\subsubsection[{\texorpdfstring{shade\+Map}{shadeMap}}]{\setlength{\rightskip}{0pt plus 5cm}A\+L\+L\+E\+G\+R\+O\+\_\+\+B\+I\+T\+M\+AP$\ast$ lighting\+::\+Circle\+Light\+Source\+::shade\+Map\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classlighting_1_1CircleLightSource_a382414c9318853e93c85bc64bcd19f4e}{}\label{classlighting_1_1CircleLightSource_a382414c9318853e93c85bc64bcd19f4e}
+
+
+Bitmap where shadows are drawn to. 
+
+\index{lighting\+::\+Circle\+Light\+Source@{lighting\+::\+Circle\+Light\+Source}!shade\+Points@{shade\+Points}}
+\index{shade\+Points@{shade\+Points}!lighting\+::\+Circle\+Light\+Source@{lighting\+::\+Circle\+Light\+Source}}
+\subsubsection[{\texorpdfstring{shade\+Points}{shadePoints}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<${\bf Circle\+Shade\+Point}$\ast$$>$ lighting\+::\+Circle\+Light\+Source\+::shade\+Points\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classlighting_1_1CircleLightSource_acdfea64be9d142f669338c5e206e753e}{}\label{classlighting_1_1CircleLightSource_acdfea64be9d142f669338c5e206e753e}
+
+
+Endpoints of \hyperlink{classlighting_1_1LightBlocker}{Light\+Blocker}s. Populated by \+::create\+Shade\+Points. 
+
+\index{lighting\+::\+Circle\+Light\+Source@{lighting\+::\+Circle\+Light\+Source}!x@{x}}
+\index{x@{x}!lighting\+::\+Circle\+Light\+Source@{lighting\+::\+Circle\+Light\+Source}}
+\subsubsection[{\texorpdfstring{x}{x}}]{\setlength{\rightskip}{0pt plus 5cm}float lighting\+::\+Circle\+Light\+Source\+::x\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classlighting_1_1CircleLightSource_afd27de5d967e2a308dadeff29d3c2883}{}\label{classlighting_1_1CircleLightSource_afd27de5d967e2a308dadeff29d3c2883}
+
+
+Horizontal position of the center of the light on the screen. 
+
+\index{lighting\+::\+Circle\+Light\+Source@{lighting\+::\+Circle\+Light\+Source}!y@{y}}
+\index{y@{y}!lighting\+::\+Circle\+Light\+Source@{lighting\+::\+Circle\+Light\+Source}}
+\subsubsection[{\texorpdfstring{y}{y}}]{\setlength{\rightskip}{0pt plus 5cm}float lighting\+::\+Circle\+Light\+Source\+::y\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classlighting_1_1CircleLightSource_ac05186b92c9bdfcef8a27cc89f8c9b52}{}\label{classlighting_1_1CircleLightSource_ac05186b92c9bdfcef8a27cc89f8c9b52}
+
+
+Vertical position of the center of the light on the screen. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Circle\+Light\+Source.\+h\item 
+Circle\+Light\+Source.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,245 @@
+\hypertarget{classlighting_1_1DirectionalLightSource}{}\section{lighting\+:\+:Directional\+Light\+Source Class Reference}
+\label{classlighting_1_1DirectionalLightSource}\index{lighting\+::\+Directional\+Light\+Source@{lighting\+::\+Directional\+Light\+Source}}
+
+
+Represents a light in the form of a flash light or any light beam limited to an angle  
+
+
+
+
+{\ttfamily \#include $<$Directional\+Light\+Source.\+h$>$}
+
+
+
+Inheritance diagram for lighting\+:\+:Directional\+Light\+Source\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=211pt]{classlighting_1_1DirectionalLightSource__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for lighting\+:\+:Directional\+Light\+Source\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=211pt]{classlighting_1_1DirectionalLightSource__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classlighting_1_1DirectionalLightSource_a65a9f9b9c9e624c4d9a2936dc86fa0b8}{Directional\+Light\+Source} (\hyperlink{classlighting_1_1LightLayer}{Light\+Layer} $\ast$owner\+Light\+Layer, int \hyperlink{classlighting_1_1CircleLightSource_a4da9b32f524563c2faeba5ea81dfe6fb}{radius}, float degs, uint8\+\_\+t r=U\+I\+N\+T8\+\_\+\+M\+AX, uint8\+\_\+t g=U\+I\+N\+T8\+\_\+\+M\+AX, uint8\+\_\+t b=U\+I\+N\+T8\+\_\+\+M\+AX)
+\begin{DoxyCompactList}\small\item\em Initializes a new instance of the \hyperlink{classlighting_1_1DirectionalLightSource}{Directional\+Light\+Source} class. Initializes all of the bitmaps and sets their sizes. Adds itself to {\itshape owner\+Light\+Layer} . \end{DoxyCompactList}\item 
+virtual void \hyperlink{classlighting_1_1DirectionalLightSource_a52f9f09a4088a44bf3f8b08df435a7aa}{draw\+Local} () override
+\begin{DoxyCompactList}\small\item\em Draws the beam and shadows to the bitmap \hyperlink{classlighting_1_1DirectionalLightSource_afc3f2e73813a6d9c035aa0d58ad5d37c}{directional\+L\+Source\+Map}. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classlighting_1_1DirectionalLightSource_ab41be6321df178f861cd71462ab47553}{draw\+To\+Light\+Map} () override
+\begin{DoxyCompactList}\small\item\em Draws light beam to the light\+Map. Assumes light\+Map is already set to target bitmap. \end{DoxyCompactList}\item 
+void \hyperlink{classlighting_1_1DirectionalLightSource_a744ef9d945ccd0ea2dcfe94582c0515b}{set\+Degs} (float degs)
+\begin{DoxyCompactList}\small\item\em Sets the angle of the beam in degrees. \end{DoxyCompactList}\item 
+void \hyperlink{classlighting_1_1DirectionalLightSource_ada5610905c7449a464eb89496b026b55}{change\+Degs} (float delta\+Degs)
+\begin{DoxyCompactList}\small\item\em Changes the angle of the beam. \end{DoxyCompactList}\item 
+void \hyperlink{classlighting_1_1DirectionalLightSource_a0d2f2c2dc0899e45540474391960ccd0}{set\+Rads} (float \hyperlink{classlighting_1_1DirectionalLightSource_af31141ab246928972aa52224e17ae46c}{rads})
+\begin{DoxyCompactList}\small\item\em Sets the angle of the beam. \end{DoxyCompactList}\item 
+void \hyperlink{classlighting_1_1DirectionalLightSource_a8737004541be45ccf76a77d52ea5ad0e}{change\+Rads} (float delta\+Rads)
+\begin{DoxyCompactList}\small\item\em Changes the angle of the beam. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+A\+L\+L\+E\+G\+R\+O\+\_\+\+B\+I\+T\+M\+AP $\ast$ \hyperlink{classlighting_1_1DirectionalLightSource_a021658da101e47c909858b2c17d387ff}{directional\+L\+Source\+Map\+Save}
+\begin{DoxyCompactList}\small\item\em Bitmap of the directional light, created in constructor and is not changed \end{DoxyCompactList}\item 
+A\+L\+L\+E\+G\+R\+O\+\_\+\+B\+I\+T\+M\+AP $\ast$ \hyperlink{classlighting_1_1DirectionalLightSource_afc3f2e73813a6d9c035aa0d58ad5d37c}{directional\+L\+Source\+Map}
+\begin{DoxyCompactList}\small\item\em Bitmap where \hyperlink{classlighting_1_1CircleLightSource_a382414c9318853e93c85bc64bcd19f4e}{Circle\+Light\+Source\+::shade\+Map} and \hyperlink{classlighting_1_1DirectionalLightSource_a021658da101e47c909858b2c17d387ff}{directional\+L\+Source\+Map\+Save} are combined. \end{DoxyCompactList}\item 
+int \hyperlink{classlighting_1_1DirectionalLightSource_af4372a31b5f7938c18723f53265922e7}{directional\+L\+SourceW}
+\begin{DoxyCompactList}\small\item\em The width of the directional\+L\+Source bitmaps. \end{DoxyCompactList}\item 
+int \hyperlink{classlighting_1_1DirectionalLightSource_a6587335669534fd8f4727c73dbd49c28}{directional\+L\+SourceH}
+\begin{DoxyCompactList}\small\item\em The height of the directional\+L\+Source bitmaps. \end{DoxyCompactList}\item 
+float \hyperlink{classlighting_1_1DirectionalLightSource_af31141ab246928972aa52224e17ae46c}{rads}
+\begin{DoxyCompactList}\small\item\em The angle of the beam (not the spread of it, in radians) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Represents a light in the form of a flash light or any light beam limited to an angle 
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{classlighting_1_1CircleLightSource}{Circle\+Light\+Source}
+
+
+\end{DoxySeeAlso}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{lighting\+::\+Directional\+Light\+Source@{lighting\+::\+Directional\+Light\+Source}!Directional\+Light\+Source@{Directional\+Light\+Source}}
+\index{Directional\+Light\+Source@{Directional\+Light\+Source}!lighting\+::\+Directional\+Light\+Source@{lighting\+::\+Directional\+Light\+Source}}
+\subsubsection[{\texorpdfstring{Directional\+Light\+Source(\+Light\+Layer $\ast$owner\+Light\+Layer, int radius, float degs, uint8\+\_\+t r=\+U\+I\+N\+T8\+\_\+\+M\+A\+X, uint8\+\_\+t g=\+U\+I\+N\+T8\+\_\+\+M\+A\+X, uint8\+\_\+t b=\+U\+I\+N\+T8\+\_\+\+M\+A\+X)}{DirectionalLightSource(LightLayer *ownerLightLayer, int radius, float degs, uint8_t r=UINT8_MAX, uint8_t g=UINT8_MAX, uint8_t b=UINT8_MAX)}}]{\setlength{\rightskip}{0pt plus 5cm}lighting\+::\+Directional\+Light\+Source\+::\+Directional\+Light\+Source (
+\begin{DoxyParamCaption}
+\item[{{\bf Light\+Layer} $\ast$}]{owner\+Light\+Layer, }
+\item[{int}]{radius, }
+\item[{float}]{degs, }
+\item[{uint8\+\_\+t}]{r = {\ttfamily UINT8\+\_\+MAX}, }
+\item[{uint8\+\_\+t}]{g = {\ttfamily UINT8\+\_\+MAX}, }
+\item[{uint8\+\_\+t}]{b = {\ttfamily UINT8\+\_\+MAX}}
+\end{DoxyParamCaption}
+)}\hypertarget{classlighting_1_1DirectionalLightSource_a65a9f9b9c9e624c4d9a2936dc86fa0b8}{}\label{classlighting_1_1DirectionalLightSource_a65a9f9b9c9e624c4d9a2936dc86fa0b8}
+
+
+Initializes a new instance of the \hyperlink{classlighting_1_1DirectionalLightSource}{Directional\+Light\+Source} class. Initializes all of the bitmaps and sets their sizes. Adds itself to {\itshape owner\+Light\+Layer} . 
+
+
+\begin{DoxyParams}{Parameters}
+{\em owner\+Light\+Layer} & The light\+Layer that owns it.\\
+\hline
+{\em radius} & The radius of the light.\\
+\hline
+{\em degs} & The spread of the light beam.\\
+\hline
+{\em r} & The red color value for the light.\\
+\hline
+{\em g} & The green color value for the light.\\
+\hline
+{\em b} & The blue color value for the light.\\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\index{lighting\+::\+Directional\+Light\+Source@{lighting\+::\+Directional\+Light\+Source}!change\+Degs@{change\+Degs}}
+\index{change\+Degs@{change\+Degs}!lighting\+::\+Directional\+Light\+Source@{lighting\+::\+Directional\+Light\+Source}}
+\subsubsection[{\texorpdfstring{change\+Degs(float delta\+Degs)}{changeDegs(float deltaDegs)}}]{\setlength{\rightskip}{0pt plus 5cm}void lighting\+::\+Directional\+Light\+Source\+::change\+Degs (
+\begin{DoxyParamCaption}
+\item[{float}]{delta\+Degs}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classlighting_1_1DirectionalLightSource_ada5610905c7449a464eb89496b026b55}{}\label{classlighting_1_1DirectionalLightSource_ada5610905c7449a464eb89496b026b55}
+
+
+Changes the angle of the beam. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em delta\+Degs} & The change in degrees.\\
+\hline
+\end{DoxyParams}
+\index{lighting\+::\+Directional\+Light\+Source@{lighting\+::\+Directional\+Light\+Source}!change\+Rads@{change\+Rads}}
+\index{change\+Rads@{change\+Rads}!lighting\+::\+Directional\+Light\+Source@{lighting\+::\+Directional\+Light\+Source}}
+\subsubsection[{\texorpdfstring{change\+Rads(float delta\+Rads)}{changeRads(float deltaRads)}}]{\setlength{\rightskip}{0pt plus 5cm}void lighting\+::\+Directional\+Light\+Source\+::change\+Rads (
+\begin{DoxyParamCaption}
+\item[{float}]{delta\+Rads}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classlighting_1_1DirectionalLightSource_a8737004541be45ccf76a77d52ea5ad0e}{}\label{classlighting_1_1DirectionalLightSource_a8737004541be45ccf76a77d52ea5ad0e}
+
+
+Changes the angle of the beam. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em delta\+Rads} & The change in rads.\\
+\hline
+\end{DoxyParams}
+\index{lighting\+::\+Directional\+Light\+Source@{lighting\+::\+Directional\+Light\+Source}!draw\+Local@{draw\+Local}}
+\index{draw\+Local@{draw\+Local}!lighting\+::\+Directional\+Light\+Source@{lighting\+::\+Directional\+Light\+Source}}
+\subsubsection[{\texorpdfstring{draw\+Local() override}{drawLocal() override}}]{\setlength{\rightskip}{0pt plus 5cm}void lighting\+::\+Directional\+Light\+Source\+::draw\+Local (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}\hypertarget{classlighting_1_1DirectionalLightSource_a52f9f09a4088a44bf3f8b08df435a7aa}{}\label{classlighting_1_1DirectionalLightSource_a52f9f09a4088a44bf3f8b08df435a7aa}
+
+
+Draws the beam and shadows to the bitmap \hyperlink{classlighting_1_1DirectionalLightSource_afc3f2e73813a6d9c035aa0d58ad5d37c}{directional\+L\+Source\+Map}. 
+
+
+
+Reimplemented from \hyperlink{classlighting_1_1CircleLightSource_a6ab6f8f8eaf003e52ac2c86d88496c77}{lighting\+::\+Circle\+Light\+Source}.
+
+\index{lighting\+::\+Directional\+Light\+Source@{lighting\+::\+Directional\+Light\+Source}!draw\+To\+Light\+Map@{draw\+To\+Light\+Map}}
+\index{draw\+To\+Light\+Map@{draw\+To\+Light\+Map}!lighting\+::\+Directional\+Light\+Source@{lighting\+::\+Directional\+Light\+Source}}
+\subsubsection[{\texorpdfstring{draw\+To\+Light\+Map() override}{drawToLightMap() override}}]{\setlength{\rightskip}{0pt plus 5cm}void lighting\+::\+Directional\+Light\+Source\+::draw\+To\+Light\+Map (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}\hypertarget{classlighting_1_1DirectionalLightSource_ab41be6321df178f861cd71462ab47553}{}\label{classlighting_1_1DirectionalLightSource_ab41be6321df178f861cd71462ab47553}
+
+
+Draws light beam to the light\+Map. Assumes light\+Map is already set to target bitmap. 
+
+
+
+Reimplemented from \hyperlink{classlighting_1_1CircleLightSource_ab0f9107c09ae9c6966bab14538505894}{lighting\+::\+Circle\+Light\+Source}.
+
+\index{lighting\+::\+Directional\+Light\+Source@{lighting\+::\+Directional\+Light\+Source}!set\+Degs@{set\+Degs}}
+\index{set\+Degs@{set\+Degs}!lighting\+::\+Directional\+Light\+Source@{lighting\+::\+Directional\+Light\+Source}}
+\subsubsection[{\texorpdfstring{set\+Degs(float degs)}{setDegs(float degs)}}]{\setlength{\rightskip}{0pt plus 5cm}void lighting\+::\+Directional\+Light\+Source\+::set\+Degs (
+\begin{DoxyParamCaption}
+\item[{float}]{degs}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classlighting_1_1DirectionalLightSource_a744ef9d945ccd0ea2dcfe94582c0515b}{}\label{classlighting_1_1DirectionalLightSource_a744ef9d945ccd0ea2dcfe94582c0515b}
+
+
+Sets the angle of the beam in degrees. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em degs} & The angle of the beam.\\
+\hline
+\end{DoxyParams}
+\index{lighting\+::\+Directional\+Light\+Source@{lighting\+::\+Directional\+Light\+Source}!set\+Rads@{set\+Rads}}
+\index{set\+Rads@{set\+Rads}!lighting\+::\+Directional\+Light\+Source@{lighting\+::\+Directional\+Light\+Source}}
+\subsubsection[{\texorpdfstring{set\+Rads(float rads)}{setRads(float rads)}}]{\setlength{\rightskip}{0pt plus 5cm}void lighting\+::\+Directional\+Light\+Source\+::set\+Rads (
+\begin{DoxyParamCaption}
+\item[{float}]{rads}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classlighting_1_1DirectionalLightSource_a0d2f2c2dc0899e45540474391960ccd0}{}\label{classlighting_1_1DirectionalLightSource_a0d2f2c2dc0899e45540474391960ccd0}
+
+
+Sets the angle of the beam. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rads} & The angle to set the beam to.\\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\index{lighting\+::\+Directional\+Light\+Source@{lighting\+::\+Directional\+Light\+Source}!directional\+L\+SourceH@{directional\+L\+SourceH}}
+\index{directional\+L\+SourceH@{directional\+L\+SourceH}!lighting\+::\+Directional\+Light\+Source@{lighting\+::\+Directional\+Light\+Source}}
+\subsubsection[{\texorpdfstring{directional\+L\+SourceH}{directionalLSourceH}}]{\setlength{\rightskip}{0pt plus 5cm}int lighting\+::\+Directional\+Light\+Source\+::directional\+L\+SourceH\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classlighting_1_1DirectionalLightSource_a6587335669534fd8f4727c73dbd49c28}{}\label{classlighting_1_1DirectionalLightSource_a6587335669534fd8f4727c73dbd49c28}
+
+
+The height of the directional\+L\+Source bitmaps. 
+
+\index{lighting\+::\+Directional\+Light\+Source@{lighting\+::\+Directional\+Light\+Source}!directional\+L\+Source\+Map@{directional\+L\+Source\+Map}}
+\index{directional\+L\+Source\+Map@{directional\+L\+Source\+Map}!lighting\+::\+Directional\+Light\+Source@{lighting\+::\+Directional\+Light\+Source}}
+\subsubsection[{\texorpdfstring{directional\+L\+Source\+Map}{directionalLSourceMap}}]{\setlength{\rightskip}{0pt plus 5cm}A\+L\+L\+E\+G\+R\+O\+\_\+\+B\+I\+T\+M\+AP$\ast$ lighting\+::\+Directional\+Light\+Source\+::directional\+L\+Source\+Map\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classlighting_1_1DirectionalLightSource_afc3f2e73813a6d9c035aa0d58ad5d37c}{}\label{classlighting_1_1DirectionalLightSource_afc3f2e73813a6d9c035aa0d58ad5d37c}
+
+
+Bitmap where \hyperlink{classlighting_1_1CircleLightSource_a382414c9318853e93c85bc64bcd19f4e}{Circle\+Light\+Source\+::shade\+Map} and \hyperlink{classlighting_1_1DirectionalLightSource_a021658da101e47c909858b2c17d387ff}{directional\+L\+Source\+Map\+Save} are combined. 
+
+\index{lighting\+::\+Directional\+Light\+Source@{lighting\+::\+Directional\+Light\+Source}!directional\+L\+Source\+Map\+Save@{directional\+L\+Source\+Map\+Save}}
+\index{directional\+L\+Source\+Map\+Save@{directional\+L\+Source\+Map\+Save}!lighting\+::\+Directional\+Light\+Source@{lighting\+::\+Directional\+Light\+Source}}
+\subsubsection[{\texorpdfstring{directional\+L\+Source\+Map\+Save}{directionalLSourceMapSave}}]{\setlength{\rightskip}{0pt plus 5cm}A\+L\+L\+E\+G\+R\+O\+\_\+\+B\+I\+T\+M\+AP$\ast$ lighting\+::\+Directional\+Light\+Source\+::directional\+L\+Source\+Map\+Save\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classlighting_1_1DirectionalLightSource_a021658da101e47c909858b2c17d387ff}{}\label{classlighting_1_1DirectionalLightSource_a021658da101e47c909858b2c17d387ff}
+
+
+Bitmap of the directional light, created in constructor and is not changed 
+
+\index{lighting\+::\+Directional\+Light\+Source@{lighting\+::\+Directional\+Light\+Source}!directional\+L\+SourceW@{directional\+L\+SourceW}}
+\index{directional\+L\+SourceW@{directional\+L\+SourceW}!lighting\+::\+Directional\+Light\+Source@{lighting\+::\+Directional\+Light\+Source}}
+\subsubsection[{\texorpdfstring{directional\+L\+SourceW}{directionalLSourceW}}]{\setlength{\rightskip}{0pt plus 5cm}int lighting\+::\+Directional\+Light\+Source\+::directional\+L\+SourceW\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classlighting_1_1DirectionalLightSource_af4372a31b5f7938c18723f53265922e7}{}\label{classlighting_1_1DirectionalLightSource_af4372a31b5f7938c18723f53265922e7}
+
+
+The width of the directional\+L\+Source bitmaps. 
+
+\index{lighting\+::\+Directional\+Light\+Source@{lighting\+::\+Directional\+Light\+Source}!rads@{rads}}
+\index{rads@{rads}!lighting\+::\+Directional\+Light\+Source@{lighting\+::\+Directional\+Light\+Source}}
+\subsubsection[{\texorpdfstring{rads}{rads}}]{\setlength{\rightskip}{0pt plus 5cm}float lighting\+::\+Directional\+Light\+Source\+::rads\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classlighting_1_1DirectionalLightSource_af31141ab246928972aa52224e17ae46c}{}\label{classlighting_1_1DirectionalLightSource_af31141ab246928972aa52224e17ae46c}
+
+
+The angle of the beam (not the spread of it, in radians) 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Directional\+Light\+Source.\+h\item 
+Directional\+Light\+Source.\+cpp\end{DoxyCompactItemize}

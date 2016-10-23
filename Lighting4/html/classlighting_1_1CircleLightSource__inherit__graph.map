@@ -1,0 +1,4 @@
+<map id="lighting::CircleLightSource" name="lighting::CircleLightSource">
+<area shape="rect" id="node3" href="$classlighting_1_1DirectionalLightSource.html" title="Represents a light in the form of a flash light or any light beam limited to an angle ..." alt="" coords="12,155,173,196"/>
+<area shape="rect" id="node2" href="$classlighting_1_1LightSource.html" title="Abstract class represnting an light that can be blocked " alt="" coords="23,5,163,32"/>
+</map>

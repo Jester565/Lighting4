@@ -1,0 +1,159 @@
+\hypertarget{classlighting_1_1ShadePoint}{}\section{lighting\+:\+:Shade\+Point Class Reference}
+\label{classlighting_1_1ShadePoint}\index{lighting\+::\+Shade\+Point@{lighting\+::\+Shade\+Point}}
+
+
+Inheritance diagram for lighting\+:\+:Shade\+Point\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classlighting_1_1ShadePoint__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for lighting\+:\+:Shade\+Point\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=273pt]{classlighting_1_1ShadePoint__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classlighting_1_1ShadePoint_aaebbffa8b934868a07455343a1943e25}{Shade\+Point} (float \hyperlink{classlighting_1_1ShadePoint_a087db3eacccf6731f674f123c22400ec}{x}, float \hyperlink{classlighting_1_1ShadePoint_a427350496a448f0dd7424955a6c21ea2}{y})
+\begin{DoxyCompactList}\small\item\em Assigns the local coordinates to the parameters and calculates the angle of those values from the origin (0, 0). \end{DoxyCompactList}\item 
+void \hyperlink{classlighting_1_1ShadePoint_a6d8d66a55dd8b16974bf138bbfcac183}{set\+Connect\+Point} (\hyperlink{classlighting_1_1ShadePoint}{Shade\+Point} $\ast$connect\+Point)
+\begin{DoxyCompactList}\small\item\em Modifier for the attribute \hyperlink{classlighting_1_1ShadePoint_a0840495febcd385a90e89e003aa15972}{Shade\+Point\+::connected\+Point}. Represents the other endpoint of a line. \end{DoxyCompactList}\item 
+bool \hyperlink{classlighting_1_1ShadePoint_af520192e696fc33d0aec19f0f4519a28}{check\+Intersect} (float x1, float y1, float x2, float y2, float \&cX, float \&cY)
+\begin{DoxyCompactList}\small\item\em Checks if the endpoints passed in as parameters form a line that would intersect with a line formed by connecting the coordinates from {\ttfamily  this } \hyperlink{classlighting_1_1ShadePoint}{Shade\+Point}s coordinates to the coordinates from \hyperlink{classlighting_1_1ShadePoint_a0840495febcd385a90e89e003aa15972}{Shade\+Point\+::connected\+Point}. \end{DoxyCompactList}\item 
+virtual \hyperlink{classlighting_1_1ShadePoint_a87875dcdefcbf587d2a060831b2ec628}{$\sim$\+Shade\+Point} ()
+\begin{DoxyCompactList}\small\item\em Finalizes an instance of the \hyperlink{classlighting_1_1ShadePoint}{Shade\+Point} class. Note that \hyperlink{classlighting_1_1ShadePoint_a0840495febcd385a90e89e003aa15972}{Shade\+Point\+::connected\+Point} will not be deleted. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float \hyperlink{classlighting_1_1ShadePoint_a087db3eacccf6731f674f123c22400ec}{x}
+\begin{DoxyCompactList}\small\item\em The horizontal position of the point. \end{DoxyCompactList}\item 
+float \hyperlink{classlighting_1_1ShadePoint_a427350496a448f0dd7424955a6c21ea2}{y}
+\begin{DoxyCompactList}\small\item\em The horizontal position of the point. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classlighting_1_1ShadePoint}{Shade\+Point} $\ast$ \hyperlink{classlighting_1_1ShadePoint_a0840495febcd385a90e89e003aa15972}{connected\+Point}
+\begin{DoxyCompactList}\small\item\em The other endpoint of the line. Initially set to {\ttfamily nullptr} but can be set by the method \hyperlink{classlighting_1_1ShadePoint_a6d8d66a55dd8b16974bf138bbfcac183}{Shade\+Point\+::set\+Connect\+Point(\+Shade\+Point$\ast$)}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{lighting\+::\+Shade\+Point@{lighting\+::\+Shade\+Point}!Shade\+Point@{Shade\+Point}}
+\index{Shade\+Point@{Shade\+Point}!lighting\+::\+Shade\+Point@{lighting\+::\+Shade\+Point}}
+\subsubsection[{\texorpdfstring{Shade\+Point(float x, float y)}{ShadePoint(float x, float y)}}]{\setlength{\rightskip}{0pt plus 5cm}lighting\+::\+Shade\+Point\+::\+Shade\+Point (
+\begin{DoxyParamCaption}
+\item[{float}]{x, }
+\item[{float}]{y}
+\end{DoxyParamCaption}
+)}\hypertarget{classlighting_1_1ShadePoint_aaebbffa8b934868a07455343a1943e25}{}\label{classlighting_1_1ShadePoint_aaebbffa8b934868a07455343a1943e25}
+
+
+Assigns the local coordinates to the parameters and calculates the angle of those values from the origin (0, 0). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The horizontal coordinate of the point.\\
+\hline
+{\em y} & The vertical coordinate of the point.\\
+\hline
+\end{DoxyParams}
+\index{lighting\+::\+Shade\+Point@{lighting\+::\+Shade\+Point}!````~Shade\+Point@{$\sim$\+Shade\+Point}}
+\index{````~Shade\+Point@{$\sim$\+Shade\+Point}!lighting\+::\+Shade\+Point@{lighting\+::\+Shade\+Point}}
+\subsubsection[{\texorpdfstring{$\sim$\+Shade\+Point()}{~ShadePoint()}}]{\setlength{\rightskip}{0pt plus 5cm}lighting\+::\+Shade\+Point\+::$\sim$\+Shade\+Point (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classlighting_1_1ShadePoint_a87875dcdefcbf587d2a060831b2ec628}{}\label{classlighting_1_1ShadePoint_a87875dcdefcbf587d2a060831b2ec628}
+
+
+Finalizes an instance of the \hyperlink{classlighting_1_1ShadePoint}{Shade\+Point} class. Note that \hyperlink{classlighting_1_1ShadePoint_a0840495febcd385a90e89e003aa15972}{Shade\+Point\+::connected\+Point} will not be deleted. 
+
+
+
+\subsection{Member Function Documentation}
+\index{lighting\+::\+Shade\+Point@{lighting\+::\+Shade\+Point}!check\+Intersect@{check\+Intersect}}
+\index{check\+Intersect@{check\+Intersect}!lighting\+::\+Shade\+Point@{lighting\+::\+Shade\+Point}}
+\subsubsection[{\texorpdfstring{check\+Intersect(float x1, float y1, float x2, float y2, float \&c\+X, float \&c\+Y)}{checkIntersect(float x1, float y1, float x2, float y2, float &cX, float &cY)}}]{\setlength{\rightskip}{0pt plus 5cm}bool lighting\+::\+Shade\+Point\+::check\+Intersect (
+\begin{DoxyParamCaption}
+\item[{float}]{x1, }
+\item[{float}]{y1, }
+\item[{float}]{x2, }
+\item[{float}]{y2, }
+\item[{float \&}]{cX, }
+\item[{float \&}]{cY}
+\end{DoxyParamCaption}
+)}\hypertarget{classlighting_1_1ShadePoint_af520192e696fc33d0aec19f0f4519a28}{}\label{classlighting_1_1ShadePoint_af520192e696fc33d0aec19f0f4519a28}
+
+
+Checks if the endpoints passed in as parameters form a line that would intersect with a line formed by connecting the coordinates from {\ttfamily  this } \hyperlink{classlighting_1_1ShadePoint}{Shade\+Point}s coordinates to the coordinates from \hyperlink{classlighting_1_1ShadePoint_a0840495febcd385a90e89e003aa15972}{Shade\+Point\+::connected\+Point}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x1} & The horizontal position of the first endpoint.\\
+\hline
+{\em y1} & The vertical position of the first endpoint.\\
+\hline
+{\em x2} & The horizontal position of the second endpoint.\\
+\hline
+{\em y2} & The vertical position of the second endpoint.\\
+\hline
+{\em cX} & Serves as an output parameter. If a collision occurs, the value will represent the horizontal position of the collision. Otherwise, it is unmodified.\\
+\hline
+{\em cY} & Serves as an output parameter. If a collision occurs, the value will represent the vertical position of the collision. Otherwise, it is unmodified.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} if the lines intersected. {\ttfamily false} otherwise.
+\end{DoxyReturn}
+\index{lighting\+::\+Shade\+Point@{lighting\+::\+Shade\+Point}!set\+Connect\+Point@{set\+Connect\+Point}}
+\index{set\+Connect\+Point@{set\+Connect\+Point}!lighting\+::\+Shade\+Point@{lighting\+::\+Shade\+Point}}
+\subsubsection[{\texorpdfstring{set\+Connect\+Point(\+Shade\+Point $\ast$connect\+Point)}{setConnectPoint(ShadePoint *connectPoint)}}]{\setlength{\rightskip}{0pt plus 5cm}void lighting\+::\+Shade\+Point\+::set\+Connect\+Point (
+\begin{DoxyParamCaption}
+\item[{{\bf Shade\+Point} $\ast$}]{connect\+Point}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classlighting_1_1ShadePoint_a6d8d66a55dd8b16974bf138bbfcac183}{}\label{classlighting_1_1ShadePoint_a6d8d66a55dd8b16974bf138bbfcac183}
+
+
+Modifier for the attribute \hyperlink{classlighting_1_1ShadePoint_a0840495febcd385a90e89e003aa15972}{Shade\+Point\+::connected\+Point}. Represents the other endpoint of a line. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em connect\+Point} & \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\index{lighting\+::\+Shade\+Point@{lighting\+::\+Shade\+Point}!connected\+Point@{connected\+Point}}
+\index{connected\+Point@{connected\+Point}!lighting\+::\+Shade\+Point@{lighting\+::\+Shade\+Point}}
+\subsubsection[{\texorpdfstring{connected\+Point}{connectedPoint}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Shade\+Point}$\ast$ lighting\+::\+Shade\+Point\+::connected\+Point\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classlighting_1_1ShadePoint_a0840495febcd385a90e89e003aa15972}{}\label{classlighting_1_1ShadePoint_a0840495febcd385a90e89e003aa15972}
+
+
+The other endpoint of the line. Initially set to {\ttfamily nullptr} but can be set by the method \hyperlink{classlighting_1_1ShadePoint_a6d8d66a55dd8b16974bf138bbfcac183}{Shade\+Point\+::set\+Connect\+Point(\+Shade\+Point$\ast$)}. 
+
+\index{lighting\+::\+Shade\+Point@{lighting\+::\+Shade\+Point}!x@{x}}
+\index{x@{x}!lighting\+::\+Shade\+Point@{lighting\+::\+Shade\+Point}}
+\subsubsection[{\texorpdfstring{x}{x}}]{\setlength{\rightskip}{0pt plus 5cm}float lighting\+::\+Shade\+Point\+::x}\hypertarget{classlighting_1_1ShadePoint_a087db3eacccf6731f674f123c22400ec}{}\label{classlighting_1_1ShadePoint_a087db3eacccf6731f674f123c22400ec}
+
+
+The horizontal position of the point. 
+
+\index{lighting\+::\+Shade\+Point@{lighting\+::\+Shade\+Point}!y@{y}}
+\index{y@{y}!lighting\+::\+Shade\+Point@{lighting\+::\+Shade\+Point}}
+\subsubsection[{\texorpdfstring{y}{y}}]{\setlength{\rightskip}{0pt plus 5cm}float lighting\+::\+Shade\+Point\+::y}\hypertarget{classlighting_1_1ShadePoint_a427350496a448f0dd7424955a6c21ea2}{}\label{classlighting_1_1ShadePoint_a427350496a448f0dd7424955a6c21ea2}
+
+
+The horizontal position of the point. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Shade\+Point.\+h\item 
+Shade\+Point.\+cpp\end{DoxyCompactItemize}

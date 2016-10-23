@@ -1,0 +1,3 @@
+<map id="lighting::LightSource" name="lighting::LightSource">
+<area shape="rect" id="node2" href="$classlighting_1_1LightLayer.html" title="The core of the lighting system. Holds all LightSources and LightBlockers, handles drawing operations..." alt="" coords="10,5,141,32"/>
+</map>

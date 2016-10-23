@@ -1,0 +1,104 @@
+\hypertarget{classlighting_1_1GaussianKernelData}{}\section{lighting\+:\+:Gaussian\+Kernel\+Data Class Reference}
+\label{classlighting_1_1GaussianKernelData}\index{lighting\+::\+Gaussian\+Kernel\+Data@{lighting\+::\+Gaussian\+Kernel\+Data}}
+
+
+Generates and stores data necessary to create a \hyperlink{classlighting_1_1GaussianBlurrer}{Gaussian\+Blurrer}.  
+
+
+
+
+{\ttfamily \#include $<$Gaussian\+Kernel\+Data.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classlighting_1_1GaussianKernelData_a416a13d87e6afe5b104e543251363a37}{Gaussian\+Kernel\+Data} ()
+\begin{DoxyCompactList}\small\item\em Initializes a new instance of the \hyperlink{classlighting_1_1GaussianKernelData}{Gaussian\+Kernel\+Data} with no attributes set. \end{DoxyCompactList}\item 
+\hyperlink{classlighting_1_1GaussianKernelData_a5a395d3d828de3a98d1a0d47404bc818}{Gaussian\+Kernel\+Data} (int pixelW, float \hyperlink{classlighting_1_1GaussianKernelData_ac99c7370fa30896baef2f03c91dd6885}{sigma})
+\begin{DoxyCompactList}\small\item\em Initializes a new instance of the \hyperlink{classlighting_1_1GaussianKernelData}{Gaussian\+Kernel\+Data} class. Sets all attributes generating elements of arrays. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ float $>$ \hyperlink{classlighting_1_1GaussianKernelData_a2a8a08e1eb8b4e5f0c8bf42868cb8bc1}{pixel\+Offsets}
+\begin{DoxyCompactList}\small\item\em The distance R\+GB values are to be taken from to blend between two pixels for better efficiency. \end{DoxyCompactList}\item 
+std\+::vector$<$ float $>$ \hyperlink{classlighting_1_1GaussianKernelData_a623d6a4fd0d92cee09f20020963fe468}{pixel\+Weights}
+\begin{DoxyCompactList}\small\item\em The R\+GB value of the pixels are mutliplied by these weights depending on their distance. \end{DoxyCompactList}\item 
+int \hyperlink{classlighting_1_1GaussianKernelData_aa01d75bd479cc39c0ccc25f8ac8c015b}{kernel\+Width}
+\begin{DoxyCompactList}\small\item\em The kernel\+Width the data was calculated from. \end{DoxyCompactList}\item 
+float \hyperlink{classlighting_1_1GaussianKernelData_ac99c7370fa30896baef2f03c91dd6885}{sigma}
+\begin{DoxyCompactList}\small\item\em The sigma the data was calculated from. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Generates and stores data necessary to create a \hyperlink{classlighting_1_1GaussianBlurrer}{Gaussian\+Blurrer}. 
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{lighting\+::\+Gaussian\+Kernel\+Data@{lighting\+::\+Gaussian\+Kernel\+Data}!Gaussian\+Kernel\+Data@{Gaussian\+Kernel\+Data}}
+\index{Gaussian\+Kernel\+Data@{Gaussian\+Kernel\+Data}!lighting\+::\+Gaussian\+Kernel\+Data@{lighting\+::\+Gaussian\+Kernel\+Data}}
+\subsubsection[{\texorpdfstring{Gaussian\+Kernel\+Data()}{GaussianKernelData()}}]{\setlength{\rightskip}{0pt plus 5cm}lighting\+::\+Gaussian\+Kernel\+Data\+::\+Gaussian\+Kernel\+Data (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classlighting_1_1GaussianKernelData_a416a13d87e6afe5b104e543251363a37}{}\label{classlighting_1_1GaussianKernelData_a416a13d87e6afe5b104e543251363a37}
+
+
+Initializes a new instance of the \hyperlink{classlighting_1_1GaussianKernelData}{Gaussian\+Kernel\+Data} with no attributes set. 
+
+\index{lighting\+::\+Gaussian\+Kernel\+Data@{lighting\+::\+Gaussian\+Kernel\+Data}!Gaussian\+Kernel\+Data@{Gaussian\+Kernel\+Data}}
+\index{Gaussian\+Kernel\+Data@{Gaussian\+Kernel\+Data}!lighting\+::\+Gaussian\+Kernel\+Data@{lighting\+::\+Gaussian\+Kernel\+Data}}
+\subsubsection[{\texorpdfstring{Gaussian\+Kernel\+Data(int pixel\+W, float sigma)}{GaussianKernelData(int pixelW, float sigma)}}]{\setlength{\rightskip}{0pt plus 5cm}lighting\+::\+Gaussian\+Kernel\+Data\+::\+Gaussian\+Kernel\+Data (
+\begin{DoxyParamCaption}
+\item[{int}]{pixelW, }
+\item[{float}]{sigma}
+\end{DoxyParamCaption}
+)}\hypertarget{classlighting_1_1GaussianKernelData_a5a395d3d828de3a98d1a0d47404bc818}{}\label{classlighting_1_1GaussianKernelData_a5a395d3d828de3a98d1a0d47404bc818}
+
+
+Initializes a new instance of the \hyperlink{classlighting_1_1GaussianKernelData}{Gaussian\+Kernel\+Data} class. Sets all attributes generating elements of arrays. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pixelW} & The width of the kernel.\\
+\hline
+{\em sigma} & The sigma.\\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\index{lighting\+::\+Gaussian\+Kernel\+Data@{lighting\+::\+Gaussian\+Kernel\+Data}!kernel\+Width@{kernel\+Width}}
+\index{kernel\+Width@{kernel\+Width}!lighting\+::\+Gaussian\+Kernel\+Data@{lighting\+::\+Gaussian\+Kernel\+Data}}
+\subsubsection[{\texorpdfstring{kernel\+Width}{kernelWidth}}]{\setlength{\rightskip}{0pt plus 5cm}int lighting\+::\+Gaussian\+Kernel\+Data\+::kernel\+Width}\hypertarget{classlighting_1_1GaussianKernelData_aa01d75bd479cc39c0ccc25f8ac8c015b}{}\label{classlighting_1_1GaussianKernelData_aa01d75bd479cc39c0ccc25f8ac8c015b}
+
+
+The kernel\+Width the data was calculated from. 
+
+\index{lighting\+::\+Gaussian\+Kernel\+Data@{lighting\+::\+Gaussian\+Kernel\+Data}!pixel\+Offsets@{pixel\+Offsets}}
+\index{pixel\+Offsets@{pixel\+Offsets}!lighting\+::\+Gaussian\+Kernel\+Data@{lighting\+::\+Gaussian\+Kernel\+Data}}
+\subsubsection[{\texorpdfstring{pixel\+Offsets}{pixelOffsets}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$float$>$ lighting\+::\+Gaussian\+Kernel\+Data\+::pixel\+Offsets}\hypertarget{classlighting_1_1GaussianKernelData_a2a8a08e1eb8b4e5f0c8bf42868cb8bc1}{}\label{classlighting_1_1GaussianKernelData_a2a8a08e1eb8b4e5f0c8bf42868cb8bc1}
+
+
+The distance R\+GB values are to be taken from to blend between two pixels for better efficiency. 
+
+\index{lighting\+::\+Gaussian\+Kernel\+Data@{lighting\+::\+Gaussian\+Kernel\+Data}!pixel\+Weights@{pixel\+Weights}}
+\index{pixel\+Weights@{pixel\+Weights}!lighting\+::\+Gaussian\+Kernel\+Data@{lighting\+::\+Gaussian\+Kernel\+Data}}
+\subsubsection[{\texorpdfstring{pixel\+Weights}{pixelWeights}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$float$>$ lighting\+::\+Gaussian\+Kernel\+Data\+::pixel\+Weights}\hypertarget{classlighting_1_1GaussianKernelData_a623d6a4fd0d92cee09f20020963fe468}{}\label{classlighting_1_1GaussianKernelData_a623d6a4fd0d92cee09f20020963fe468}
+
+
+The R\+GB value of the pixels are mutliplied by these weights depending on their distance. 
+
+\index{lighting\+::\+Gaussian\+Kernel\+Data@{lighting\+::\+Gaussian\+Kernel\+Data}!sigma@{sigma}}
+\index{sigma@{sigma}!lighting\+::\+Gaussian\+Kernel\+Data@{lighting\+::\+Gaussian\+Kernel\+Data}}
+\subsubsection[{\texorpdfstring{sigma}{sigma}}]{\setlength{\rightskip}{0pt plus 5cm}float lighting\+::\+Gaussian\+Kernel\+Data\+::sigma}\hypertarget{classlighting_1_1GaussianKernelData_ac99c7370fa30896baef2f03c91dd6885}{}\label{classlighting_1_1GaussianKernelData_ac99c7370fa30896baef2f03c91dd6885}
+
+
+The sigma the data was calculated from. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Gaussian\+Kernel\+Data.\+h\item 
+Gaussian\+Kernel\+Data.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,173 @@
+\hypertarget{classlighting_1_1LightLayer}{}\section{lighting\+:\+:Light\+Layer Class Reference}
+\label{classlighting_1_1LightLayer}\index{lighting\+::\+Light\+Layer@{lighting\+::\+Light\+Layer}}
+
+
+The core of the lighting system. Holds all \hyperlink{classlighting_1_1LightSource}{Light\+Source}s and Light\+Blockers, handles drawing operations, and manages threads.  
+
+
+
+
+{\ttfamily \#include $<$Light\+Layer.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classlighting_1_1LightLayer_a29d0df3bb8c40e2a3ad8e30f4f3c5588}{Light\+Layer} (int draw\+To\+BmpW, int draw\+To\+BmpH, double light\+Bmp\+Scale, size\+\_\+t max\+Threads=M\+A\+X\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+T\+O\+\_\+\+C\+O\+R\+ES)
+\begin{DoxyCompactList}\small\item\em Initializes a new instance of the \hyperlink{classlighting_1_1LightLayer}{Light\+Layer} class. \end{DoxyCompactList}\item 
+void \hyperlink{classlighting_1_1LightLayer_ac4f833f7d7d72586f8efef6967282889}{detach} ()
+\begin{DoxyCompactList}\small\item\em Detaches all elements of light\+Runnables to process \hyperlink{classlighting_1_1LightSource}{Light\+Source}s. Attributes such as location and angle of \hyperlink{classlighting_1_1LightSource}{Light\+Source}s and \hyperlink{classlighting_1_1LightBlocker}{Light\+Blocker}s should be set before called or you will have to wait until the next call to detach before they are implemented. \end{DoxyCompactList}\item 
+void \hyperlink{classlighting_1_1LightLayer_a6c3ce84a4fd8c6c6e50ac74c91c371fb}{draw} ()
+\begin{DoxyCompactList}\small\item\em Draws all of the \hyperlink{classlighting_1_1LightSource}{Light\+Source}s to the light\+Map after all elements in light\+Runnables have finished processing shadows. Gaussian blurs will be applied to the map and everything will be drawn to the display. \end{DoxyCompactList}\item 
+void \hyperlink{classlighting_1_1LightLayer_a59dd50384250b760039fff3fd3679db2}{add\+Light\+Blocker} (\hyperlink{classlighting_1_1LightBlocker}{Light\+Blocker} $\ast$light\+Blocker)
+\begin{DoxyCompactList}\small\item\em Adds {\itshape light\+Blocker}  to light\+Blockers and saves its location in that list in light\+Blocker\+Tracker\+Map. \end{DoxyCompactList}\item 
+void \hyperlink{classlighting_1_1LightLayer_aea3eb133116ff34ba4a4784e637023e4}{remove\+Light\+Blocker} (\hyperlink{classlighting_1_1LightBlocker}{Light\+Blocker} $\ast$light\+Blocker)
+\begin{DoxyCompactList}\small\item\em Removes {\itshape light\+Blocker}  from light\+Blockers using its location from light\+Blocker\+Tracker\+Map. \end{DoxyCompactList}\item 
+float \hyperlink{classlighting_1_1LightLayer_a06ec4bef39383bcc6cd61935e6ee2740}{get\+Light\+Bmp\+Scale} ()
+\begin{DoxyCompactList}\small\item\em Accessor for attribute light\+Bmp\+Scale. Scale of light\+Map relative to the display size. \end{DoxyCompactList}\item 
+\hyperlink{classlighting_1_1LightLayer_ab03e26d778fbe2f4607dd971bdfa95ac}{$\sim$\+Light\+Layer} ()
+\begin{DoxyCompactList}\small\item\em Finalizes an instance of the \hyperlink{classlighting_1_1LightLayer}{Light\+Layer}. None of the \hyperlink{classlighting_1_1LightBlocker}{Light\+Blocker}s or \hyperlink{classlighting_1_1LightSource}{Light\+Source} are deleted. Everything else is destroyed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const int {\bfseries M\+A\+X\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+T\+O\+\_\+\+C\+O\+R\+ES} = 0\hypertarget{classlighting_1_1LightLayer_afa46a22daf29cfb76001f09e07c312b7}{}\label{classlighting_1_1LightLayer_afa46a22daf29cfb76001f09e07c312b7}
+
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class {\bfseries Above\+Light\+Blocker}\hypertarget{classlighting_1_1LightLayer_a1c89aa6deb964112100d6dfe018a3108}{}\label{classlighting_1_1LightLayer_a1c89aa6deb964112100d6dfe018a3108}
+
+\item 
+class {\bfseries Above\+Light\+Source}\hypertarget{classlighting_1_1LightLayer_a7494ceda86b0415487e89ecf06ca36f8}{}\label{classlighting_1_1LightLayer_a7494ceda86b0415487e89ecf06ca36f8}
+
+\item 
+class {\bfseries Circle\+Light\+Source}\hypertarget{classlighting_1_1LightLayer_a2224497c267a19fc733115a90d16fd8f}{}\label{classlighting_1_1LightLayer_a2224497c267a19fc733115a90d16fd8f}
+
+\item 
+class {\bfseries Light\+Source}\hypertarget{classlighting_1_1LightLayer_a971d7f7b2685acda99cf00ca1c51e00d}{}\label{classlighting_1_1LightLayer_a971d7f7b2685acda99cf00ca1c51e00d}
+
+\item 
+class {\bfseries Gaussian\+Blurrer}\hypertarget{classlighting_1_1LightLayer_a93d13798acd08628a765e19044a239ee}{}\label{classlighting_1_1LightLayer_a93d13798acd08628a765e19044a239ee}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The core of the lighting system. Holds all \hyperlink{classlighting_1_1LightSource}{Light\+Source}s and Light\+Blockers, handles drawing operations, and manages threads. 
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{lighting\+::\+Light\+Layer@{lighting\+::\+Light\+Layer}!Light\+Layer@{Light\+Layer}}
+\index{Light\+Layer@{Light\+Layer}!lighting\+::\+Light\+Layer@{lighting\+::\+Light\+Layer}}
+\subsubsection[{\texorpdfstring{Light\+Layer(int draw\+To\+Bmp\+W, int draw\+To\+Bmp\+H, double light\+Bmp\+Scale, size\+\_\+t max\+Threads=\+M\+A\+X\+\_\+\+T\+H\+R\+E\+A\+D\+\_\+\+T\+O\+\_\+\+C\+O\+R\+E\+S)}{LightLayer(int drawToBmpW, int drawToBmpH, double lightBmpScale, size_t maxThreads=MAX_THREAD_TO_CORES)}}]{\setlength{\rightskip}{0pt plus 5cm}lighting\+::\+Light\+Layer\+::\+Light\+Layer (
+\begin{DoxyParamCaption}
+\item[{int}]{draw\+To\+BmpW, }
+\item[{int}]{draw\+To\+BmpH, }
+\item[{double}]{light\+Bmp\+Scale, }
+\item[{size\+\_\+t}]{max\+Threads = {\ttfamily MAX\+\_\+THREAD\+\_\+TO\+\_\+CORES}}
+\end{DoxyParamCaption}
+)}\hypertarget{classlighting_1_1LightLayer_a29d0df3bb8c40e2a3ad8e30f4f3c5588}{}\label{classlighting_1_1LightLayer_a29d0df3bb8c40e2a3ad8e30f4f3c5588}
+
+
+Initializes a new instance of the \hyperlink{classlighting_1_1LightLayer}{Light\+Layer} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em draw\+To\+BmpW} & The draw to B\+MP w.\\
+\hline
+{\em draw\+To\+BmpH} & The draw to B\+MP h.\\
+\hline
+{\em light\+Bmp\+Scale} & The light B\+MP scale.\\
+\hline
+{\em max\+Threads} & The maximum threads. Default will set this to number of cores on computer.\\
+\hline
+\end{DoxyParams}
+\index{lighting\+::\+Light\+Layer@{lighting\+::\+Light\+Layer}!````~Light\+Layer@{$\sim$\+Light\+Layer}}
+\index{````~Light\+Layer@{$\sim$\+Light\+Layer}!lighting\+::\+Light\+Layer@{lighting\+::\+Light\+Layer}}
+\subsubsection[{\texorpdfstring{$\sim$\+Light\+Layer()}{~LightLayer()}}]{\setlength{\rightskip}{0pt plus 5cm}lighting\+::\+Light\+Layer\+::$\sim$\+Light\+Layer (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classlighting_1_1LightLayer_ab03e26d778fbe2f4607dd971bdfa95ac}{}\label{classlighting_1_1LightLayer_ab03e26d778fbe2f4607dd971bdfa95ac}
+
+
+Finalizes an instance of the \hyperlink{classlighting_1_1LightLayer}{Light\+Layer}. None of the \hyperlink{classlighting_1_1LightBlocker}{Light\+Blocker}s or \hyperlink{classlighting_1_1LightSource}{Light\+Source} are deleted. Everything else is destroyed. 
+
+
+
+\subsection{Member Function Documentation}
+\index{lighting\+::\+Light\+Layer@{lighting\+::\+Light\+Layer}!add\+Light\+Blocker@{add\+Light\+Blocker}}
+\index{add\+Light\+Blocker@{add\+Light\+Blocker}!lighting\+::\+Light\+Layer@{lighting\+::\+Light\+Layer}}
+\subsubsection[{\texorpdfstring{add\+Light\+Blocker(\+Light\+Blocker $\ast$light\+Blocker)}{addLightBlocker(LightBlocker *lightBlocker)}}]{\setlength{\rightskip}{0pt plus 5cm}void lighting\+::\+Light\+Layer\+::add\+Light\+Blocker (
+\begin{DoxyParamCaption}
+\item[{{\bf Light\+Blocker} $\ast$}]{light\+Blocker}
+\end{DoxyParamCaption}
+)}\hypertarget{classlighting_1_1LightLayer_a59dd50384250b760039fff3fd3679db2}{}\label{classlighting_1_1LightLayer_a59dd50384250b760039fff3fd3679db2}
+
+
+Adds {\itshape light\+Blocker}  to light\+Blockers and saves its location in that list in light\+Blocker\+Tracker\+Map. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em light\+Blocker} & The \hyperlink{classlighting_1_1LightBlocker}{Light\+Blocker} to be added.\\
+\hline
+\end{DoxyParams}
+\index{lighting\+::\+Light\+Layer@{lighting\+::\+Light\+Layer}!detach@{detach}}
+\index{detach@{detach}!lighting\+::\+Light\+Layer@{lighting\+::\+Light\+Layer}}
+\subsubsection[{\texorpdfstring{detach()}{detach()}}]{\setlength{\rightskip}{0pt plus 5cm}void lighting\+::\+Light\+Layer\+::detach (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classlighting_1_1LightLayer_ac4f833f7d7d72586f8efef6967282889}{}\label{classlighting_1_1LightLayer_ac4f833f7d7d72586f8efef6967282889}
+
+
+Detaches all elements of light\+Runnables to process \hyperlink{classlighting_1_1LightSource}{Light\+Source}s. Attributes such as location and angle of \hyperlink{classlighting_1_1LightSource}{Light\+Source}s and \hyperlink{classlighting_1_1LightBlocker}{Light\+Blocker}s should be set before called or you will have to wait until the next call to detach before they are implemented. 
+
+\index{lighting\+::\+Light\+Layer@{lighting\+::\+Light\+Layer}!draw@{draw}}
+\index{draw@{draw}!lighting\+::\+Light\+Layer@{lighting\+::\+Light\+Layer}}
+\subsubsection[{\texorpdfstring{draw()}{draw()}}]{\setlength{\rightskip}{0pt plus 5cm}void lighting\+::\+Light\+Layer\+::draw (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classlighting_1_1LightLayer_a6c3ce84a4fd8c6c6e50ac74c91c371fb}{}\label{classlighting_1_1LightLayer_a6c3ce84a4fd8c6c6e50ac74c91c371fb}
+
+
+Draws all of the \hyperlink{classlighting_1_1LightSource}{Light\+Source}s to the light\+Map after all elements in light\+Runnables have finished processing shadows. Gaussian blurs will be applied to the map and everything will be drawn to the display. 
+
+\index{lighting\+::\+Light\+Layer@{lighting\+::\+Light\+Layer}!get\+Light\+Bmp\+Scale@{get\+Light\+Bmp\+Scale}}
+\index{get\+Light\+Bmp\+Scale@{get\+Light\+Bmp\+Scale}!lighting\+::\+Light\+Layer@{lighting\+::\+Light\+Layer}}
+\subsubsection[{\texorpdfstring{get\+Light\+Bmp\+Scale()}{getLightBmpScale()}}]{\setlength{\rightskip}{0pt plus 5cm}float lighting\+::\+Light\+Layer\+::get\+Light\+Bmp\+Scale (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classlighting_1_1LightLayer_a06ec4bef39383bcc6cd61935e6ee2740}{}\label{classlighting_1_1LightLayer_a06ec4bef39383bcc6cd61935e6ee2740}
+
+
+Accessor for attribute light\+Bmp\+Scale. Scale of light\+Map relative to the display size. 
+
+\begin{DoxyReturn}{Returns}
+Scale of light\+Map relative to the display.
+\end{DoxyReturn}
+\index{lighting\+::\+Light\+Layer@{lighting\+::\+Light\+Layer}!remove\+Light\+Blocker@{remove\+Light\+Blocker}}
+\index{remove\+Light\+Blocker@{remove\+Light\+Blocker}!lighting\+::\+Light\+Layer@{lighting\+::\+Light\+Layer}}
+\subsubsection[{\texorpdfstring{remove\+Light\+Blocker(\+Light\+Blocker $\ast$light\+Blocker)}{removeLightBlocker(LightBlocker *lightBlocker)}}]{\setlength{\rightskip}{0pt plus 5cm}void lighting\+::\+Light\+Layer\+::remove\+Light\+Blocker (
+\begin{DoxyParamCaption}
+\item[{{\bf Light\+Blocker} $\ast$}]{light\+Blocker}
+\end{DoxyParamCaption}
+)}\hypertarget{classlighting_1_1LightLayer_aea3eb133116ff34ba4a4784e637023e4}{}\label{classlighting_1_1LightLayer_aea3eb133116ff34ba4a4784e637023e4}
+
+
+Removes {\itshape light\+Blocker}  from light\+Blockers using its location from light\+Blocker\+Tracker\+Map. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em light\+Blocker} & The light blocker.\\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Light\+Layer.\+h\item 
+Light\+Layer.\+cpp\end{DoxyCompactItemize}

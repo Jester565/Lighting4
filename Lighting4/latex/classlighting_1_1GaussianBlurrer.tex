@@ -1,0 +1,182 @@
+\hypertarget{classlighting_1_1GaussianBlurrer}{}\section{lighting\+:\+:Gaussian\+Blurrer Class Reference}
+\label{classlighting_1_1GaussianBlurrer}\index{lighting\+::\+Gaussian\+Blurrer@{lighting\+::\+Gaussian\+Blurrer}}
+
+
+Takes bitmaps and uses a two pass gaussian blur on it. Specify which shaders to use and the kernel\+Data. Adds itself to {\itshape owner} .  
+
+
+
+
+{\ttfamily \#include $<$Gaussian\+Blurrer.\+h$>$}
+
+
+
+Collaboration diagram for lighting\+:\+:Gaussian\+Blurrer\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=203pt]{classlighting_1_1GaussianBlurrer__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classlighting_1_1GaussianBlurrer_ad6586426f68f4e7527261951fe39f995}{Gaussian\+Blurrer} (\hyperlink{classlighting_1_1LightLayer}{Light\+Layer} $\ast$\hyperlink{classlighting_1_1GaussianBlurrer_ae673db1b5f734d90a45628a33cc73bd1}{owner}, \hyperlink{classlighting_1_1GaussianKernelData}{Gaussian\+Kernel\+Data} \&kernel\+Data, const std\+::string \&vert\+Shader\+Path, const std\+::string \&pixel\+Shader\+PathX, const std\+::string \&pixel\+Shader\+PathY, A\+L\+L\+E\+G\+R\+O\+\_\+\+S\+H\+A\+D\+E\+R\+\_\+\+P\+L\+A\+T\+F\+O\+RM platform=A\+L\+L\+E\+G\+R\+O\+\_\+\+S\+H\+A\+D\+E\+R\+\_\+\+A\+U\+TO)
+\begin{DoxyCompactList}\small\item\em Initializes a new instance of the \hyperlink{classlighting_1_1GaussianBlurrer}{Gaussian\+Blurrer} class. Creating new shaders with the proper {\itshape kernel\+Data} . \end{DoxyCompactList}\item 
+void \hyperlink{classlighting_1_1GaussianBlurrer_a8422fd11341d886f0951552bdc038f5b}{blur} (A\+L\+L\+E\+G\+R\+O\+\_\+\+B\+I\+T\+M\+AP $\ast$map\+To\+Blur, A\+L\+L\+E\+G\+R\+O\+\_\+\+B\+I\+T\+M\+AP $\ast$placeholder)
+\begin{DoxyCompactList}\small\item\em Called by Light\+Map. The {\itshape map\+To\+Blur}  will be fully gaussian blurred and the placeholder bitmap will be horizontally blurred. (W\+A\+R\+N\+I\+NG S\+H\+A\+D\+ER N\+OT S\+ET TO N\+U\+L\+L\+P\+TR W\+H\+EN F\+I\+N\+I\+S\+H\+ED). \end{DoxyCompactList}\item 
+\hyperlink{classlighting_1_1GaussianBlurrer_ae3b3470c59d86f3837b639961f41cb13}{$\sim$\+Gaussian\+Blurrer} ()
+\begin{DoxyCompactList}\small\item\em Finalizes an instance of the \hyperlink{classlighting_1_1GaussianBlurrer}{Gaussian\+Blurrer} class. Removes itself from {\itshape owner} . \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+A\+L\+L\+E\+G\+R\+O\+\_\+\+S\+H\+A\+D\+ER $\ast$ \hyperlink{classlighting_1_1GaussianBlurrer_a6c13e999dd54c2dbbbfb6af5ab800412}{get\+Shader} (const std\+::string \&vert\+Shader\+Path, const std\+::string \&pixel\+Shader\+Path, A\+L\+L\+E\+G\+R\+O\+\_\+\+S\+H\+A\+D\+E\+R\+\_\+\+P\+L\+A\+T\+F\+O\+RM platform)
+\begin{DoxyCompactList}\small\item\em Creates a new shader using the paths specified. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+A\+L\+L\+E\+G\+R\+O\+\_\+\+S\+H\+A\+D\+ER $\ast$ \hyperlink{classlighting_1_1GaussianBlurrer_a36d10a62e2fd99e1182c596425fbacfa}{shaderX}
+\begin{DoxyCompactList}\small\item\em The horizontal gaussian shader (called first). \end{DoxyCompactList}\item 
+A\+L\+L\+E\+G\+R\+O\+\_\+\+S\+H\+A\+D\+ER $\ast$ \hyperlink{classlighting_1_1GaussianBlurrer_a57c41b5a1dd0712e98d085a8a90172d4}{shaderY}
+\begin{DoxyCompactList}\small\item\em The vertial gaussian shader (called last). \end{DoxyCompactList}\item 
+\hyperlink{classlighting_1_1LightLayer}{Light\+Layer} $\ast$ \hyperlink{classlighting_1_1GaussianBlurrer_ae673db1b5f734d90a45628a33cc73bd1}{owner}
+\begin{DoxyCompactList}\small\item\em The \hyperlink{classlighting_1_1LightLayer}{Light\+Layer} that owns 
+\begin{DoxyCode}
+\textcolor{keyword}{this}
+\end{DoxyCode}
+. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Takes bitmaps and uses a two pass gaussian blur on it. Specify which shaders to use and the kernel\+Data. Adds itself to {\itshape owner} . 
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{lighting\+::\+Gaussian\+Blurrer@{lighting\+::\+Gaussian\+Blurrer}!Gaussian\+Blurrer@{Gaussian\+Blurrer}}
+\index{Gaussian\+Blurrer@{Gaussian\+Blurrer}!lighting\+::\+Gaussian\+Blurrer@{lighting\+::\+Gaussian\+Blurrer}}
+\subsubsection[{\texorpdfstring{Gaussian\+Blurrer(\+Light\+Layer $\ast$owner, Gaussian\+Kernel\+Data \&kernel\+Data, const std\+::string \&vert\+Shader\+Path, const std\+::string \&pixel\+Shader\+Path\+X, const std\+::string \&pixel\+Shader\+Path\+Y, A\+L\+L\+E\+G\+R\+O\+\_\+\+S\+H\+A\+D\+E\+R\+\_\+\+P\+L\+A\+T\+F\+O\+R\+M platform=\+A\+L\+L\+E\+G\+R\+O\+\_\+\+S\+H\+A\+D\+E\+R\+\_\+\+A\+U\+T\+O)}{GaussianBlurrer(LightLayer *owner, GaussianKernelData &kernelData, const std::string &vertShaderPath, const std::string &pixelShaderPathX, const std::string &pixelShaderPathY, ALLEGRO_SHADER_PLATFORM platform=ALLEGRO_SHADER_AUTO)}}]{\setlength{\rightskip}{0pt plus 5cm}lighting\+::\+Gaussian\+Blurrer\+::\+Gaussian\+Blurrer (
+\begin{DoxyParamCaption}
+\item[{{\bf Light\+Layer} $\ast$}]{owner, }
+\item[{{\bf Gaussian\+Kernel\+Data} \&}]{kernel\+Data, }
+\item[{const std\+::string \&}]{vert\+Shader\+Path, }
+\item[{const std\+::string \&}]{pixel\+Shader\+PathX, }
+\item[{const std\+::string \&}]{pixel\+Shader\+PathY, }
+\item[{A\+L\+L\+E\+G\+R\+O\+\_\+\+S\+H\+A\+D\+E\+R\+\_\+\+P\+L\+A\+T\+F\+O\+RM}]{platform = {\ttfamily ALLEGRO\+\_\+SHADER\+\_\+AUTO}}
+\end{DoxyParamCaption}
+)}\hypertarget{classlighting_1_1GaussianBlurrer_ad6586426f68f4e7527261951fe39f995}{}\label{classlighting_1_1GaussianBlurrer_ad6586426f68f4e7527261951fe39f995}
+
+
+Initializes a new instance of the \hyperlink{classlighting_1_1GaussianBlurrer}{Gaussian\+Blurrer} class. Creating new shaders with the proper {\itshape kernel\+Data} . 
+
+
+\begin{DoxyParams}{Parameters}
+{\em owner} & The \hyperlink{classlighting_1_1LightLayer}{Light\+Layer} that owns 
+\begin{DoxyCode}
+\textcolor{keyword}{this}
+\end{DoxyCode}
+.\\
+\hline
+{\em kernel\+Data} & The \hyperlink{classlighting_1_1GaussianKernelData}{Gaussian\+Kernel\+Data} used to set the variables of the shaders. Uses the Pixel\+Offsets and Pixel\+Weights to set the shaders. The size of Pixel\+Offsets and Pixel\+Weights must be less than 12 (When generating the Kernel\+Data, use values less than 44)\\
+\hline
+{\em vert\+Shader\+Path} & The vertex shader path, must be compatible with Allegro (See their default shader for an example).\\
+\hline
+{\em pixel\+Shader\+PathX} & The pixel shader path for horizontal gaussian blur. Should have Bmp\+Width, Pixel\+Offsets, and Pixel\+Weights variables to set.\\
+\hline
+{\em pixel\+Shader\+PathY} & The pixel shader path for vertical gaussian blur. Should have Bmp\+Height, Pixel\+Offsets, and Pixel\+Weights variables to set.\\
+\hline
+{\em platform} & The platform to create the shaders on, H\+L\+SL or G\+L\+SL.\\
+\hline
+\end{DoxyParams}
+\index{lighting\+::\+Gaussian\+Blurrer@{lighting\+::\+Gaussian\+Blurrer}!````~Gaussian\+Blurrer@{$\sim$\+Gaussian\+Blurrer}}
+\index{````~Gaussian\+Blurrer@{$\sim$\+Gaussian\+Blurrer}!lighting\+::\+Gaussian\+Blurrer@{lighting\+::\+Gaussian\+Blurrer}}
+\subsubsection[{\texorpdfstring{$\sim$\+Gaussian\+Blurrer()}{~GaussianBlurrer()}}]{\setlength{\rightskip}{0pt plus 5cm}lighting\+::\+Gaussian\+Blurrer\+::$\sim$\+Gaussian\+Blurrer (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classlighting_1_1GaussianBlurrer_ae3b3470c59d86f3837b639961f41cb13}{}\label{classlighting_1_1GaussianBlurrer_ae3b3470c59d86f3837b639961f41cb13}
+
+
+Finalizes an instance of the \hyperlink{classlighting_1_1GaussianBlurrer}{Gaussian\+Blurrer} class. Removes itself from {\itshape owner} . 
+
+
+
+\subsection{Member Function Documentation}
+\index{lighting\+::\+Gaussian\+Blurrer@{lighting\+::\+Gaussian\+Blurrer}!blur@{blur}}
+\index{blur@{blur}!lighting\+::\+Gaussian\+Blurrer@{lighting\+::\+Gaussian\+Blurrer}}
+\subsubsection[{\texorpdfstring{blur(\+A\+L\+L\+E\+G\+R\+O\+\_\+\+B\+I\+T\+M\+A\+P $\ast$map\+To\+Blur, A\+L\+L\+E\+G\+R\+O\+\_\+\+B\+I\+T\+M\+A\+P $\ast$placeholder)}{blur(ALLEGRO_BITMAP *mapToBlur, ALLEGRO_BITMAP *placeholder)}}]{\setlength{\rightskip}{0pt plus 5cm}void lighting\+::\+Gaussian\+Blurrer\+::blur (
+\begin{DoxyParamCaption}
+\item[{A\+L\+L\+E\+G\+R\+O\+\_\+\+B\+I\+T\+M\+AP $\ast$}]{map\+To\+Blur, }
+\item[{A\+L\+L\+E\+G\+R\+O\+\_\+\+B\+I\+T\+M\+AP $\ast$}]{placeholder}
+\end{DoxyParamCaption}
+)}\hypertarget{classlighting_1_1GaussianBlurrer_a8422fd11341d886f0951552bdc038f5b}{}\label{classlighting_1_1GaussianBlurrer_a8422fd11341d886f0951552bdc038f5b}
+
+
+Called by Light\+Map. The {\itshape map\+To\+Blur}  will be fully gaussian blurred and the placeholder bitmap will be horizontally blurred. (W\+A\+R\+N\+I\+NG S\+H\+A\+D\+ER N\+OT S\+ET TO N\+U\+L\+L\+P\+TR W\+H\+EN F\+I\+N\+I\+S\+H\+ED). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em map\+To\+Blur} & The map to blur.\\
+\hline
+{\em placeholder} & The placeholder.\\
+\hline
+\end{DoxyParams}
+\index{lighting\+::\+Gaussian\+Blurrer@{lighting\+::\+Gaussian\+Blurrer}!get\+Shader@{get\+Shader}}
+\index{get\+Shader@{get\+Shader}!lighting\+::\+Gaussian\+Blurrer@{lighting\+::\+Gaussian\+Blurrer}}
+\subsubsection[{\texorpdfstring{get\+Shader(const std\+::string \&vert\+Shader\+Path, const std\+::string \&pixel\+Shader\+Path, A\+L\+L\+E\+G\+R\+O\+\_\+\+S\+H\+A\+D\+E\+R\+\_\+\+P\+L\+A\+T\+F\+O\+R\+M platform)}{getShader(const std::string &vertShaderPath, const std::string &pixelShaderPath, ALLEGRO_SHADER_PLATFORM platform)}}]{\setlength{\rightskip}{0pt plus 5cm}A\+L\+L\+E\+G\+R\+O\+\_\+\+S\+H\+A\+D\+ER $\ast$ lighting\+::\+Gaussian\+Blurrer\+::get\+Shader (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{vert\+Shader\+Path, }
+\item[{const std\+::string \&}]{pixel\+Shader\+Path, }
+\item[{A\+L\+L\+E\+G\+R\+O\+\_\+\+S\+H\+A\+D\+E\+R\+\_\+\+P\+L\+A\+T\+F\+O\+RM}]{platform}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classlighting_1_1GaussianBlurrer_a6c13e999dd54c2dbbbfb6af5ab800412}{}\label{classlighting_1_1GaussianBlurrer_a6c13e999dd54c2dbbbfb6af5ab800412}
+
+
+Creates a new shader using the paths specified. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vert\+Shader\+Path} & The vertex shader path, must be compatible with Allegro (See their default shader for an example).\\
+\hline
+{\em pixel\+Shader\+Path} & The pixel shader path.\\
+\hline
+{\em platform} & The shader platform (H\+L\+SL or G\+L\+SL).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\index{lighting\+::\+Gaussian\+Blurrer@{lighting\+::\+Gaussian\+Blurrer}!owner@{owner}}
+\index{owner@{owner}!lighting\+::\+Gaussian\+Blurrer@{lighting\+::\+Gaussian\+Blurrer}}
+\subsubsection[{\texorpdfstring{owner}{owner}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Light\+Layer}$\ast$ lighting\+::\+Gaussian\+Blurrer\+::owner\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classlighting_1_1GaussianBlurrer_ae673db1b5f734d90a45628a33cc73bd1}{}\label{classlighting_1_1GaussianBlurrer_ae673db1b5f734d90a45628a33cc73bd1}
+
+
+The \hyperlink{classlighting_1_1LightLayer}{Light\+Layer} that owns 
+\begin{DoxyCode}
+\textcolor{keyword}{this}
+\end{DoxyCode}
+. 
+
+\index{lighting\+::\+Gaussian\+Blurrer@{lighting\+::\+Gaussian\+Blurrer}!shaderX@{shaderX}}
+\index{shaderX@{shaderX}!lighting\+::\+Gaussian\+Blurrer@{lighting\+::\+Gaussian\+Blurrer}}
+\subsubsection[{\texorpdfstring{shaderX}{shaderX}}]{\setlength{\rightskip}{0pt plus 5cm}A\+L\+L\+E\+G\+R\+O\+\_\+\+S\+H\+A\+D\+ER$\ast$ lighting\+::\+Gaussian\+Blurrer\+::shaderX\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classlighting_1_1GaussianBlurrer_a36d10a62e2fd99e1182c596425fbacfa}{}\label{classlighting_1_1GaussianBlurrer_a36d10a62e2fd99e1182c596425fbacfa}
+
+
+The horizontal gaussian shader (called first). 
+
+\index{lighting\+::\+Gaussian\+Blurrer@{lighting\+::\+Gaussian\+Blurrer}!shaderY@{shaderY}}
+\index{shaderY@{shaderY}!lighting\+::\+Gaussian\+Blurrer@{lighting\+::\+Gaussian\+Blurrer}}
+\subsubsection[{\texorpdfstring{shaderY}{shaderY}}]{\setlength{\rightskip}{0pt plus 5cm}A\+L\+L\+E\+G\+R\+O\+\_\+\+S\+H\+A\+D\+ER$\ast$ lighting\+::\+Gaussian\+Blurrer\+::shaderY\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classlighting_1_1GaussianBlurrer_a57c41b5a1dd0712e98d085a8a90172d4}{}\label{classlighting_1_1GaussianBlurrer_a57c41b5a1dd0712e98d085a8a90172d4}
+
+
+The vertial gaussian shader (called last). 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Gaussian\+Blurrer.\+h\item 
+Gaussian\+Blurrer.\+cpp\end{DoxyCompactItemize}

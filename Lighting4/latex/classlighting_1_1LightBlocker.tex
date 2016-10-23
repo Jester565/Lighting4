@@ -1,0 +1,236 @@
+\hypertarget{classlighting_1_1LightBlocker}{}\section{lighting\+:\+:Light\+Blocker Class Reference}
+\label{classlighting_1_1LightBlocker}\index{lighting\+::\+Light\+Blocker@{lighting\+::\+Light\+Blocker}}
+
+
+Represents a line that will be used by \hyperlink{classlighting_1_1LightSource}{s to determine if their rays are being blocked. }  
+
+
+
+
+{\ttfamily \#include $<$Light\+Blocker.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classlighting_1_1LightBlocker_a3a6c6d10ce50969937c4c06c4842fa16}{Light\+Blocker} (float x, float y, float \hyperlink{classlighting_1_1LightBlocker_a3c030005ee4af11838011f549ec0b4c3}{ep\+X1}, float \hyperlink{classlighting_1_1LightBlocker_a2d8e512751df14bff73c59e3bfaea216}{ep\+Y1}, float \hyperlink{classlighting_1_1LightBlocker_a01cf6b4663389c17b5f80294a2b26401}{ep\+X2}, float \hyperlink{classlighting_1_1LightBlocker_ac208ae1dafe53ec7ceab6d60113c6ca1}{ep\+Y2})
+\begin{DoxyCompactList}\small\item\em Initializes a new instance of the \hyperlink{classlighting_1_1LightBlocker}{Light\+Blocker} class. Specifying the {\itshape x}  and {\itshape y}  of the line and the offset of the endpoints from {\itshape x}  and {\itshape y} . \end{DoxyCompactList}\item 
+void \hyperlink{classlighting_1_1LightBlocker_aca52033e87e21fbe0a2574447ed05a3d}{set\+Global\+XY} (float x, float y)
+\begin{DoxyCompactList}\small\item\em Sets the location of the line. Modifies attributes \hyperlink{classlighting_1_1LightBlocker_acb89235bf9b478b8242e0bf3a1ca863c}{x1}, \hyperlink{classlighting_1_1LightBlocker_ad988b4727c60d6e83a8fca2d7eabbdec}{y1} and \hyperlink{classlighting_1_1LightBlocker_aaeb1641f4d28d66c4d89045c6053a29a}{x2}, \hyperlink{classlighting_1_1LightBlocker_a69fdb1256cab66b415a76b9f63af4284}{. } \end{DoxyCompactList}\item 
+void \hyperlink{classlighting_1_1LightBlocker_a1fe1c13013aeee813526ae74cd5a984c}{set\+Rads} (float cX, float cY, float rads)
+\begin{DoxyCompactList}\small\item\em Rotates the endpoints around {\itshape cX}  and {\itshape cY} . The change in coordinates from the rotation are stored in \hyperlink{classlighting_1_1LightBlocker_a51b85e054f0ffaf8ae51d305b62e6a6f}{rotate\+X\+Off1}, \hyperlink{classlighting_1_1LightBlocker_a3c9c30ae0058e5f97b13c785f9ab879a}{rotate\+Y\+Off1} and \hyperlink{classlighting_1_1LightBlocker_a5e08ff3bf8f8f26b8660f95114184b5c}{rotate\+X\+Off2}, \hyperlink{classlighting_1_1LightBlocker_aea5301a408a819c955c9227ff6a41009}{rotate\+Y\+Off2}. \end{DoxyCompactList}\item 
+\hyperlink{classlighting_1_1LightBlocker_ac185b4f1d32b6ac15c247e42fa9dcb00}{$\sim$\+Light\+Blocker} ()
+\begin{DoxyCompactList}\small\item\em Finalizes an instance of the \hyperlink{classlighting_1_1LightBlocker}{Light\+Blocker} class. Default destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float \hyperlink{classlighting_1_1LightBlocker_acb89235bf9b478b8242e0bf3a1ca863c}{x1}
+\begin{DoxyCompactList}\small\item\em Horizontal position of first endpoint on the screen. \end{DoxyCompactList}\item 
+float \hyperlink{classlighting_1_1LightBlocker_ad988b4727c60d6e83a8fca2d7eabbdec}{y1}
+\begin{DoxyCompactList}\small\item\em Vertical position of first endpoint on the screen. \end{DoxyCompactList}\item 
+float \hyperlink{classlighting_1_1LightBlocker_aaeb1641f4d28d66c4d89045c6053a29a}{x2}
+\begin{DoxyCompactList}\small\item\em Horizontal position of the second endpoint on the screen. \end{DoxyCompactList}\item 
+float \hyperlink{classlighting_1_1LightBlocker_a69fdb1256cab66b415a76b9f63af4284}{y2}
+\begin{DoxyCompactList}\small\item\em Vertical position of the second endpoint on the screen. \end{DoxyCompactList}\item 
+float \hyperlink{classlighting_1_1LightBlocker_a3c030005ee4af11838011f549ec0b4c3}{ep\+X1}
+\begin{DoxyCompactList}\small\item\em The displacement between x and the endpointX \end{DoxyCompactList}\item 
+float \hyperlink{classlighting_1_1LightBlocker_a2d8e512751df14bff73c59e3bfaea216}{ep\+Y1}
+\begin{DoxyCompactList}\small\item\em The displacement between y and the endpointY \end{DoxyCompactList}\item 
+float \hyperlink{classlighting_1_1LightBlocker_a01cf6b4663389c17b5f80294a2b26401}{ep\+X2}
+\begin{DoxyCompactList}\small\item\em The displacement between x and the endpointX \end{DoxyCompactList}\item 
+float \hyperlink{classlighting_1_1LightBlocker_ac208ae1dafe53ec7ceab6d60113c6ca1}{ep\+Y2}
+\begin{DoxyCompactList}\small\item\em The displacement between y and the endpointY \end{DoxyCompactList}\item 
+float \hyperlink{classlighting_1_1LightBlocker_a51b85e054f0ffaf8ae51d305b62e6a6f}{rotate\+X\+Off1}
+\begin{DoxyCompactList}\small\item\em The horizontal displacement of the first endpoint due to rotation, set by \hyperlink{classlighting_1_1LightBlocker_a1fe1c13013aeee813526ae74cd5a984c}{set\+Rads()}. \end{DoxyCompactList}\item 
+float \hyperlink{classlighting_1_1LightBlocker_a3c9c30ae0058e5f97b13c785f9ab879a}{rotate\+Y\+Off1}
+\begin{DoxyCompactList}\small\item\em The vertical displacement of the first endpoint due to rotation, set by \hyperlink{classlighting_1_1LightBlocker_a1fe1c13013aeee813526ae74cd5a984c}{set\+Rads()}. \end{DoxyCompactList}\item 
+float \hyperlink{classlighting_1_1LightBlocker_a5e08ff3bf8f8f26b8660f95114184b5c}{rotate\+X\+Off2}
+\begin{DoxyCompactList}\small\item\em The horizontal displacement of the second endpoint due to rotation, set by \hyperlink{classlighting_1_1LightBlocker_a1fe1c13013aeee813526ae74cd5a984c}{set\+Rads()}. \end{DoxyCompactList}\item 
+float \hyperlink{classlighting_1_1LightBlocker_aea5301a408a819c955c9227ff6a41009}{rotate\+Y\+Off2}
+\begin{DoxyCompactList}\small\item\em The vertical displacement of the second endpoint due to rotation, set by \hyperlink{classlighting_1_1LightBlocker_a1fe1c13013aeee813526ae74cd5a984c}{set\+Rads()}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Represents a line that will be used by \hyperlink{classlighting_1_1LightSource}{s to determine if their rays are being blocked. } 
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{lighting\+::\+Light\+Blocker@{lighting\+::\+Light\+Blocker}!Light\+Blocker@{Light\+Blocker}}
+\index{Light\+Blocker@{Light\+Blocker}!lighting\+::\+Light\+Blocker@{lighting\+::\+Light\+Blocker}}
+\subsubsection[{\texorpdfstring{Light\+Blocker(float x, float y, float ep\+X1, float ep\+Y1, float ep\+X2, float ep\+Y2)}{LightBlocker(float x, float y, float epX1, float epY1, float epX2, float epY2)}}]{\setlength{\rightskip}{0pt plus 5cm}lighting\+::\+Light\+Blocker\+::\+Light\+Blocker (
+\begin{DoxyParamCaption}
+\item[{float}]{x, }
+\item[{float}]{y, }
+\item[{float}]{ep\+X1, }
+\item[{float}]{ep\+Y1, }
+\item[{float}]{ep\+X2, }
+\item[{float}]{ep\+Y2}
+\end{DoxyParamCaption}
+)}\hypertarget{classlighting_1_1LightBlocker_a3a6c6d10ce50969937c4c06c4842fa16}{}\label{classlighting_1_1LightBlocker_a3a6c6d10ce50969937c4c06c4842fa16}
+
+
+Initializes a new instance of the \hyperlink{classlighting_1_1LightBlocker}{Light\+Blocker} class. Specifying the {\itshape x}  and {\itshape y}  of the line and the offset of the endpoints from {\itshape x}  and {\itshape y} . 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The horizontal postion of the line.\\
+\hline
+{\em y} & The vertical position of the line.\\
+\hline
+{\em ep\+X1} & The horizontal displacement of the first endpoint from {\itshape x} . Sets \hyperlink{classlighting_1_1LightBlocker_a3c030005ee4af11838011f549ec0b4c3}{ep\+X1}.\\
+\hline
+{\em ep\+Y1} & The vertical displacement of the first endpoint from {\itshape y} . Sets \hyperlink{classlighting_1_1LightBlocker_a2d8e512751df14bff73c59e3bfaea216}{ep\+Y1}.\\
+\hline
+{\em ep\+X2} & The horizontal displacement of the second endpoint from {\itshape x} . Sets \hyperlink{classlighting_1_1LightBlocker_a01cf6b4663389c17b5f80294a2b26401}{ep\+X2}.\\
+\hline
+{\em ep\+Y2} & The vertical displacement of the second endpoint from {\itshape x} . Sets \hyperlink{classlighting_1_1LightBlocker_ac208ae1dafe53ec7ceab6d60113c6ca1}{ep\+Y2}.\\
+\hline
+\end{DoxyParams}
+\index{lighting\+::\+Light\+Blocker@{lighting\+::\+Light\+Blocker}!````~Light\+Blocker@{$\sim$\+Light\+Blocker}}
+\index{````~Light\+Blocker@{$\sim$\+Light\+Blocker}!lighting\+::\+Light\+Blocker@{lighting\+::\+Light\+Blocker}}
+\subsubsection[{\texorpdfstring{$\sim$\+Light\+Blocker()}{~LightBlocker()}}]{\setlength{\rightskip}{0pt plus 5cm}lighting\+::\+Light\+Blocker\+::$\sim$\+Light\+Blocker (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classlighting_1_1LightBlocker_ac185b4f1d32b6ac15c247e42fa9dcb00}{}\label{classlighting_1_1LightBlocker_ac185b4f1d32b6ac15c247e42fa9dcb00}
+
+
+Finalizes an instance of the \hyperlink{classlighting_1_1LightBlocker}{Light\+Blocker} class. Default destructor. 
+
+
+
+\subsection{Member Function Documentation}
+\index{lighting\+::\+Light\+Blocker@{lighting\+::\+Light\+Blocker}!set\+Global\+XY@{set\+Global\+XY}}
+\index{set\+Global\+XY@{set\+Global\+XY}!lighting\+::\+Light\+Blocker@{lighting\+::\+Light\+Blocker}}
+\subsubsection[{\texorpdfstring{set\+Global\+X\+Y(float x, float y)}{setGlobalXY(float x, float y)}}]{\setlength{\rightskip}{0pt plus 5cm}void lighting\+::\+Light\+Blocker\+::set\+Global\+XY (
+\begin{DoxyParamCaption}
+\item[{float}]{x, }
+\item[{float}]{y}
+\end{DoxyParamCaption}
+)}\hypertarget{classlighting_1_1LightBlocker_aca52033e87e21fbe0a2574447ed05a3d}{}\label{classlighting_1_1LightBlocker_aca52033e87e21fbe0a2574447ed05a3d}
+
+
+Sets the location of the line. Modifies attributes \hyperlink{classlighting_1_1LightBlocker_acb89235bf9b478b8242e0bf3a1ca863c}{x1}, \hyperlink{classlighting_1_1LightBlocker_ad988b4727c60d6e83a8fca2d7eabbdec}{y1} and \hyperlink{classlighting_1_1LightBlocker_aaeb1641f4d28d66c4d89045c6053a29a}{x2}, \hyperlink{classlighting_1_1LightBlocker_a69fdb1256cab66b415a76b9f63af4284}{. } 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The horizontal position.\\
+\hline
+{\em y} & The vertical position.\\
+\hline
+\end{DoxyParams}
+\index{lighting\+::\+Light\+Blocker@{lighting\+::\+Light\+Blocker}!set\+Rads@{set\+Rads}}
+\index{set\+Rads@{set\+Rads}!lighting\+::\+Light\+Blocker@{lighting\+::\+Light\+Blocker}}
+\subsubsection[{\texorpdfstring{set\+Rads(float c\+X, float c\+Y, float rads)}{setRads(float cX, float cY, float rads)}}]{\setlength{\rightskip}{0pt plus 5cm}void lighting\+::\+Light\+Blocker\+::set\+Rads (
+\begin{DoxyParamCaption}
+\item[{float}]{cX, }
+\item[{float}]{cY, }
+\item[{float}]{rads}
+\end{DoxyParamCaption}
+)}\hypertarget{classlighting_1_1LightBlocker_a1fe1c13013aeee813526ae74cd5a984c}{}\label{classlighting_1_1LightBlocker_a1fe1c13013aeee813526ae74cd5a984c}
+
+
+Rotates the endpoints around {\itshape cX}  and {\itshape cY} . The change in coordinates from the rotation are stored in \hyperlink{classlighting_1_1LightBlocker_a51b85e054f0ffaf8ae51d305b62e6a6f}{rotate\+X\+Off1}, \hyperlink{classlighting_1_1LightBlocker_a3c9c30ae0058e5f97b13c785f9ab879a}{rotate\+Y\+Off1} and \hyperlink{classlighting_1_1LightBlocker_a5e08ff3bf8f8f26b8660f95114184b5c}{rotate\+X\+Off2}, \hyperlink{classlighting_1_1LightBlocker_aea5301a408a819c955c9227ff6a41009}{rotate\+Y\+Off2}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cX} & The horizontal displacement from x to rotate around.\\
+\hline
+{\em cY} & The vertical displacement from y to rotate around.\\
+\hline
+{\em rads} & The rads.\\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\index{lighting\+::\+Light\+Blocker@{lighting\+::\+Light\+Blocker}!ep\+X1@{ep\+X1}}
+\index{ep\+X1@{ep\+X1}!lighting\+::\+Light\+Blocker@{lighting\+::\+Light\+Blocker}}
+\subsubsection[{\texorpdfstring{ep\+X1}{epX1}}]{\setlength{\rightskip}{0pt plus 5cm}float lighting\+::\+Light\+Blocker\+::ep\+X1}\hypertarget{classlighting_1_1LightBlocker_a3c030005ee4af11838011f549ec0b4c3}{}\label{classlighting_1_1LightBlocker_a3c030005ee4af11838011f549ec0b4c3}
+
+
+The displacement between x and the endpointX 
+
+\index{lighting\+::\+Light\+Blocker@{lighting\+::\+Light\+Blocker}!ep\+X2@{ep\+X2}}
+\index{ep\+X2@{ep\+X2}!lighting\+::\+Light\+Blocker@{lighting\+::\+Light\+Blocker}}
+\subsubsection[{\texorpdfstring{ep\+X2}{epX2}}]{\setlength{\rightskip}{0pt plus 5cm}float lighting\+::\+Light\+Blocker\+::ep\+X2}\hypertarget{classlighting_1_1LightBlocker_a01cf6b4663389c17b5f80294a2b26401}{}\label{classlighting_1_1LightBlocker_a01cf6b4663389c17b5f80294a2b26401}
+
+
+The displacement between x and the endpointX 
+
+\index{lighting\+::\+Light\+Blocker@{lighting\+::\+Light\+Blocker}!ep\+Y1@{ep\+Y1}}
+\index{ep\+Y1@{ep\+Y1}!lighting\+::\+Light\+Blocker@{lighting\+::\+Light\+Blocker}}
+\subsubsection[{\texorpdfstring{ep\+Y1}{epY1}}]{\setlength{\rightskip}{0pt plus 5cm}float lighting\+::\+Light\+Blocker\+::ep\+Y1}\hypertarget{classlighting_1_1LightBlocker_a2d8e512751df14bff73c59e3bfaea216}{}\label{classlighting_1_1LightBlocker_a2d8e512751df14bff73c59e3bfaea216}
+
+
+The displacement between y and the endpointY 
+
+\index{lighting\+::\+Light\+Blocker@{lighting\+::\+Light\+Blocker}!ep\+Y2@{ep\+Y2}}
+\index{ep\+Y2@{ep\+Y2}!lighting\+::\+Light\+Blocker@{lighting\+::\+Light\+Blocker}}
+\subsubsection[{\texorpdfstring{ep\+Y2}{epY2}}]{\setlength{\rightskip}{0pt plus 5cm}float lighting\+::\+Light\+Blocker\+::ep\+Y2}\hypertarget{classlighting_1_1LightBlocker_ac208ae1dafe53ec7ceab6d60113c6ca1}{}\label{classlighting_1_1LightBlocker_ac208ae1dafe53ec7ceab6d60113c6ca1}
+
+
+The displacement between y and the endpointY 
+
+\index{lighting\+::\+Light\+Blocker@{lighting\+::\+Light\+Blocker}!rotate\+X\+Off1@{rotate\+X\+Off1}}
+\index{rotate\+X\+Off1@{rotate\+X\+Off1}!lighting\+::\+Light\+Blocker@{lighting\+::\+Light\+Blocker}}
+\subsubsection[{\texorpdfstring{rotate\+X\+Off1}{rotateXOff1}}]{\setlength{\rightskip}{0pt plus 5cm}float lighting\+::\+Light\+Blocker\+::rotate\+X\+Off1}\hypertarget{classlighting_1_1LightBlocker_a51b85e054f0ffaf8ae51d305b62e6a6f}{}\label{classlighting_1_1LightBlocker_a51b85e054f0ffaf8ae51d305b62e6a6f}
+
+
+The horizontal displacement of the first endpoint due to rotation, set by \hyperlink{classlighting_1_1LightBlocker_a1fe1c13013aeee813526ae74cd5a984c}{set\+Rads()}. 
+
+\index{lighting\+::\+Light\+Blocker@{lighting\+::\+Light\+Blocker}!rotate\+X\+Off2@{rotate\+X\+Off2}}
+\index{rotate\+X\+Off2@{rotate\+X\+Off2}!lighting\+::\+Light\+Blocker@{lighting\+::\+Light\+Blocker}}
+\subsubsection[{\texorpdfstring{rotate\+X\+Off2}{rotateXOff2}}]{\setlength{\rightskip}{0pt plus 5cm}float lighting\+::\+Light\+Blocker\+::rotate\+X\+Off2}\hypertarget{classlighting_1_1LightBlocker_a5e08ff3bf8f8f26b8660f95114184b5c}{}\label{classlighting_1_1LightBlocker_a5e08ff3bf8f8f26b8660f95114184b5c}
+
+
+The horizontal displacement of the second endpoint due to rotation, set by \hyperlink{classlighting_1_1LightBlocker_a1fe1c13013aeee813526ae74cd5a984c}{set\+Rads()}. 
+
+\index{lighting\+::\+Light\+Blocker@{lighting\+::\+Light\+Blocker}!rotate\+Y\+Off1@{rotate\+Y\+Off1}}
+\index{rotate\+Y\+Off1@{rotate\+Y\+Off1}!lighting\+::\+Light\+Blocker@{lighting\+::\+Light\+Blocker}}
+\subsubsection[{\texorpdfstring{rotate\+Y\+Off1}{rotateYOff1}}]{\setlength{\rightskip}{0pt plus 5cm}float lighting\+::\+Light\+Blocker\+::rotate\+Y\+Off1}\hypertarget{classlighting_1_1LightBlocker_a3c9c30ae0058e5f97b13c785f9ab879a}{}\label{classlighting_1_1LightBlocker_a3c9c30ae0058e5f97b13c785f9ab879a}
+
+
+The vertical displacement of the first endpoint due to rotation, set by \hyperlink{classlighting_1_1LightBlocker_a1fe1c13013aeee813526ae74cd5a984c}{set\+Rads()}. 
+
+\index{lighting\+::\+Light\+Blocker@{lighting\+::\+Light\+Blocker}!rotate\+Y\+Off2@{rotate\+Y\+Off2}}
+\index{rotate\+Y\+Off2@{rotate\+Y\+Off2}!lighting\+::\+Light\+Blocker@{lighting\+::\+Light\+Blocker}}
+\subsubsection[{\texorpdfstring{rotate\+Y\+Off2}{rotateYOff2}}]{\setlength{\rightskip}{0pt plus 5cm}float lighting\+::\+Light\+Blocker\+::rotate\+Y\+Off2}\hypertarget{classlighting_1_1LightBlocker_aea5301a408a819c955c9227ff6a41009}{}\label{classlighting_1_1LightBlocker_aea5301a408a819c955c9227ff6a41009}
+
+
+The vertical displacement of the second endpoint due to rotation, set by \hyperlink{classlighting_1_1LightBlocker_a1fe1c13013aeee813526ae74cd5a984c}{set\+Rads()}. 
+
+\index{lighting\+::\+Light\+Blocker@{lighting\+::\+Light\+Blocker}!x1@{x1}}
+\index{x1@{x1}!lighting\+::\+Light\+Blocker@{lighting\+::\+Light\+Blocker}}
+\subsubsection[{\texorpdfstring{x1}{x1}}]{\setlength{\rightskip}{0pt plus 5cm}float lighting\+::\+Light\+Blocker\+::x1}\hypertarget{classlighting_1_1LightBlocker_acb89235bf9b478b8242e0bf3a1ca863c}{}\label{classlighting_1_1LightBlocker_acb89235bf9b478b8242e0bf3a1ca863c}
+
+
+Horizontal position of first endpoint on the screen. 
+
+\index{lighting\+::\+Light\+Blocker@{lighting\+::\+Light\+Blocker}!x2@{x2}}
+\index{x2@{x2}!lighting\+::\+Light\+Blocker@{lighting\+::\+Light\+Blocker}}
+\subsubsection[{\texorpdfstring{x2}{x2}}]{\setlength{\rightskip}{0pt plus 5cm}float lighting\+::\+Light\+Blocker\+::x2}\hypertarget{classlighting_1_1LightBlocker_aaeb1641f4d28d66c4d89045c6053a29a}{}\label{classlighting_1_1LightBlocker_aaeb1641f4d28d66c4d89045c6053a29a}
+
+
+Horizontal position of the second endpoint on the screen. 
+
+\index{lighting\+::\+Light\+Blocker@{lighting\+::\+Light\+Blocker}!y1@{y1}}
+\index{y1@{y1}!lighting\+::\+Light\+Blocker@{lighting\+::\+Light\+Blocker}}
+\subsubsection[{\texorpdfstring{y1}{y1}}]{\setlength{\rightskip}{0pt plus 5cm}float lighting\+::\+Light\+Blocker\+::y1}\hypertarget{classlighting_1_1LightBlocker_ad988b4727c60d6e83a8fca2d7eabbdec}{}\label{classlighting_1_1LightBlocker_ad988b4727c60d6e83a8fca2d7eabbdec}
+
+
+Vertical position of first endpoint on the screen. 
+
+\index{lighting\+::\+Light\+Blocker@{lighting\+::\+Light\+Blocker}!y2@{y2}}
+\index{y2@{y2}!lighting\+::\+Light\+Blocker@{lighting\+::\+Light\+Blocker}}
+\subsubsection[{\texorpdfstring{y2}{y2}}]{\setlength{\rightskip}{0pt plus 5cm}float lighting\+::\+Light\+Blocker\+::y2}\hypertarget{classlighting_1_1LightBlocker_a69fdb1256cab66b415a76b9f63af4284}{}\label{classlighting_1_1LightBlocker_a69fdb1256cab66b415a76b9f63af4284}
+
+
+Vertical position of the second endpoint on the screen. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Light\+Blocker.\+h\item 
+Light\+Blocker.\+cpp\end{DoxyCompactItemize}
