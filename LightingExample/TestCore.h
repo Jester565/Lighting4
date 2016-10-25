@@ -21,8 +21,6 @@ public:
 
 	void draw() override;
 
-	void populateLBC(int x, int y, int rowNum, int colNum, int lbcWidth, int offset);
-
 	~TestCore();
 
 private:
@@ -30,15 +28,6 @@ private:
 	GaussianKernelData kernelData;
 	GaussianBlurrer* blurrer;
 	LightLayer* lightLayer;
-	std::vector <CircleLightSource*> lightSources;
-	AboveLightSource* sun;
-	int drawCount;
-	float lightVX;
-	float lightVY;
-	float lightX, lightY;
-	int passes;
-	void handlePass();
-	void generateReport();
-	uint64_t startTimeMillis;
-	std::vector <LightBlockerContainer*> lbcs;
+	CircleLightSource* circleLightSource;
+	LightBlockerContainer* lbc;
 };

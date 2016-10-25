@@ -30,7 +30,7 @@ namespace lighting
 		addLine(w, 0, 0, 0);
 		addLine(0, 0, 0, h);
 		addLine(0, h, w, h);
-		addLine(w, h, w, 0);
+		addLine(w, 0, w, h);
 	}
 
 	void LightBlockerContainer::setCXYToCenter()

@@ -6,5 +6,4 @@ int main()
 	TestCore tCore;
 	tCore.setFPSCap(1000);
 	tCore.run();
-	system("pause");
 }

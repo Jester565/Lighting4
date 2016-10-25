@@ -302,6 +302,10 @@ namespace lighting
 		if (!p1In && !p2In)
 		{
 			bool p1Set = false;
+			float cX1 = x1;
+			float cY1 = y1;
+			float cX2 = x2;
+			float cY2 = y2;
 			for (int i = 0; i < BOUND_POINTS_SIZE; i += 2)
 			{
 				float cX;
@@ -311,17 +315,21 @@ namespace lighting
 				{
 					if (!p1Set)
 					{
-						x1 = cX;
-						y1 = cY;
+						cX1 = cX;
+						cY1 = cY;
 						p1Set = true;
 					}
 					else
 					{
-						x2 = cX;
-						y2 = cY;
+						cX2 = cX;
+						cY2 = cY;
 					}
 				}
 			}
+			x1 = cX1;
+			y1 = cY1;
+			x2 = cX2;
+			y2 = cY2;
 			//Means that the line is not anywhere near the light and does not need to be considered
 			if (!p1Set)
 			{
