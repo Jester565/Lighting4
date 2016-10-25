@@ -68,10 +68,23 @@ namespace lighting
 		{
 			return lightBmpScale;
 		}
-		
+				
+		/// <summary>
+		/// Gets the number light blockers.
+		/// </summary>
+		/// <returns></returns>
 		int getNumLightBlockers()
 		{
 			return lightBlockers.size();
+		}
+		
+		/// <summary>
+		/// Accessor for data members <see cref="lightMap"/>.
+		/// </summary>
+		/// <returns>Pointer to <see cref="lightMap"/>.</returns>
+		ALLEGRO_BITMAP* getLightmMap()
+		{
+			return lightMap;
 		}
 
 		/// <summary>
