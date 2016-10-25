@@ -1,5 +1,6 @@
 #pragma once
 #include <unordered_set>
+#include <set>
 #include <vector>
 #include "LightSource.h"
 #include "CircleShadePoint.h"
@@ -23,17 +24,17 @@ namespace lighting
 		/// <summary>
 		/// Number of bits for the radix base
 		/// </summary>
-		static const uint8_t RADIX_BASE_BITS = 4;
+		static const uint8_t RADIX_BASE_BITS = 8;
 		
 		/// <summary>
 		/// The maximum decimal value for the radix base.
 		/// </summary>
-		static const unsigned int RADIX_BASE_NUM = 16;
+		static const unsigned int RADIX_BASE_NUM = 256;
 		
 		/// <summary>
 		/// Number of bits for the maximum value of elements sorted by radix sort
 		/// </summary>
-		static const uint8_t RADIX_MAX_BITS = 32;
+		static const uint8_t RADIX_MAX_BITS = 16;
 		
 		/// <summary>
 		/// The maximum decimal value of the elements sorted by <see cref="::radixSortShadePoints"/>.

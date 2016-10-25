@@ -68,6 +68,11 @@ namespace lighting
 		{
 			return lightBmpScale;
 		}
+		
+		int getNumLightBlockers()
+		{
+			return lightBlockers.size();
+		}
 
 		/// <summary>
 		/// Finalizes an instance of the <see cref="LightLayer"/>.  None of the <see cref="LightBlocker"/>s or <see cref="LightSource"/> are deleted.  Everything else is destroyed.

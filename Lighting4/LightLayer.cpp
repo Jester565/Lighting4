@@ -49,10 +49,10 @@ namespace lighting
 						it = copyLightRunnables.erase(it);
 					}
 					lightRunnable->lightBlockersCopiedMutex.unlock();
-				}
+		 		}
 				if (!erased)
 				{
-					it++;
+	 				it++;
 				}
 			}
 		}
@@ -138,15 +138,14 @@ namespace lighting
 	void LightLayer::addLightBlocker(LightBlocker * lightBlocker)
 	{
 		lightBlockers.push_back(lightBlocker);
-		//lightBlockerTrackerMap.emplace(std::make_pair(lightBlocker, lightBlockers.end()));
+		lightBlockerTrackerMap.emplace(std::make_pair(lightBlocker, --lightBlockers.end()));
 	}
 
 	void LightLayer::removeLightBlocker(LightBlocker * lightBlocker)
 	{
-		//auto trackMapIter = lightBlockerTrackerMap.find(lightBlocker);
-		lightBlockers.remove(lightBlocker);
-		//lightBlockers.erase(trackMapIter->second);
-		//lightBlockerTrackerMap.erase(lightBlocker);
+		auto trackMapIter = lightBlockerTrackerMap.find(lightBlocker);
+		lightBlockers.erase(trackMapIter->second);
+		lightBlockerTrackerMap.erase(trackMapIter);
 	}
 
 	LightLayer::~LightLayer()

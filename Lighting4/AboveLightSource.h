@@ -42,6 +42,11 @@ namespace lighting
 		/// The maximum value of the radix.
 		/// </summary>
 		static const unsigned int RADIX_MAX_NUM = 65535;
+
+		/// <summary>
+		/// The y value <see cref="AboveLightBlocker"/> will be added at.
+		/// </summary>
+		static const int ABOVE_LIGHT_BLOCKER_Y = -30;
 		
 		/// <summary>
 		/// Initializes a new instance of the <see cref="AboveLightSource"/> class.  Automatically adds itelf to <paramref name="ownerLightLayer"/>.

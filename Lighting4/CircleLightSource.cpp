@@ -12,10 +12,15 @@ namespace lighting
 	uint64_t CircleLightSource::CastPointsProcessed = 0;
 	uint64_t CircleLightSource::TotalCycles = 0;
 
+	bool RadialShadePointCompare(CircleShadePoint* sp1, CircleShadePoint* sp2)
+	{
+		return sp1->rads < sp2->rads;
+	}
+
 	/// <summary>
-	/// The radix maximum number{CC2D43FA-BBC4-448A-9D0B-7B57ADF2655C}
+	/// The radix maximum number.
 	/// </summary>
-	unsigned int CircleLightSource::RADIX_MAX_NUM = pow(2, 32) - 1;
+	unsigned int CircleLightSource::RADIX_MAX_NUM = pow(2, RADIX_MAX_BITS) - 1;
 
 	const float CircleLightSource::MAX_NEG_FLOAT = -std::numeric_limits<float>::max();
 
@@ -51,7 +56,7 @@ namespace lighting
 		std::vector <unsigned int> counts(RADIX_BASE_NUM);
 		for (int i = 0; i < shadePoints.size(); i++)
 		{
-			int countIdx = (shadePoints[i]->radixVal >> bI) & 0xF;
+			int countIdx = (shadePoints[i]->radixVal >> bI) & 0xff;
 			counts.at(countIdx)++;
 		}
 
@@ -63,7 +68,7 @@ namespace lighting
 		std::vector<CircleShadePoint*> output(shadePoints.size());
 		for (int i = shadePoints.size() - 1; i >= 0; i--)
 		{
-			int countIdx = (shadePoints[i]->radixVal >> bI) & 0xF;
+			int countIdx = (shadePoints[i]->radixVal >> bI) & 0xff;
 			output[counts[countIdx] - 1] = shadePoints[i];
 			counts[countIdx]--;
 		}
@@ -149,7 +154,6 @@ namespace lighting
 			}
 		}
 		radixSortShadePoints();
-		//std::sort(shadePoints.begin(), shadePoints.end(), RadialShadePointCompare);
 	}
 
 	void CircleLightSource::mapShadePoints()
