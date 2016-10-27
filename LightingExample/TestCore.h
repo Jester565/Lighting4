@@ -13,13 +13,15 @@ using namespace lighting;
 
 class TestCore : public Core
 {
-public: 
+public:
 	static const int LS_SIZE = 4;
 	TestCore();
 
 	bool init() override;
 
 	void draw() override;
+
+	void populateLBC(int x, int y, int rowNum, int colNum, int lbcWidth, int offset);
 
 	~TestCore();
 
@@ -28,6 +30,15 @@ private:
 	GaussianKernelData kernelData;
 	GaussianBlurrer* blurrer;
 	LightLayer* lightLayer;
-	CircleLightSource* circleLightSource;
-	LightBlockerContainer* lbc;
+	std::vector <CircleLightSource*> lightSources;
+	AboveLightSource* sun;
+	int drawCount;
+	float lightVX;
+	float lightVY;
+	float lightX, lightY;
+	int passes;
+	void handlePass();
+	void generateReport();
+	uint64_t startTimeMillis;
+	std::vector <LightBlockerContainer*> lbcs;
 };

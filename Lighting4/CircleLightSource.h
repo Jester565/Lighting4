@@ -34,7 +34,7 @@ namespace lighting
 		/// <summary>
 		/// Number of bits for the maximum value of elements sorted by radix sort
 		/// </summary>
-		static const uint8_t RADIX_MAX_BITS = 16;
+		static const uint8_t RADIX_MAX_BITS = 24;
 		
 		/// <summary>
 		/// The maximum decimal value of the elements sorted by <see cref="::radixSortShadePoints"/>.

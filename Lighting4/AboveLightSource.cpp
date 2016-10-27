@@ -6,7 +6,7 @@
 namespace lighting
 {
 	AboveLightSource::AboveLightSource(LightLayer * ownerLightLayer, int yOff, uint8_t r, uint8_t g, uint8_t b, uint8_t a)
-		:LightSource(ownerLightLayer)
+		:LightSource(ownerLightLayer), yOff(yOff)
 	{
 		setLightColor(r, g, b, a);
 	}
