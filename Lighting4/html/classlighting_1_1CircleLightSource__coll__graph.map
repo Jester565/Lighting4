@@ -1,4 +1,0 @@
-<map id="lighting::CircleLightSource" name="lighting::CircleLightSource">
-<area shape="rect" id="node2" href="$classlighting_1_1LightSource.html" title="Abstract class represnting an light that can be blocked " alt="" coords="23,95,163,121"/>
-<area shape="rect" id="node3" href="$classlighting_1_1LightLayer.html" title="The core of the lighting system. Holds all LightSources and LightBlockers, handles drawing operations..." alt="" coords="27,5,158,32"/>
-</map>

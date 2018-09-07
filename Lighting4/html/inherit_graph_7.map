@@ -1,6 +1,0 @@
-<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classlighting_1_1LightSource.html" title="Abstract class represnting an light that can be blocked " alt="" coords="5,31,145,57"/>
-<area shape="rect" id="node2" href="$classlighting_1_1AboveLightSource.html" title="Represents the sun or any planetary source of light. Can be blocked by s or s. " alt="" coords="193,5,371,32"/>
-<area shape="rect" id="node3" href="$classlighting_1_1CircleLightSource.html" title="A child of LightSource represents a full circle of light that would be produced by an oil lamp or a l..." alt="" coords="195,56,369,83"/>
-<area shape="rect" id="node4" href="$classlighting_1_1DirectionalLightSource.html" title="Represents a light in the form of a flash light or any light beam limited to an angle ..." alt="" coords="419,49,580,90"/>
-</map>

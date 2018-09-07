@@ -1,5 +1,0 @@
-<map id="lighting::DirectionalLightSource" name="lighting::DirectionalLightSource">
-<area shape="rect" id="node2" href="$classlighting_1_1CircleLightSource.html" title="A child of LightSource represents a full circle of light that would be produced by an oil lamp or a l..." alt="" coords="5,171,180,197"/>
-<area shape="rect" id="node3" href="$classlighting_1_1LightSource.html" title="Abstract class represnting an light that can be blocked " alt="" coords="23,95,163,121"/>
-<area shape="rect" id="node4" href="$classlighting_1_1LightLayer.html" title="The core of the lighting system. Holds all LightSources and LightBlockers, handles drawing operations..." alt="" coords="27,5,158,32"/>
-</map>
