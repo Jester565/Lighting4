@@ -9,7 +9,7 @@ Lighting system implemented in a small platformer with no Gaussain Blur.
 ![alt tag](/Imgs/farmerGameLightGaus.PNG)
 Now with two passes of Gaussian Blur.
 
-# Installation
+# Building
 ***Clone repository with --recurse-submodules***  
 Requirements: Allegro (5.2.4)
 
